@@ -191,7 +191,7 @@ sudo nano ~/.config/touchegg/touchegg.conf
 <p align="center">
  <img src="https://i.imgur.com/E8S35nT.png" width=400px height=200px>	
 	
-### ─ Gnome themes from <a href="https://www.pling.com/s/Gnome/browse"><b>Pling</b></a> website ─
+### ─ All gnome themes from <a href="https://www.pling.com/s/Gnome/browse"><b>Pling</b></a> website ─
 
 #### <a href="https://www.pling.com/p/1445634/#files-panel"><b>Rainbow cursor</b></a>
 
@@ -217,7 +217,19 @@ Install <a href="https://launchpad.net/plank"><b>plank</b></a> dock from softwar
 #### <a href="https://www.gnome-look.org/p/1257556/"><b>Cyberpunk plank theme</b></a>
 
 Extract zip files to `/usr/share/plank/themes/`
+	
+### ─ Boot Logo ─
+	
+#### <a href="https://github.com/topics/plymouth-themes"><b>Plymouth Themes</b></a>
 
+Copy theme folder to `/usr/share/plymouth/themes/`
+	
+#### Install the new theme (<a href="https://raw.githubusercontent.com/adi1090x/files/master/plymouth-themes/previews/22.gif"><b>cybernetic</b></a> in this case)
+```
+sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/cybernetic/cybernetic.plymouth 100
+sudo update-alternatives --config default.plymouth
+sudo update-initramfs -u	
+```
 ***
 #
 <h2 align="center"><b><i>📥SOFTWARES📥</b></i> </h2>
