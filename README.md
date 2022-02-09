@@ -143,7 +143,7 @@ sudo systemctl enable --now nohang-desktop.service
 ```
 ### ─ Command to free memory ─
 ```
-sync; sudo echo 3 | sudo tee /proc/sys/vm/drop_caches
+sync; sudo echo 2 | sudo tee /proc/sys/vm/drop_caches
 ```
 Check out this <a href="https://gist.github.com/trinib/0ae1e7cd56178358ee28bb0828daab4f"><b>guide</b></a> to make a script and execute it at a certain time
 
