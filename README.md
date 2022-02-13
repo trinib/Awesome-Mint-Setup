@@ -16,7 +16,7 @@
 - [Touchpad Gestures](#touchpad-gestures-)
 - [Customization](#customization-)
 - [Software](#softwares-)
-- [Retro Gaming](#%EF%B8%8Fretro-gaming%EF%B8%8F-)
+- [Retro Gaming](#-install-retropi-)
 - [Linux Resources](#linux-resourses-)
 - [Terminal](#terminal-)
 - [Useful Linux Commands](#useful-commands-)
