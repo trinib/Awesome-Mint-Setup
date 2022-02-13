@@ -31,7 +31,11 @@
     echo 'deb http://deb.xanmod.org releases main' | sudo tee /etc/apt/sources.list.d/xanmod-kernel.list
     wget -qO - https://dl.xanmod.org/gpg.key | sudo apt-key --keyring /etc/apt/trusted.gpg.d/xanmod-kernel.gpg add -
     sudo apt update && sudo apt install linux-xanmod
+    sudo apt install intel-microcode iucode-tool
+    sudo apt install amd64-microcode
+    echo 'net.core.default_qdisc = fq_pie' | sudo tee /etc/sysctl.d/90-override.conf
     sudo reboot
+
       
 or
 
@@ -284,7 +288,7 @@ sudo chmod +x name_of_file.deb
 sudo dpkg -i /path/to/deb/file
 ```
 	
-### ─ <a href="https://www.qbittorrent.org/"><b>qBittorrent</b></a> (Torrent Client) ─
+### ─ <a href="https://www.qbittorrent.org/"><b>qBittorrent</b></a> (Torrenting Client) ─
 ```	
 sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable
 sudo apt-get update
