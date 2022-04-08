@@ -199,7 +199,7 @@ sudo nano ~/.config/touchegg/touchegg.conf
 <p align="center">
  <img src="https://i.imgur.com/E8S35nT.png" width=400px height=200px>	
 	
-### ─ All gnome themes from <a href="https://www.pling.com/s/Gnome/browse"><b>Pling</b></a> website ─
+### ─ All linux themes from <a href="https://www.pling.com/s/Gnome/browse"><b>Pling</b></a> website ─
 
 #### <a href="https://www.pling.com/p/1445634/#files-panel"><b>Rainbow cursor</b></a>
 
