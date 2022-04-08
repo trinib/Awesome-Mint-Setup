@@ -357,7 +357,7 @@ chmod +x "install.sh"
 	
 ▶<a href="https://www.youtube.com/watch?v=Jm1vGJRAutU&t=76s"><b>Video tutorial</b></a>◀
 		
-Get more shaders from <a href="https://github.com/libretro/glsl-shaders"><b>glsl-shaders</b></a>, Extract <a href="https://github.com/libretro/glsl-shaders/archive/refs/heads/master.zip"><b>zip</b></a> to `~/.config/retroarch/shaders` folder <i>( `~/` means home directory )</i>.
+Get more shaders from <a href="https://github.com/libretro/glsl-shaders"><b>glsl-shaders</b></a>, Extract <a href="https://github.com/libretro/glsl-shaders/archive/refs/heads/master.zip"><b>zip</b></a> to `~/.config/retroarch/shaders` folder <i>(`~/` means home directory)</i>.
 	
 ### ─ <a href="https://github.com/thebezelproject/BezelProject"><b>The Bezel Project</b></a> ─ 
 ```
