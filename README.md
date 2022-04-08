@@ -1,11 +1,11 @@
 <p align="center">
-<a href="https://linuxmint.com/about.php"><img src="https://img.shields.io/badge/Linux%20Mint-87CF3E?style=for-the-badge&logo=Linux%20Mint&logoColor=white" height=35px width=150px><a href=""><img src="https://badges.frapsoft.com/bash/v1/bash-200x34.png?v=103" height=35px width=160px><a href=""><img src="https://badges.frapsoft.com/os/v2/open-source-175x29.png?v=103" height=35px width=160px><a href="https://www.kernel.org/category/about.html"><img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" height=35px width=150px></a>
+<img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" height=35px width=150px><img src="https://badges.frapsoft.com/bash/v1/bash-200x34.png?v=103" height=35px width=160px><a href=""><img src="https://badges.frapsoft.com/os/v2/open-source-175x29.png?v=103" height=35px width=160px><a href="https://www.kernel.org/category/about.html"></a>
 
 <h2 align="center"><b><i>Just what you needed !!</b></i></h2>	
 	
-<h2 align="center"><b><i>💚 Important & Cool Resources For <a href="https://linuxmint.com/download_all.php"><b>LINUX MINT</b></a></b></i> Fans 💚</h2>
+<h2 align="center"><b><i>Important & cool resources after installing <a href="https://distrowatch.com/search.php?ostype=Linux&category=All&origin=All&basedon=Ubuntu&notbasedon=None&desktop=All&architecture=All&package=All&rolling=All&isosize=All&netinstall=All&language=All&defaultinit=All&status=Active#simple"><b>Ubuntu-base-distros</b></a></b></i></h2>
 	    
-<p align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Linux_Mint_logo_submission.svg" width=250px height=90px> 
+<p align="center"><img src="https://i.imgur.com/SYiccUK.png" width=20%> 
 
 # Contents
 - [Kernels & Drivers](#%EF%B8%8Fcustom-kernels--drivers%EF%B8%8F-)
