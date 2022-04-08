@@ -397,7 +397,7 @@ Tip :
 		</td>
 		<td>
 			<a href="https://itsfoss.com/">
-				<img src="https://itsfoss.com/wp-content/uploads/2017/06/itsfoss-text-logo.png" width=200px height=50px>
+				<img src="https://itsfoss.com/wp-content/uploads/2019/12/itsfoss_homepage.png" width=200px height=80px>
 			</a>
 		</td>
 		<td>
