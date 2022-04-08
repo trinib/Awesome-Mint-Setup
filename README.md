@@ -493,7 +493,7 @@ or:
 4. `cat` (list the content of the desired file)
 5. `nano` (Simple Text editor , quick&fast)
 6. `locate` (Searching with command line , (*)has other options too
-7. `--purge remove` (Uninstall paackages and clean up files)
+7. `--purge remove` (Uninstall packages and clean up files)
 8. `history | grep`  (Search history for specific word)
 9. `rm` (Remove files/folders)
 10. `cd $home` (return to home directory where ever you are)
