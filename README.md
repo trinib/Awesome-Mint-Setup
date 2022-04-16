@@ -16,7 +16,7 @@
 - [Touchpad Gestures](#touchpad-gestures-)
 - [Customization](#customization-)
 - [Software](#softwares-)
-- [Retro Gaming](#%EF%B8%8Fretro-gaming%EF%B8%8F-)
+- [Retro Gaming](#-install-retropi-)
 - [Linux Resources](#linux-resourses-)
 - [Terminal](#terminal-)
   - [Oh-My-fish](#-use-oh-my-fish-)
@@ -25,7 +25,7 @@
 #
 <h2 align="center"><b><i>⚙️CUSTOM KERNELS & DRIVERS⚙️</b></i> </h2>
 
-### ─ Depending on the type of hardware you have one might work better than the other  ─ 
+<i>Depending on the type of hardware you have one might work better than the other</i>
 
 <a href="https://xanmod.org/"><b>XanMod</b></a>
 
