@@ -16,9 +16,10 @@
 - [Touchpad Gestures](#touchpad-gestures-)
 - [Customization](#customization-)
 - [Software](#softwares-)
-- [Retro Gaming](#-install-retropi-)
+- [Retro Gaming](#%EF%B8%8Fretro-gaming%EF%B8%8F-)
 - [Linux Resources](#linux-resourses-)
 - [Terminal](#terminal-)
+  - [Oh-My-fish](#-use-oh-my-fish-)
 - [Useful Linux Commands](#useful-commands-)
 ***
 #
@@ -69,7 +70,7 @@ sudo apt-get install pulseeffects lsp-plugins
 ### ─ Audio Tweaks ─
 Check out this <a href="https://github.com/trinib/Awesome-Linux-Mint-Basics/blob/main/Enable%20High%20Quality%20Audio.md"><b>guide</b></a>
 
-### ─ TroubleShoot ─
+### ─ Troubleshoot ─
 If there is any issue with your audio like *_lag_* or in my case *_louder volume_* feature was not working, I found this fix on mint forums :
 ```
 killall pulseaudio
@@ -459,11 +460,36 @@ Open neofetch config file to edit :
  
     ~/.config/neofetch/config.conf
 
-
 To add custom ASCII art work, you need to create a <a href="https://github.com/trinib/Awesome-Basic-Linux-Mint/blob/main/ascii_art_example.txt"><b>txt file (with the art)</b></a> in your home directory and add <i><a href="https://github.com/trinib/Awesome-Basic-Linux-Mint/blob/f8bf66934e6d0710fd1816d817aad1b2f4e47961/neofetch.conf#L695"><b>file path</b></a></i> to neofetch config file 
 
 <i>Here is an <a href="https://github.com/trinib/Awesome-Basic-Linux-Mint/blob/main/neofetch.conf"><b>example</b></a> for reference</i>
 
+#
+### ─ Use Oh-My-Fish ─
+	
+Instead of linux bash you can use fish shell which has cool features like my favourite <i><b>auto predictions preview</b></i>
+	
+Fish is a Unix shell with a focus on interactivity and usability. Oh My Fish provides core infrastructure to allow you to install packages which extend or modify the look of your shell. It's fast, extensible and easy to use
+	
+Install <a href="https://fishshell.com/"><b>fish</b></a> :
+```	
+sudo apt install fish
+```	
+	
+Install <a href="https://github.com/oh-my-fish/oh-my-fish"><b>oh-my-fish</b></a> :
+```
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+```	
+	
+Install <a href="https://github.com/oh-my-fish/oh-my-fish/blob/master/docs/Themes.md"><b>themes</b></a>
+	
+Customize current fish theme colors :
+```
+fish_config	
+```
+	
+For startup greetings go to `.config/fish/functions` and create a file <a href="https://github.com/trinib/Awesome-Ubuntu-for-Beginners/blob/main/fish_greeting.fish"><b>fish_greeting.fish</b></a>
+	
 #
 ### ─ Stop terminal sudo asking for password ─
 
