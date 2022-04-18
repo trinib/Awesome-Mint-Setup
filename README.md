@@ -452,7 +452,7 @@ Everything is added and edited at the end of bashrc file :
 
 <i>Here is an <a href="https://github.com/trinib/Awesome-Linux-Mint/blob/main/bashrc"><b>example</b></a> for reference</i>
     
-### Pimp out <a href="https://github.com/dylanaraps/neofetch"><b>Neofetch</b></a> (can be added to bashrc)
+### ─ Pimp out <a href="https://github.com/dylanaraps/neofetch"><b>Neofetch</b></a> ─ (can be added to bashrc)
  
 <img src="https://i.imgur.com/w21XtAG.png" width=400px height=280px>    
  
@@ -527,5 +527,5 @@ or:
 <i>Here is more <a href="https://github.com/trinib/Awesome-Linux-Mint/blob/main/Linux%20Basic%20Commands%20Every%20User%20Should%20Know.md"><b>COMMANDS</b></a> </i>
 #
 
-**[⬆ BACK TO TOP ⬆](#-important--cool-resources-for-linux-mint-fans-)**
+**[⬆ BACK TO TOP ⬆]#contents)**
 
