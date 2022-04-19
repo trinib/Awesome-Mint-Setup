@@ -561,4 +561,4 @@ or:
 <i>Here is more <a href="https://github.com/trinib/Awesome-Linux-Mint/blob/main/Linux%20Basic%20Commands%20Every%20User%20Should%20Know.md"><b>COMMANDS</b></a> </i>
 #
 
-**[⬆ BACK TO TOP ⬆]#contents)**
+**[⬆ BACK TO TOP ⬆](#contents)**
