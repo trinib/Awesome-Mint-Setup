@@ -1,7 +1,7 @@
 <p align="center">
-<img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" height=35px width=150px><img src="https://badges.frapsoft.com/bash/v1/bash-200x34.png?v=103" height=35px width=160px><a href=""><img src="https://badges.frapsoft.com/os/v2/open-source-175x29.png?v=103" height=35px width=160px><a href="https://www.kernel.org/category/about.html"></a>
+<img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" height=25px width=100px><img src="https://badges.frapsoft.com/os/v2/open-source-175x29.png?v=103" 25px width=100px><a href="https://www.kernel.org/category/about.html"><img src="https://badges.frapsoft.com/bash/v1/bash-200x34.png?v=103" height=25px width=100px><a href=""></a>
 
-<h2 align="center"><b><i>Just what you needed !!</b></i></h2>	
+<h2 align="center"><b>Just what you needed !</b></h2>	
 	
 <h2 align="center"><b><i>Important & cool resources after installing <a href="https://distrowatch.com/search.php?ostype=Linux&category=All&origin=All&basedon=Ubuntu&notbasedon=None&desktop=All&architecture=All&package=All&rolling=All&isosize=All&netinstall=All&language=All&defaultinit=All&status=Active#simple"><b>Ubuntu-based-distros</b></a></b></i></h2>
 	    
@@ -9,17 +9,39 @@
 
 # Contents
 - [Kernels & Drivers](#%EF%B8%8Fcustom-kernels--drivers%EF%B8%8F-)
+  - [XanMod](#xanmod)
+  - [Liquorix](#liquorix)
+  - [Graphic Drivers](#-graphic-drivers-)
 - [Better Audio](#boost-audio-)
+  - [Equalizer](#-equalizer-)
+  - [Audio Tweaks](#-audio-tweaks-)
+  - [Troubleshoot](#-troubleshoot-)
 - [Longer Battery Life](#better-battery-)
+  - [Install TLP package](#-install-tlp-package-)
+  - [Disable Bluetooth](#-disable-bluetooth-)
+  - [Turn Off Firewall Logs](#-turn-off-firewall-logs-)
+  - [Disable Gome features](#-disable-gome-features-)
 - [Optimize RAM&SSD](#optimize-ramssd-)
+  - [Decrease swap](#-decrease-swap-)
+  - [Set VFS cache pressure](#-set-vfs-cache-pressure-)
+  - [Disables write access](#-disables-write-access-)
+  - [Prevent out of memory](#-prevent-out-of-memory-)
+  - [Command to free memory](#-command-to-free-memory-)
 - [Better CPU Managment](#better-cpu-)
 - [Touchpad Gestures](#touchpad-gestures-)
 - [Customization](#customization-)
 - [Software](#softwares-)
 - [Retro Gaming](#-install-retropi-)
+  - [Install RetroPi](#-install-retropi-)
+  - [Install Themes](#-install-themes-)
+  - [Install Shaders](#-install-shaders-)
+  - [The Bezel Project](#-the-bezel-project-)
 - [Linux Resources](#linux-resourses-)
 - [Terminal](#terminal-)
-  - [Oh-My-fish](#-use-oh-my-fish-)
+  - [Cool Bash ](#-use-oh-my-fish-)
+  - [Pimp out Neofetch](#better-battery-)
+  - [Oh-My-fish](#better-battery-)
+  - [Stop terminal sudo password](#better-battery-)
 - [Useful Linux Commands](#useful-commands-)
 ***
 #
@@ -27,7 +49,7 @@
 
 <i>Depending on the type of hardware you have one might work better than the other</i>
 
-<a href="https://xanmod.org/"><b>XanMod</b></a>
+#### <a href="https://xanmod.org/"><b>XanMod</b></a>
 
     echo 'deb http://deb.xanmod.org releases main' | sudo tee /etc/apt/sources.list.d/xanmod-kernel.list
     wget -qO - https://dl.xanmod.org/gpg.key | sudo apt-key --keyring /etc/apt/trusted.gpg.d/xanmod-kernel.gpg add -
@@ -44,7 +66,7 @@
       
 or
 
-<a href="https://liquorix.net/"><b>Liquorix</b></a>
+#### <a href="https://liquorix.net/"><b>Liquorix</b></a>
 
     sudo add-apt-repository ppa:damentz/liquorix && sudo apt-get update
     sudo apt-get install linux-image-liquorix-amd64 linux-headers-liquorix-amd64
@@ -116,8 +138,10 @@ Disable Automatic Screen Rotation (found in `display settings`)
 #
 <h2 align="center"><b><i>🚀OPTIMIZE RAM&SSD🚀</b></i> </h2>
 
-### ─ Decrease <a href="https://www.linux.com/news/all-about-linux-swap-space/"><b>swap</b></a> if using 8gb ram or more for less disk writes and more use of memory ─
+### ─ Decrease <a href="https://www.linux.com/news/all-about-linux-swap-space/"><b>swap</b></a> ─
 
+_Only if using 8gb ram or more for less disk writes and more use of memory_
+	
 Open:
 ```
 sudo nano /etc/sysctl.conf
@@ -129,21 +153,31 @@ Add at end of file :
 <i>This means when 10% of ram is only available, swap will activate</i>
 	
 ### ─ Set VFS cache pressure ─
-Add at end of sysctl.conf file
+	
+<i>VFS cache pressure pushes the kernel to return memory being used for caching to the main pool of free memory</i>
+	
+Open:
+```
+sudo nano /etc/sysctl.conf
+````
 
+Add at end of sysctl.conf file:
+	
 `vm.vfs_cache_pressure=50`
 
-<i>VFS cache pressure pushes the kernel to return memory being used for caching to the main pool of free memory</i>
 
-### ─ Add `noatime` mount option to all partitions except swap partition ─
+### ─ Disables write access ─
+	
+<i>Noatime mount option fully disables writing file access times to SSD every time you read a file, this reduces the writes to SSD therefore greatly increasing lifespan of SSD’s</i>
 ```
 sudo nano /etc/fstab
 ```
 <p align="center">
  <img src="https://i.imgur.com/pM1Mf4C.png" width=400px height=200px>	
 	
-<i>Noatime mount option fully disables writing file access times to SSD every time you read a file, this reduces the writes to SSD therefore greatly increasing lifespan of SSD’s</i>
-### ─ Prevent out of memory with <a href="https://github.com/hakavlad/nohang"><b>Nohang</b></a> ─
+### ─ Prevent out of memory ─
+	
+Install <a href="https://github.com/hakavlad/nohang"><b>Nohang</b></a>:
 ```  
 sudo add-apt-repository ppa:oibaf/test
 sudo apt update
@@ -344,7 +378,7 @@ sudo ./retropie_setup.sh
 
 ▶<a href="https://www.youtube.com/watch?v=PZwRfLlh01M&t=37s"><b>Video tutorial</b></a>◀
 	
-Install more themes from <a href="https://github.com/RetroHursty69/HurstyThemes">RetroHursty69<b></b></a>
+#### Install more themes from <a href="https://github.com/RetroHursty69/HurstyThemes">RetroHursty69<b></b></a>
 ```
 wget https://raw.githubusercontent.com/RetroHursty69/HurstyThemes/master/install.sh
 chmod +x "install.sh"
@@ -360,7 +394,7 @@ chmod +x "install.sh"
 		
 Get more shaders from <a href="https://github.com/libretro/glsl-shaders"><b>glsl-shaders</b></a>, Extract <a href="https://github.com/libretro/glsl-shaders/archive/refs/heads/master.zip"><b>zip</b></a> to `~/.config/retroarch/shaders` folder <i>(`~/` means home directory)</i>.
 	
-### ─ <a href="https://github.com/thebezelproject/BezelProject"><b>The Bezel Project</b></a> ─ 
+### ─ The <a href="https://github.com/thebezelproject/BezelProject"><b>Bezel Project</b></a> ─ 
 ```
 cd /home/pi/RetroPie/retropiemenu/
 wget https://raw.githubusercontent.com/thebezelproject/BezelProject/master/bezelproject.sh
@@ -528,4 +562,3 @@ or:
 #
 
 **[⬆ BACK TO TOP ⬆]#contents)**
-
