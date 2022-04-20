@@ -3,7 +3,7 @@
 
 <h2 align="center"><b>Just what you needed !</b></h2>	
 	
-<h2 align="center"><b><i>Important & cool resources after installing <a href="https://distrowatch.com/search.php?ostype=Linux&category=All&origin=All&basedon=Ubuntu&notbasedon=None&desktop=All&architecture=All&package=All&rolling=All&isosize=All&netinstall=All&language=All&defaultinit=All&status=Active#simple"><b>Ubuntu-based-distros</b></a></b></i></h2>
+<h2 align="center"><b><i>Simple, important & cool resources after installing <a href="https://distrowatch.com/search.php?ostype=Linux&category=All&origin=All&basedon=Ubuntu&notbasedon=None&desktop=All&architecture=All&package=All&rolling=All&isosize=All&netinstall=All&language=All&defaultinit=All&status=Active#simple"><b>Ubuntu-based-distros</b></a></b></i></h2>
 	    
 <p align="center"><img src="https://i.imgur.com/SYiccUK.png" width=20%> 
 
