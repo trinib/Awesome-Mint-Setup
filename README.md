@@ -38,10 +38,10 @@
   - [The Bezel Project](#-the-bezel-project-)
 - [Linux Resources](#linux-resourses-)
 - [Terminal](#terminal-)
-  - [Cool Bash ](#-use-oh-my-fish-)
-  - [Pimp out Neofetch](#better-battery-)
-  - [Oh-My-fish](#better-battery-)
-  - [Stop terminal sudo password](#better-battery-)
+  - [Cool Bash ](#-cool-bash-)
+  - [Pimp out Neofetch](#-pimp-out-neofetch--can-be-added-to-bashrc)
+  - [Oh-My-fish](#-use-oh-my-fish-)
+  - [Stop terminal sudo password](#-stop-terminal-sudo-asking-for-password-)
 - [Useful Linux Commands](#useful-commands-)
 ***
 #
