@@ -11,37 +11,37 @@
 - [Kernels & Drivers](#%EF%B8%8Fcustom-kernels--drivers%EF%B8%8F-)
   - [XanMod](#xanmod)
   - [Liquorix](#liquorix)
-  - [Graphic Drivers](#-graphic-drivers-)
+  - [Graphic Drivers](#graphic-drivers)
 - [Better Audio](#boost-audio-)
-  - [Equalizer](#-equalizer-)
-  - [Audio Tweaks](#-audio-tweaks-)
-  - [Troubleshoot](#-troubleshoot-)
+  - [Equalizer](#equalizer)
+  - [Audio Tweaks](#audio-tweaks)
+  - [Troubleshoot](#troubleshoot)
 - [Longer Battery Life](#better-battery-)
-  - [Install TLP package](#-install-tlp-package-)
-  - [Disable Bluetooth](#-disable-bluetooth-)
-  - [Turn Off Firewall Logs](#-turn-off-firewall-logs-)
-  - [Disable Gome features](#-disable-gome-features-)
+  - [Install TLP package](#install-tlp-package)
+  - [Disable Bluetooth](#disable-bluetooth)
+  - [Turn Off Firewall Logs](#turn-off-firewall-logs)
+  - [Disable Gome features](#disable-gome-features)
 - [Optimize RAM&SSD](#optimize-ramssd-)
-  - [Decrease swap](#-decrease-swap-)
-  - [Set VFS cache pressure](#-set-vfs-cache-pressure-)
-  - [Disables write access](#-disables-write-access-)
-  - [Prevent out of memory](#-prevent-out-of-memory-)
-  - [Command to free memory](#-command-to-free-memory-)
+  - [Decrease swap](#decrease-swap)
+  - [Set VFS cache pressure](#set-vfs-cache-pressure)
+  - [Disables write access](#disables-write-access)
+  - [Prevent out of memory](#prevent-out-of-memory)
+  - [Command to free memory](#command-to-free-memory)
 - [Better CPU Managment](#better-cpu-)
 - [Touchpad Gestures](#touchpad-gestures-)
 - [Customization](#customization-)
 - [Software](#softwares-)
-- [Retro Gaming](#-install-retropi-)
-  - [Install RetroPi](#-install-retropi-)
-  - [Install Themes](#-install-themes-)
-  - [Install Shaders](#-install-shaders-)
-  - [The Bezel Project](#-the-bezel-project-)
+- [Retro Gaming](#install-retropi)
+  - [Install RetroPi](#install-retropi)
+  - [Install Themes](#install-themes)
+  - [Install Shaders](#install-shaders)
+  - [The Bezel Project](#the-bezel-project)
 - [Linux Resources](#linux-resourses-)
 - [Terminal](#terminal-)
-  - [Cool Bash ](#-cool-bash-)
-  - [Pimp out Neofetch](#-pimp-out-neofetch--can-be-added-to-bashrc)
-  - [Oh-My-fish](#-use-oh-my-fish-)
-  - [Stop terminal sudo password](#-stop-terminal-sudo-asking-for-password-)
+  - [Cool Bash ](#cool-bash)
+  - [Pimp out Neofetch](#pimp-out-neofetch--can-be-added-to-bashrc)
+  - [Oh-My-fish](#use-oh-my-fish)
+  - [Stop terminal sudo password](#stop-terminal-sudo-asking-for-password)
 - [Useful Linux Commands](#useful-commands-)
 ***
 #
@@ -72,7 +72,7 @@ or
     sudo apt-get install linux-image-liquorix-amd64 linux-headers-liquorix-amd64
     sudo reboot
 	
-### ─ Graphic Drivers ─
+###  Graphic Drivers 
 	
 <a href="https://github.com/lutris/docs/blob/master/InstallingDrivers.md#nvidia"><b>Nvidia</b></a>
 
@@ -83,16 +83,17 @@ or
 #
 <h2 align="center"><b><i>🔊BOOST AUDIO🔊</b></i> </h2>
 
-### ─ Equalizer ─
+###  Equalizer 
 <a href="https://flathub.org/apps/details/com.github.wwmm.pulseeffects"><b>Pulse Effects</b></a> (can make soft speakers alot louder)
 ```
 sudo apt-get install pulseeffects lsp-plugins
 ````
+<a href="https://github.com/rsommerard/pulse-presets"><b>pulse-presets</b></a>
 
-### ─ Audio Tweaks ─
+###  Audio Tweaks 
 Check out this <a href="https://github.com/trinib/Awesome-Linux-Mint-Basics/blob/main/Enable%20High%20Quality%20Audio.md"><b>guide</b></a>
 
-### ─ Troubleshoot ─
+###  Troubleshoot 
 If there is any issue with your audio like *_lag_* or in my case *_louder volume_* feature was not working, I found this fix on mint forums :
 ```
 killall pulseaudio
@@ -107,25 +108,25 @@ sudo apt-get install libalsaplayer0
 #
 <h2 align="center"><b><i>🔋BETTER BATTERY🔋</b></i> </h2>
 
-### ─ Install <a href="https://linrunner.de/tlp/"><b>TLP</b></a> package ─
+###  Install <a href="https://linrunner.de/tlp/"><b>TLP</b></a> package 
 1. Open synaptic package manager
 2. Search for tlp package
 3. Right click package, select mark for installation and mark
 4. Click apply
 	
-### ─ Disable Bluetooth ─
+###  Disable Bluetooth 
 ```	
 sudo systemctl disable bluetooth.service    
 ## To re-enable
 sudo systemctl enable bluetooth.service
 ```
-### ─ Turn Off Firewall Logs ─
+###  Turn Off Firewall Logs 
 ```
 sudo ufw logging off 
 ## To re-enable
 sudo ufw logging low
 ```	
-### ─ Disable Gome features ─
+###  Disable Gome features 
 
 Disabling Vsync&Windows Compositing (found in `general`)
 	
@@ -138,7 +139,7 @@ Disable Automatic Screen Rotation (found in `display settings`)
 #
 <h2 align="center"><b><i>🚀OPTIMIZE RAM&SSD🚀</b></i> </h2>
 
-### ─ Decrease <a href="https://www.linux.com/news/all-about-linux-swap-space/"><b>swap</b></a> ─
+###  Decrease <a href="https://www.linux.com/news/all-about-linux-swap-space/"><b>swap</b></a> 
 
 _Only if using 8gb ram or more for less disk writes and more use of memory_
 	
@@ -152,7 +153,7 @@ Add at end of file :
 	
 <i>This means when 10% of ram is only available, swap will activate</i>
 	
-### ─ Set VFS cache pressure ─
+###  Set VFS cache pressure 
 	
 <i>VFS cache pressure pushes the kernel to return memory being used for caching to the main pool of free memory</i>
 	
@@ -166,7 +167,7 @@ Add at end of sysctl.conf file:
 `vm.vfs_cache_pressure=50`
 
 
-### ─ Disables write access ─
+###  Disables write access 
 	
 <i>Noatime mount option fully disables writing file access times to SSD every time you read a file, this reduces the writes to SSD therefore greatly increasing lifespan of SSD’s</i>
 ```
@@ -175,7 +176,7 @@ sudo nano /etc/fstab
 <p align="center">
  <img src="https://i.imgur.com/pM1Mf4C.png" width=400px height=200px>	
 	
-### ─ Prevent out of memory ─
+###  Prevent out of memory 
 	
 Install <a href="https://github.com/hakavlad/nohang"><b>Nohang</b></a>:
 ```  
@@ -184,7 +185,7 @@ sudo apt update
 sudo apt install nohang
 sudo systemctl enable --now nohang-desktop.service
 ```
-### ─ Command to free memory ─
+###  Command to free memory 
 ```
 sync; sudo echo 2 | sudo tee /proc/sys/vm/drop_caches
 ```
@@ -194,7 +195,7 @@ Check out this <a href="https://gist.github.com/trinib/0ae1e7cd56178358ee28bb082
 #
 <h2 align="center"><b><i>💻BETTER CPU💻</b></i> </h2>
 
-### ─ Manage processes IO and CPU priorities with <a href="https://github.com/Nefelim4ag/Ananicy"><b>Ananicy</b></a> ─
+###  Manage processes IO and CPU priorities with <a href="https://github.com/Nefelim4ag/Ananicy"><b>Ananicy</b></a> 
 ```
 git clone https://github.com/Nefelim4ag/Ananicy.git /tmp/ananicy
 cd /tmp/ananicy
@@ -206,7 +207,7 @@ sudo systemctl start ananicy
 #
 <h2 align="center"><b><i>🔧TOUCHPAD GESTURES🔧</b></i> </h2>
 
-### ─ Install <a href="https://github.com/JoseExposito/touchegg"><b>Touchegg</b></a> ─
+###  Install <a href="https://github.com/JoseExposito/touchegg"><b>Touchegg</b></a> 
 ```
 sudo add-apt-repository ppa:touchegg/stable
 sudo apt update
@@ -234,7 +235,7 @@ sudo nano ~/.config/touchegg/touchegg.conf
 <p align="center">
  <img src="https://i.imgur.com/E8S35nT.png" width=400px height=200px>	
 	
-### ─ All linux themes from <a href="https://www.pling.com/s/Gnome/browse"><b>Pling</b></a> website ─
+###  All linux themes from <a href="https://www.pling.com/s/Gnome/browse"><b>Pling</b></a> website 
 
 #### <a href="https://www.pling.com/p/1445634/#files-panel"><b>Rainbow cursor</b></a>
 
@@ -247,13 +248,13 @@ Extract zip files to `/usr/share/themes/ `
 #### <a href="https://www.cinnamon-look.org/p/1425426"><b>Beautyline icon theme</b></a>
 Extract zip files to `/usr/share/icons/`
 	
-### ─ Applets ─
+###  Applets 
 	
 #### <a href="https://cinnamon-spices.linuxmint.com/applets/view/281"><b>CinnVIIStarkMenu</b></a>
 #### <a href="https://cinnamon-spices.linuxmint.com/applets/view/106"><b>CPU Temp Indicator</b></a>
 #### <a href="https://cinnamon-spices.linuxmint.com/applets/view/79"><b>Multicore System Monitor</b></a>
 
-### ─ Dock ─
+###  Dock 
 
 Install <a href="https://launchpad.net/plank"><b>plank</b></a> dock from software manager
 
@@ -261,7 +262,7 @@ Install <a href="https://launchpad.net/plank"><b>plank</b></a> dock from softwar
 
 Extract zip files to `/usr/share/plank/themes/`
 	
-### ─ Boot Logo ─
+###  Boot Logo 
 	
 #### <a href="https://github.com/topics/plymouth-themes"><b>Plymouth Themes</b></a>
 
@@ -276,8 +277,24 @@ sudo update-initramfs -u
 ***
 #
 <h2 align="center"><b><i>📥SOFTWARES📥</b></i> </h2>
+	
+### <a href="https://app-outlet.github.io/"><b>App Outlet</b></a> (Universal App Store)
+Install from https://www.pling.com/p/1355468/
+	
+#### Or build manually
+- An .deb file
+- An .tar.gz file
+- A folder linux-unpacked folder with the unpacked app
+```
+sudo apt install nodejs git npm
+git clone https://github.com/app-outlet/app-outlet.git
+cd app-outlet
+npm install
+npm run start
+npm run build
+```
 
-### ─ <a href="https://www.oracle.com/java/technologies/downloads/"><b>Java</b></a> (Running Programs) ─ 
+### <a href="https://www.oracle.com/java/technologies/downloads/"><b>Java</b></a> (Running Programs)
 ```
 sudo add-apt-repository ppa:linuxuprising/java
 sudo apt update
@@ -289,7 +306,7 @@ chmod +x jdk-17_linux-x64_bin.deb
 sudo dpkg -i jdk-17_linux-x64_bin.deb
 ```	
 	
-### ─ <a href="https://www.winehq.org/"><b>Wine</b></a> (Install Windows Softwares) ─
+###  <a href="https://www.winehq.org/"><b>Wine</b></a> (Install Windows Softwares) 
 ```
 sudo dpkg --add-architecture i386 
 wget -nc https://dl.winehq.org/wine-builds/winehq.key
@@ -298,9 +315,7 @@ sudo add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal mai
 sudo apt install --install-recommends winehq-stable
 ```
 	
-### ─ <a href="https://anbox.io/"><b>Anbox</b></a> (Android Emulator) ─
-
-
+###  <a href="https://anbox.io/"><b>Anbox</b></a> (Android Emulator) 
 ```
 ## Install kernel modules
 sudo add-apt-repository ppa:morphis/anbox-support
@@ -317,7 +332,7 @@ snap install --devmode --beta anbox
 snap refresh --beta --devmode anbox
 ```
 	
-### ─ <a href="https://getmailspring.com/"><b>Mailspring</b></a> (Mail Client) ─
+###  <a href="https://getmailspring.com/"><b>Mailspring</b></a> (Mail Client) 
 ```
 sudo snap install mailspring
 	
@@ -327,35 +342,35 @@ sudo chmod +x name_of_file.deb
 sudo dpkg -i /path/to/deb/file
 ```
 	
-### ─ <a href="https://www.qbittorrent.org/"><b>qBittorrent</b></a> (Torrenting Client) ─
+###  <a href="https://www.qbittorrent.org/"><b>qBittorrent</b></a> (Torrenting Client) 
 ```	
 sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable
 sudo apt-get update
 sudo apt install qbittorrent
 ```
 
-### ─ <a href="https://github.com/lpereira/hardinfo"><b>Hardinfo</b></a> (System Information) ─ 
+###  <a href="https://github.com/lpereira/hardinfo"><b>Hardinfo</b></a> (System Information)  
 ```
 sudo add-apt-repository ppa:linuxuprising/hardinfo
 sudo apt update
 sudo apt install hardinfo
 ```
-### ─ <a href="https://www.bleachbit.org/features"><b>Bleachbit</b></a> (Clean Linux) ─
+###  <a href="https://www.bleachbit.org/features"><b>Bleachbit</b></a> (Clean Linux) 
  ```
 sudo apt install bleachbit
 ```	
-### ─ <a href="https://oguzhaninan.github.io/Stacer-Web/"><b>Stacer</b></a> (System Optimizer & Monitoring) ─
+###  <a href="https://oguzhaninan.github.io/Stacer-Web/"><b>Stacer</b></a> (System Optimizer & Monitoring) 
 ```
 sudo add-apt-repository ppa:oguzhaninan/stacer -y
 sudo apt-get update
 sudo apt-get install stacer -y
 ```
 
-### ─ <a href="https://invent.kde.org/multimedia/haruna"><b>Haruna</b></a> (Video player & Youtube-dl) ─ 
+###  <a href="https://invent.kde.org/multimedia/haruna"><b>Haruna</b></a> (Video player & Youtube-dl)  
 ```
 flatpak install flathub org.kde.haruna
 ```
-### ─ <a href="https://shutter-project.org/"><b>Shutter</b></a> (Screenshot tool) ─
+###  <a href="https://shutter-project.org/"><b>Shutter</b></a> (Screenshot tool) 
 ```
 sudo add-apt-repository ppa:shutter/ppa
 sudo apt-get update
@@ -365,7 +380,7 @@ sudo apt install shutter
 #
 <h2 align="center"><b><i>🕹️Retro Gaming🕹️</b></i> </h2>
 
-### ─ Install <a href="https://retropie.org.uk/docs/Debian/"><b>RetroPi</b></a> ─
+###  Install <a href="https://retropie.org.uk/docs/Debian/"><b>RetroPi</b></a> 
 ```
 sudo apt install -y git dialog unzip xmlstarlet
 git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
@@ -374,7 +389,7 @@ sudo ./retropie_setup.sh
 ```
 ▶<a href="https://youtu.be/hyZcGG5QMuk?t=337"><b>Video tutorial</b></a>◀
 		
-### ─ Install <a href="https://retropie.org.uk/docs/Themes/"><b>Themes</b></a> ─ 
+###  Install <a href="https://retropie.org.uk/docs/Themes/"><b>Themes</b></a>  
 
 ▶<a href="https://www.youtube.com/watch?v=PZwRfLlh01M&t=37s"><b>Video tutorial</b></a>◀
 	
@@ -388,13 +403,13 @@ chmod +x "install.sh"
 ```
 ▶<a href="https://youtu.be/CRC_ENX8Z4E?t=126"><b>Video tutorial</b></a>◀
 
-### ─ Install <a href="https://retropie.org.uk/docs/Shaders-and-Smoothing/"><b>Shaders</b></a> ─
+###  Install <a href="https://retropie.org.uk/docs/Shaders-and-Smoothing/"><b>Shaders</b></a> 
 	
 ▶<a href="https://www.youtube.com/watch?v=Jm1vGJRAutU&t=76s"><b>Video tutorial</b></a>◀
 		
 Get more shaders from <a href="https://github.com/libretro/glsl-shaders"><b>glsl-shaders</b></a>, Extract <a href="https://github.com/libretro/glsl-shaders/archive/refs/heads/master.zip"><b>zip</b></a> to `~/.config/retroarch/shaders` folder <i>(`~/` means home directory)</i>.
 	
-### ─ The <a href="https://github.com/thebezelproject/BezelProject"><b>Bezel Project</b></a> ─ 
+###  The <a href="https://github.com/thebezelproject/BezelProject"><b>Bezel Project</b></a>  
 ```
 cd /home/pi/RetroPie/retropiemenu/
 wget https://raw.githubusercontent.com/thebezelproject/BezelProject/master/bezelproject.sh
@@ -411,7 +426,7 @@ Tip :
 #
 <h2 align="center"><b><i>📚LINUX RESOURSES📚</b></i> </h2>
 
-### ─ Endless linux stuff ─
+###  Endless linux stuff 
 
 <table>
 	<tr>
@@ -447,7 +462,7 @@ Tip :
 #
 <h2 align="center"><b><i>🔳TERMINAL🔳</b></i> </h2>
 
-### ─ Cool Bash ─
+###  Cool Bash 
 
 Customize your terminal like a boss
 <p align="left">
@@ -486,20 +501,20 @@ Everything is added and edited at the end of bashrc file :
 
 <i>Here is an <a href="https://github.com/trinib/Awesome-Linux-Mint/blob/main/bashrc"><b>example</b></a> for reference</i>
     
-### ─ Pimp out <a href="https://github.com/dylanaraps/neofetch"><b>Neofetch</b></a> ─ (can be added to bashrc)
+###  Pimp out <a href="https://github.com/dylanaraps/neofetch"><b>Neofetch</b></a>  (can be added to bashrc)
  
 <img src="https://i.imgur.com/w21XtAG.png" width=400px height=280px>    
  
 Open neofetch config file to edit :
  
-    ~/.config/neofetch/config.conf
+    sudo nano ~/.config/neofetch/config.conf
 
 To add custom ASCII art work, you need to create a <a href="https://github.com/trinib/Awesome-Basic-Linux-Mint/blob/main/ascii_art_example.txt"><b>txt file (with the art)</b></a> in your home directory and add <i><a href="https://github.com/trinib/Awesome-Basic-Linux-Mint/blob/f8bf66934e6d0710fd1816d817aad1b2f4e47961/neofetch.conf#L695"><b>file path</b></a></i> to neofetch config file 
 
 <i>Here is an <a href="https://github.com/trinib/Awesome-Basic-Linux-Mint/blob/main/neofetch.conf"><b>example</b></a> for reference</i>
 
 #
-### ─ Use Oh-My-Fish ─
+###  Use Oh-My-Fish 
 	
 Instead of linux bash you can use fish shell which has cool features like my favourite <i><b>auto predictions preview</b></i>
 	
@@ -525,7 +540,7 @@ fish_config
 For startup greetings go to `.config/fish/functions` and create a file <a href="https://github.com/trinib/Awesome-Ubuntu-for-Beginners/blob/main/fish_greeting.fish"><b>fish_greeting.fish</b></a>
 	
 #
-### ─ Stop terminal sudo asking for password ─
+###  Stop terminal sudo asking for password 
 
 Open: 
 
@@ -558,7 +573,7 @@ or:
 9. `rm` (Remove files/folders)
 10. `cd $home` (return to home directory where ever you are)
 
-<i>Here is more <a href="https://github.com/trinib/Awesome-Linux-Mint/blob/main/Linux%20Basic%20Commands%20Every%20User%20Should%20Know.md"><b>COMMANDS</b></a> </i>
+<i>Here is more <a href="https://github.com rinib/Awesome-Linux-Mint/blob/main/Linux%20Basic%20Commands%20Every%20User%20Should%20Know.md"><b>COMMANDS</b></a> </i>
 #
 
 **[⬆ BACK TO TOP ⬆](#contents)**
