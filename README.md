@@ -24,7 +24,7 @@
 - [Optimize RAM&SSD](#optimize-ramssd-)
   - [Decrease swap](#decrease-swap)
   - [Set VFS cache pressure](#set-vfs-cache-pressure)
-  - [Disables write access](#disables-write-access)
+  - [Disable write access](#disables-write-access)
   - [Prevent out of memory](#prevent-out-of-memory)
   - [Command to free memory](#command-to-free-memory)
 - [Better CPU Managment](#better-cpu-)
@@ -428,7 +428,7 @@ Tip :
 
 ###  Endless linux stuff 
 
-<table>
+<h2 align=center><table>
 	<tr>
 		<td>
 			<a href="https://www.linuxuprising.com/">
@@ -444,7 +444,10 @@ Tip :
 			<a href="https://www.omgubuntu.co.uk/">
 				<img src="https://www.omgubuntu.co.uk/wp-content/themes/omgubuntu-theme-2021_10_0/images/logo.svg?v=20210304085925" width=200px height=50px>
 			</a>
-		</td>
+                </tr>
+</table>
+<table>
+	<tr>
 		<td>
 			<a href="https://itsfoss.com/">
 				<img src="https://itsfoss.com/wp-content/uploads/2019/12/itsfoss_homepage.png" width=200px height=80px>
@@ -455,11 +458,15 @@ Tip :
 				<img src="https://786647.smushcdn.com/1490832/wp-content/uploads/2020/01/fl_logo_v3.png?lossy=1&strip=1&webp=1" width=200px height=50px>
 			</a>
 		</td>
+		<td>
+			<a href="https://ubunlog.com/en/">
+				<img src="https://scontent.fpos1-1.fna.fbcdn.net/v/t1.18169-9/399280_10150981309523763_1867995150_n.jpg?_nc_cat=103&ccb=1-6&_nc_sid=e3f864&_nc_ohc=bXNXFj49ou0AX-Y79Jx&_nc_ht=scontent.fpos1-1.fna&oh=00_AT8tebcBgf1xGcE_qTHX57jxOG_8UqXaxd1Ub_aRJ8L0sg&oe=62A4AA3F" width=200px height=70px>
+			</a>
+		</td>		
 	</tr>
 </table>
 
 ***
-#
 <h2 align="center"><b><i>🔳TERMINAL🔳</b></i> </h2>
 
 ###  Cool Bash 
