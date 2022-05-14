@@ -55,9 +55,9 @@
     wget -qO - https://dl.xanmod.org/gpg.key | sudo apt-key --keyring /etc/apt/trusted.gpg.d/xanmod-kernel.gpg add -
     sudo apt update && sudo apt install linux-xanmod
     
-    ## FOR INTEL ##
+    ## FOR INTEL
     sudo apt install intel-microcode iucode-tool
-    ## FOR AMD ##
+    ## FOR AMD
     sudo apt install amd64-microcode
 
     echo 'net.core.default_qdisc = fq_pie' | sudo tee /etc/sysctl.d/90-override.conf
@@ -84,10 +84,12 @@ or
 <h2 align="center"><b><i>🔊BOOST AUDIO🔊</b></i> </h2>
 
 ###  Equalizer 
-<a href="https://flathub.org/apps/details/com.github.wwmm.pulseeffects"><b>Pulse Effects</b></a> (can make soft speakers alot louder)
+<a href="https://flathub.org/apps/details/com.github.wwmm.pulseeffects"><b>Pulse Effects</b></a> (will make soft speakers alot louder)
 ```
 sudo apt-get install pulseeffects lsp-plugins
 ````
+<a href="https://github.com/JackHack96/EasyEffects-Presets/tree/pulseeffects"><b>pulse-presets</b></a>
+
 
 ###  Audio Tweaks 
 Check out this <a href="https://github.com/trinib/Awesome-Linux-Mint-Basics/blob/main/Enable%20High%20Quality%20Audio.md"><b>guide</b></a>
@@ -534,7 +536,14 @@ sudo apt install fish
 Install <a href="https://github.com/oh-my-fish/oh-my-fish"><b>oh-my-fish</b></a> :
 ```
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
-```	
+```
+
+Set fish to default shell :
+```
+fish --login
+## REVERT
+bash --login
+```
 	
 Install <a href="https://github.com/oh-my-fish/oh-my-fish/blob/master/docs/Themes.md"><b>themes</b></a>
 	
