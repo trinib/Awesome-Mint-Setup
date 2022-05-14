@@ -88,7 +88,6 @@ or
 ```
 sudo apt-get install pulseeffects lsp-plugins
 ````
-<a href="https://github.com/rsommerard/pulse-presets"><b>pulse-presets</b></a>
 
 ###  Audio Tweaks 
 Check out this <a href="https://github.com/trinib/Awesome-Linux-Mint-Basics/blob/main/Enable%20High%20Quality%20Audio.md"><b>guide</b></a>
