@@ -1,9 +1,7 @@
 <p align="center">
-<img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" height=25px width=100px><img src="https://badges.frapsoft.com/os/v2/open-source-175x29.png?v=103" 25px width=100px><a href="https://www.kernel.org/category/about.html"><img src="https://badges.frapsoft.com/bash/v1/bash-200x34.png?v=103" height=25px width=100px><a href=""></a>
-
-<h2 align="center"><b>Just what you needed !</b></h2>	
+<img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white"><img src="https://badges.frapsoft.com/os/v2/open-source-175x29.png?v=103"><br><a href="https://www.kernel.org/category/about.html"><img src="https://badges.frapsoft.com/bash/v1/bash-200x34.png?v=103"><a href=""></a>
 	
-<h2 align="center"><b><i>Simple, important & cool resources after installing <a href="https://distrowatch.com/search.php?ostype=Linux&category=All&origin=All&basedon=Ubuntu&notbasedon=None&desktop=All&architecture=All&package=All&rolling=All&isosize=All&netinstall=All&language=All&defaultinit=All&status=Active#simple"><b>Ubuntu-based-distros</b></a></b></i></h2>
+<h2 align="center"><b><i>Simple, important & cool resources for <a href="https://distrowatch.com/search.php?ostype=Linux&category=All&origin=All&basedon=Ubuntu&notbasedon=None&desktop=All&architecture=All&package=All&rolling=All&isosize=All&netinstall=All&language=All&defaultinit=All&status=Active#simple"><b>Ubuntu-based-distros</b></a></b></i></h2>
 	    
 <p align="center"><img src="https://i.imgur.com/SYiccUK.png" width=20%> 
 
@@ -359,7 +357,7 @@ sudo add-apt-repository ppa:linuxuprising/hardinfo
 sudo apt update
 sudo apt install hardinfo
 ```
-###  <a href="https://www.bleachbit.org/features"><b>Bleachbit</b></a> (Clean Linux) 
+###  <a href="https://www.bleachbit.org/features"><b>Bleachbit</b></a> (Clean System) 
  ```
 sudo apt install bleachbit
 ```	
@@ -432,10 +430,7 @@ chmod +x "bezelproject.sh"
 ```
 	
 `Tip:`
-<i> For rom packs & bios files, go to <a href="https://www.arcadepunks.com/download-raspberry-pi-4-images/"><b>Arcade Punks</b></a> and download a Raspberry Pi custom build image using torrents. Then you can mount image file in linux and view contents. Search for roms&bios folders/files and extract them to retropi directories on your Linux system </i>!
-	
-![arcadejpg](https://user-images.githubusercontent.com/18756975/168470129-2d86dc24-70f2-4ab5-85dc-83aee8062044.jpg)
-
+<i> For rom packs & bios files, go to <a href="https://www.arcadepunks.com/download-raspberry-pi-4-images/"><b>Arcade Punks</b></a> and download a Raspberry Pi custom build image using torrents. Then you can mount image file in linux and view contents. Search for roms&bios folders/files and extract them to retropi directories on your Linux system </i>!<br><a href="https://www.arcadepunks.com/download-raspberry-pi-4-images/"><img src="https://user-images.githubusercontent.com/18756975/168477808-c1d67cfe-b9ee-4f48-a777-b4d87d3cd318.png" width=220px height=70px></a>
 	
 ***
 #
