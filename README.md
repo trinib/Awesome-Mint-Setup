@@ -430,8 +430,8 @@ chmod +x "bezelproject.sh"
 ```
 	
 `Tip:`
-<i> For rom packs & bios files, go to <a href="https://www.arcadepunks.com/download-raspberry-pi-4-images/"><b>Arcade Punks</b></a> and download a Raspberry Pi custom build image using torrents. Then you can mount image file in linux and view contents. Search for roms&bios folders/files and extract them to retropi directories on your Linux system </i>!<br><a href="https://www.arcadepunks.com/download-raspberry-pi-4-images/"><img src="https://user-images.githubusercontent.com/18756975/168477808-c1d67cfe-b9ee-4f48-a777-b4d87d3cd318.png" width=220px height=70px></a>
-	
+<i> For rom packs & bios files, go to <a href="https://www.arcadepunks.com/download-raspberry-pi-4-images/"><b>Arcade Punks</b></a> and download a Raspberry Pi custom build image using torrents. Then you can mount image file in linux and view contents. Search for roms&bios folders/files and extract them to retropi directories on your Linux system </i>!<br><a href="https://www.arcadepunks.com/download-raspberry-pi-4-images/"><img src="https://user-images.githubusercontent.com/18756975/168478268-5001d1f6-1b5d-4273-9eb5-2cca4f740a74.png" width=220px height=70px></a>
+
 ***
 #
 <h2 align="center"><b><i>📚LINUX RESOURSES📚</b></i> </h2>
