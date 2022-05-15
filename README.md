@@ -31,7 +31,7 @@
 - [Touchpad Gestures](#touchpad-gestures-)
 - [Customization](#customization-)
 - [Software](#softwares-)
-- [Retro Gaming](#install-retropi)
+- [Retro Gaming](#retro-gaming-)
   - [Install RetroPi](#install-retropi)
   - [Install Themes](#install-themes)
   - [Install Shaders](#install-shaders)
@@ -84,7 +84,10 @@ or
 <h2 align="center"><b><i>🔊BOOST AUDIO🔊</b></i> </h2>
 
 ###  Equalizer 
+
 <a href="https://flathub.org/apps/details/com.github.wwmm.pulseeffects"><b>Pulse Effects</b></a> (will make soft speakers alot louder)
+	
+<img src="https://user-images.githubusercontent.com/18756975/168470285-7d16cddc-38ca-4ac3-8829-69cc6bf17297.png" width=350px height=200px><br>
 ```
 sudo apt-get install pulseeffects lsp-plugins
 ````
@@ -379,38 +382,48 @@ sudo apt install shutter
 ```
 ***
 #
-<h2 align="center"><b><i>🕹️Retro Gaming🕹️</b></i> </h2>
+<h2 align="center"><b><i>🎮Retro Gaming🎮</b></i> </h2>
+	
+<h2 align="center"
+	
+![retro](https://user-images.githubusercontent.com/18756975/168469893-89fb359d-e086-494a-b385-2f4e89cc19f4.gif) </h2>
 
 ###  Install <a href="https://retropie.org.uk/docs/Debian/"><b>RetroPi</b></a> 
+	
+▶<a href="https://youtu.be/hyZcGG5QMuk?t=337"><b>Video tutorial</b></a><br>
 ```
 sudo apt install -y git dialog unzip xmlstarlet
 git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
 cd RetroPie-Setup
 sudo ./retropie_setup.sh
 ```
-▶<a href="https://youtu.be/hyZcGG5QMuk?t=337"><b>Video tutorial</b></a>◀
 		
 ###  Install <a href="https://retropie.org.uk/docs/Themes/"><b>Themes</b></a>  
 
-▶<a href="https://www.youtube.com/watch?v=PZwRfLlh01M&t=37s"><b>Video tutorial</b></a>◀
+▶<a href="https://www.youtube.com/watch?v=PZwRfLlh01M&t=37s"><b>Video tutorial</b></a>
 	
 #### Install more themes from <a href="https://github.com/RetroHursty69/HurstyThemes">RetroHursty69<b></b></a>
+	
+▶<a href="https://youtu.be/CRC_ENX8Z4E?t=126"><b>Video tutorial</b></a><br>
 ```
 wget https://raw.githubusercontent.com/RetroHursty69/HurstyThemes/master/install.sh
 chmod +x "install.sh"
 ./install.sh
 
-## Restart Emulation Station and you should then see the new script in the RetroPie menu
+## Restart Emulation Station and you should then see the new script in the RetroPie menu.
 ```
-▶<a href="https://youtu.be/CRC_ENX8Z4E?t=126"><b>Video tutorial</b></a>◀
 
 ###  Install <a href="https://retropie.org.uk/docs/Shaders-and-Smoothing/"><b>Shaders</b></a> 
 	
-▶<a href="https://www.youtube.com/watch?v=Jm1vGJRAutU&t=76s"><b>Video tutorial</b></a>◀
+▶<a href="https://www.youtube.com/watch?v=Jm1vGJRAutU&t=76s"><b>Video tutorial</b></a>
 		
-Get more shaders from <a href="https://github.com/libretro/glsl-shaders"><b>glsl-shaders</b></a>, Extract <a href="https://github.com/libretro/glsl-shaders/archive/refs/heads/master.zip"><b>zip</b></a> to `~/.config/retroarch/shaders` folder <i>(`~/` means home directory)</i>.
+Get more shaders from <a href="https://github.com/libretro/glsl-shaders"><b>glsl-shaders</b></a>, Extract <a href="https://github.com/libretro/glsl-shaders/archive/refs/heads/master.zip"><b>zip</b></a> to `~/.config/retroarch/shaders` folder <i>(`~/` points to root directory)</i>.
 	
 ###  The <a href="https://github.com/thebezelproject/BezelProject"><b>Bezel Project</b></a>  
+	
+![index](https://user-images.githubusercontent.com/18756975/168470041-11f11782-209b-47b8-9dbd-405a6338c6c6.jpg)
+	
+▶<a href="https://youtu.be/uq8IecVQ6yY?t=233"><b>Video tutorial</b></a><br>
 ```
 cd /home/pi/RetroPie/retropiemenu/
 wget https://raw.githubusercontent.com/thebezelproject/BezelProject/master/bezelproject.sh
@@ -418,10 +431,12 @@ chmod +x "bezelproject.sh"
 	
 ## Restart Emulation Station and you should then see the new script in the RetroPie menu.
 ```
-▶<a href="https://youtu.be/uq8IecVQ6yY?t=233"><b>Video tutorial</b></a>◀
 	
-Tip :
-<i> For rom packs & bios files, go to <a href="https://www.arcadepunks.com/download-raspberry-pi-4-images/"><b>Arcade Punks</b></a> and download a Raspberry Pi custom build image using torrents. Then you can mount image file in linux and view contents. Search for roms&bios folders/files and extract them to retropi directories </i>
+`Tip:`
+<i> For rom packs & bios files, go to <a href="https://www.arcadepunks.com/download-raspberry-pi-4-images/"><b>Arcade Punks</b></a> and download a Raspberry Pi custom build image using torrents. Then you can mount image file in linux and view contents. Search for roms&bios folders/files and extract them to retropi directories on your Linux system </i>!
+	
+![arcadejpg](https://user-images.githubusercontent.com/18756975/168470129-2d86dc24-70f2-4ab5-85dc-83aee8062044.jpg)
+
 	
 ***
 #
