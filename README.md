@@ -384,9 +384,8 @@ sudo apt install shutter
 #
 <h2 align="center"><b><i>🎮Retro Gaming🎮</b></i> </h2>
 	
-<h2 align="center"
-	
-![retro](https://user-images.githubusercontent.com/18756975/168469893-89fb359d-e086-494a-b385-2f4e89cc19f4.gif) </h2>
+<p align="center">
+<img src="https://user-images.githubusercontent.com/18756975/168472926-e3c0fb71-89f8-4f33-8d24-d0dfdd90973d.gif" width=55%>
 
 ###  Install <a href="https://retropie.org.uk/docs/Debian/"><b>RetroPi</b></a> 
 	
