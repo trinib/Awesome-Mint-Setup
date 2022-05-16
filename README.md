@@ -29,7 +29,7 @@
 - [Touchpad Gestures 🖲️](#install-touchegg)
 - [Customization 🎨](#customization-)
 - [Software 📥](#softwares-)
-- [Retro Gaming🎮](#retro-gaming-)
+- [Retro Gaming 🎮](#retro-gaming-)
   - [Install RetroPi](#install-retropi)
   - [Install Themes](#install-themes)
   - [Install Shaders](#install-shaders)
@@ -334,6 +334,14 @@ snap install --devmode --beta anbox
 snap refresh --beta --devmode anbox
 ```
 	
+###  <a href="https://lutris.net/"><b>Lutris</b></a> (Game Library Manager) 
+<a href="https://www.youtube.com/watch?v=oHDkeQ9eDrc"><b>Demo</b></a>
+```
+sudo add-apt-repository ppa:lutris-team/lutris
+sudo apt update
+sudo apt install lutris
+```
+	
 ###  <a href="https://getmailspring.com/"><b>Mailspring</b></a> (Mail Client) 
 ```
 sudo snap install mailspring
@@ -419,7 +427,7 @@ chmod +x "install.sh"
 	
 ▶<a href="https://www.youtube.com/watch?v=Jm1vGJRAutU&t=76s"><b>Video tutorial</b></a>
 		
-Get more shaders from <a href="https://github.com/libretro/glsl-shaders"><b>glsl-shaders</b></a>, Extract <a href="https://github.com/libretro/glsl-shaders/archive/refs/heads/master.zip"><b>zip</b></a> to `~/.config/retroarch/shaders` folder <i>(`~/` points to root directory)</i>.
+Get more shaders from <a href="https://github.com/libretro/glsl-shaders"><b>glsl-shaders</b></a>, Extract <a href="https://github.com/libretro/glsl-shaders/archive/refs/heads/master.zip"><b>zip</b></a> to `~/.config/retroarch/shaders` folder.
 	
 ###  The <a href="https://github.com/thebezelproject/BezelProject"><b>Bezel Project</b></a>  
 	
@@ -435,7 +443,7 @@ chmod +x "bezelproject.sh"
 ```
 	
 `Tip:`
-<i> For rom packs & bios files, go to <a href="https://www.arcadepunks.com/download-raspberry-pi-4-images/"><b>Arcade Punks</b></a> and download a Raspberry Pi custom build image using torrents. Then you can mount image file in linux and view contents. Search for roms&bios folders/files and extract them to retropi directories on your Linux system </i>!<br><a href="https://www.arcadepunks.com/download-raspberry-pi-4-images/"><img src="https://user-images.githubusercontent.com/18756975/168478268-5001d1f6-1b5d-4273-9eb5-2cca4f740a74.png" width=220px height=70px></a>
+<i> For rom packs & bios files, go to <a href="https://www.arcadepunks.com/download-raspberry-pi-4-images/"><b>Arcade Punks</b></a> and download a Raspberry Pi custom build image using torrents. Then you can mount image file in linux and view contents. Search for roms&bios folders/files and extract them to retropi directories on your Linux system.</i><br><a href="https://www.arcadepunks.com/download-raspberry-pi-4-images/"><img src="https://user-images.githubusercontent.com/18756975/168478268-5001d1f6-1b5d-4273-9eb5-2cca4f740a74.png" width=220px height=70px></a>
 
 ***
 #
