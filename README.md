@@ -3,10 +3,10 @@
 	
 <h2 align="center"><b><i>Simple, important & cool resources for <a href="https://distrowatch.com/search.php?ostype=Linux&category=All&origin=All&basedon=Ubuntu&notbasedon=None&desktop=All&architecture=All&package=All&rolling=All&isosize=All&netinstall=All&language=All&defaultinit=All&status=Active#simple"><b>Ubuntu-based-distros</b></a></b></i></h2>
 	    
-<p align="center"><img src="https://i.imgur.com/SYiccUK.png" width=20%> 
+<p align="center"><img src="https://i.imgur.com/SYiccUK.png" width=20%></p>
 
 # Contents
-- [Kernels & Drivers 🔧](#custom-kernels--drivers-)
+- [Kernels & Drivers 🔧](#custom-kernels--drivers)
   - [XanMod](#xanmod)
   - [Liquorix](#liquorix)
   - [Graphic Drivers](#graphic-drivers)
@@ -14,36 +14,37 @@
   - [Equalizer](#equalizer)
   - [Audio Tweaks](#audio-tweaks)
   - [Troubleshoot](#troubleshoot)
-- [Longer Battery Life 🔋](#better-battery-)
+- [Longer Battery Life 🔋](#better-battery)
   - [Install TLP package](#install-tlp-package)
   - [Disable Bluetooth](#disable-bluetooth)
   - [Turn Off Firewall Logs](#turn-off-firewall-logs)
   - [Disable Gome features](#disable-gome-features)
-- [Optimize RAM&SSD 🚀](#optimize-ramssd-)
+- [Optimize RAM&SSD 🚀](#optimize-ramssd)
   - [Decrease swap](#decrease-swap)
   - [Set VFS cache pressure](#set-vfs-cache-pressure)
   - [Disable write access](#disables-write-access)
   - [Prevent out of memory](#prevent-out-of-memory)
   - [Command to free memory](#command-to-free-memory)
-- [Better CPU Managment 💻](#better-cpu-)
-- [Touchpad Gestures 🖲️](#install-touchegg)
-- [Customization 🎨](#customization-)
-- [Software 📥](#softwares-)
-- [Retro Gaming 🎮](#retro-gaming-)
+- [Better CPU Managment 💻](#better-cpu)
+- [Touchpad Gestures 🖱️](#install-touchegg)
+- [Customization 🎨](#customization)
+- [Software 📥](#softwares)
+- [Retro Gaming 🎮](#retro-gaming)
   - [Install RetroPi](#install-retropi)
   - [Install Themes](#install-themes)
   - [Install Shaders](#install-shaders)
   - [The Bezel Project](#the-bezel-project)
-- [Linux Resources 📚](#linux-resourses-)
-- [Terminal 🔳](#terminal-)
+- [Linux Resources 📚](#linux-resourses)
+- [Terminal 🔳](#terminal)
   - [Cool Bash ](#cool-bash)
   - [Pimp out Neofetch](#pimp-out-neofetch--can-be-added-to-bashrc)
   - [Oh-My-fish](#use-oh-my-fish)
   - [Disable terminal sudo password](#disable-terminal-sudo-password)
-- [Useful Linux Commands 📋](#useful-commands-)
+- [Useful Linux Commands 📋](#useful-commands)
+	
 ***
-#
-<h2 align="center"><b><i>🔧CUSTOM KERNELS & DRIVERS🔧</b></i> </h2>
+
+<h2 align="center">🔧<b><i>CUSTOM KERNELS & DRIVERS</b></i>🔧</h2>
 
 <i>Depending on the type of hardware you have one might work better than the other</i>
 
@@ -78,7 +79,6 @@ or
 
 ***
 	
-#
 <h2 align="center"><b><i>🔊BOOST AUDIO🔊</b></i> </h2>
 
 ###  Equalizer 
@@ -106,9 +106,10 @@ rm ~/.pulse-cookie
 rm -r ~/.pulse
 sudo apt-get install libalsaplayer0
 ```
+	
 ***
-#
-<h2 align="center"><b><i>🔋BETTER BATTERY🔋</b></i> </h2>
+
+<h2 align="center">🔋<b><i>BETTER BATTERY</b></i>🔋</h2>
 
 ###  Install <a href="https://linrunner.de/tlp/"><b>TLP</b></a> package 
 1. Open synaptic package manager
@@ -137,9 +138,10 @@ Disable Startup Apps
 Disable All Effects & Animations
 	
 Disable Automatic Screen Rotation (found in `display settings`)
+	
 ***
-#
-<h2 align="center"><b><i>🚀OPTIMIZE RAM&SSD🚀</b></i> </h2>
+
+<h2 align="center">🚀<b><i>OPTIMIZE RAM&SSD</b></i>🚀</h2>
 
 ###  Decrease <a href="https://www.linux.com/news/all-about-linux-swap-space/"><b>swap</b></a> 
 
@@ -194,8 +196,8 @@ sync; sudo echo 2 | sudo tee /proc/sys/vm/drop_caches
 Check out this <a href="https://gist.github.com/trinib/0ae1e7cd56178358ee28bb0828daab4f"><b>guide</b></a> to make a script and execute it at a certain time
 
 ***
-#
-<h2 align="center"><b><i>💻BETTER CPU💻</b></i> </h2>
+
+<h2 align="center">💻<b><i>BETTER CPU</b></i>💻</h2>
 
 ###  Manage processes IO and CPU priorities with <a href="https://github.com/Nefelim4ag/Ananicy"><b>Ananicy</b></a> 
 ```
@@ -205,9 +207,10 @@ sudo make install
 sudo systemctl enable ananicy
 sudo systemctl start ananicy
 ```
+	
 ***
-#
-<h2 align="center"><b><i>🖲️TOUCHPAD GESTURES🖲️</b></i> </h2>
+
+<h2 align="center">🖱️<b><i>TOUCHPAD GESTURES</b></i>🖱️</h2>
 
 ###  Install <a href="https://github.com/JoseExposito/touchegg"><b>Touchegg</b></a> 
 ```
@@ -230,8 +233,8 @@ sudo nano ~/.config/touchegg/touchegg.conf
 <i>Here is my <a href="https://github.com/trinib/Awesome-Basic-Linux-Mint/blob/main/Touchegg_Settings.txt"><b>configuration</b></a> for reference</i>
 
 ***
-#
-<h2 align="center"><b><i>🎨CUSTOMIZATION🎨</b></i> </h2>
+
+<h2 align="center">🎨<b><i>CUSTOMIZATION</b></i>🎨</h2>
 
 <h3 align="center"><b><i>𝔼𝕐𝔼 ℂ𝔸ℕ𝔻𝕐</b></i> </h3>
 <p align="center">
@@ -276,9 +279,10 @@ sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth d
 sudo update-alternatives --config default.plymouth
 sudo update-initramfs -u	
 ```
+	
 ***
-#
-<h2 align="center"><b><i>📥SOFTWARES📥</b></i> </h2>
+
+<h2 align="center">📥<b><i>SOFTWARES</b></i>📥</h2>
 	
 ### <a href="https://app-outlet.github.io/"><b>App Outlet</b></a> (Universal App Store)
 Install from https://www.pling.com/p/1355468/
@@ -391,14 +395,15 @@ sudo add-apt-repository ppa:shutter/ppa
 sudo apt-get update
 sudo apt install shutter
 ```
+	
 ***
-#
-<h2 align="center"><b><i>🎮Retro Gaming🎮</b></i> </h2>
+
+<h2 align="center">🎮<b><i>Retro Gaming</b></i>🎮</h2>
 	
 <p align="center">
-<img src="https://user-images.githubusercontent.com/18756975/168472926-e3c0fb71-89f8-4f33-8d24-d0dfdd90973d.gif" width=55%>
+<img src="https://user-images.githubusercontent.com/18756975/168472926-e3c0fb71-89f8-4f33-8d24-d0dfdd90973d.gif">
 
-###  Install <a href="https://retropie.org.uk/docs/Debian/"><b>RetroPi</b></a> 
+###  Install <a href="https://retropie.org.uk/docs/Debian/"><b>RetroPi</b></a>
 	
 ▶<a href="https://youtu.be/hyZcGG5QMuk?t=337"><b>Video tutorial</b></a><br>
 ```
@@ -446,8 +451,8 @@ chmod +x "bezelproject.sh"
 <i> For rom packs & bios files, go to <a href="https://www.arcadepunks.com/download-raspberry-pi-4-images/"><b>Arcade Punks</b></a> and download a Raspberry Pi custom build image using torrents. Then you can mount image file in linux and view contents. Search for roms&bios folders/files and extract them to retropi directories on your Linux system.</i><br><a href="https://www.arcadepunks.com/download-raspberry-pi-4-images/"><img src="https://user-images.githubusercontent.com/18756975/168478268-5001d1f6-1b5d-4273-9eb5-2cca4f740a74.png" width=220px height=70px></a>
 
 ***
-#
-<h2 align="center"><b><i>📚LINUX RESOURSES📚</b></i> </h2>
+
+<h2 align="center">📚<b><i>LINUX RESOURSES</b></i>📚</h2>
 
 ###  Endless linux stuff 
 
@@ -487,10 +492,11 @@ chmod +x "bezelproject.sh"
 			</a>
 		</td>		
 	</tr>
-</table>
+</table></h2>
 
-***
-<h2 align="center"><b><i>🔳TERMINAL🔳</b></i> </h2>
+****
+	
+<h2 align="center">🔳<b><i>TERMINAL</b></i>🔳</h2>
 
 ###  Cool Bash 
 
@@ -596,8 +602,8 @@ or:
 `%sudo  ALL=(ALL:ALL) NOPASSWD:ALL` (to allow any group as well as any user).
 
 ***   
-#	
-<h2 align="center"><b><i>📋USEFUL COMMANDS📋</b></i> </h2>
+	
+<h2 align="center">📋<b><i>USEFUL COMMANDS</b></i>📋</h2>
 
 1. `man` (used for getting manuals for specific command example: `man ls` gets manual for `ls` command)
 2. `ping` (used for checking connection)
