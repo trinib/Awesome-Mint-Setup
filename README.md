@@ -6,44 +6,44 @@
 <p align="center"><img src="https://i.imgur.com/SYiccUK.png" width=20%> 
 
 # Contents
-- [Kernels & Drivers⚙️](#%EF%B8%8Fcustom-kernels--drivers%EF%B8%8F-)
+- [Kernels & Drivers 🔧](#custom-kernels--drivers-)
   - [XanMod](#xanmod)
   - [Liquorix](#liquorix)
   - [Graphic Drivers](#graphic-drivers)
-- [Better Audio🔊](#boost-audio-)
+- [Better Audio 🔊](#boost-audio-)
   - [Equalizer](#equalizer)
   - [Audio Tweaks](#audio-tweaks)
   - [Troubleshoot](#troubleshoot)
-- [Longer Battery Life🔋](#better-battery-)
+- [Longer Battery Life 🔋](#better-battery-)
   - [Install TLP package](#install-tlp-package)
   - [Disable Bluetooth](#disable-bluetooth)
   - [Turn Off Firewall Logs](#turn-off-firewall-logs)
   - [Disable Gome features](#disable-gome-features)
-- [Optimize RAM&SSD🚀](#optimize-ramssd-)
+- [Optimize RAM&SSD 🚀](#optimize-ramssd-)
   - [Decrease swap](#decrease-swap)
   - [Set VFS cache pressure](#set-vfs-cache-pressure)
   - [Disable write access](#disables-write-access)
   - [Prevent out of memory](#prevent-out-of-memory)
   - [Command to free memory](#command-to-free-memory)
-- [Better CPU Managment💻](#better-cpu-)
-- [Touchpad Gestures🖱️](#install-touchegg)
-- [Customization🎨](#customization-)
-- [Software📥](#softwares-)
+- [Better CPU Managment 💻](#better-cpu-)
+- [Touchpad Gestures 🖲️](#install-touchegg)
+- [Customization 🎨](#customization-)
+- [Software 📥](#softwares-)
 - [Retro Gaming🎮](#retro-gaming-)
   - [Install RetroPi](#install-retropi)
   - [Install Themes](#install-themes)
   - [Install Shaders](#install-shaders)
   - [The Bezel Project](#the-bezel-project)
-- [Linux Resources📚](#linux-resourses-)
-- [Terminal🔳](#terminal-)
+- [Linux Resources 📚](#linux-resourses-)
+- [Terminal 🔳](#terminal-)
   - [Cool Bash ](#cool-bash)
   - [Pimp out Neofetch](#pimp-out-neofetch--can-be-added-to-bashrc)
   - [Oh-My-fish](#use-oh-my-fish)
   - [Disable terminal sudo password](#disable-terminal-sudo-password)
-- [Useful Linux Commands📋](#useful-commands-)
+- [Useful Linux Commands 📋](#useful-commands-)
 ***
 #
-<h2 align="center"><b><i>⚙️CUSTOM KERNELS & DRIVERS⚙️</b></i> </h2>
+<h2 align="center"><b><i>🔧CUSTOM KERNELS & DRIVERS🔧</b></i> </h2>
 
 <i>Depending on the type of hardware you have one might work better than the other</i>
 
@@ -207,7 +207,7 @@ sudo systemctl start ananicy
 ```
 ***
 #
-<h2 align="center"><b><i>🖱️TOUCHPAD GESTURES🖱️</b></i> </h2>
+<h2 align="center"><b><i>🖲️TOUCHPAD GESTURES🖲️</b></i> </h2>
 
 ###  Install <a href="https://github.com/JoseExposito/touchegg"><b>Touchegg</b></a> 
 ```
