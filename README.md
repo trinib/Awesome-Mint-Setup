@@ -6,41 +6,41 @@
 <p align="center"><img src="https://i.imgur.com/SYiccUK.png" width=20%> 
 
 # Contents
-- [Kernels & Drivers](#%EF%B8%8Fcustom-kernels--drivers%EF%B8%8F-)
+- [Kernels & Drivers⚙️](#%EF%B8%8Fcustom-kernels--drivers%EF%B8%8F-)
   - [XanMod](#xanmod)
   - [Liquorix](#liquorix)
   - [Graphic Drivers](#graphic-drivers)
-- [Better Audio](#boost-audio-)
+- [Better Audio🔊](#boost-audio-)
   - [Equalizer](#equalizer)
   - [Audio Tweaks](#audio-tweaks)
   - [Troubleshoot](#troubleshoot)
-- [Longer Battery Life](#better-battery-)
+- [Longer Battery Life🔋](#better-battery-)
   - [Install TLP package](#install-tlp-package)
   - [Disable Bluetooth](#disable-bluetooth)
   - [Turn Off Firewall Logs](#turn-off-firewall-logs)
   - [Disable Gome features](#disable-gome-features)
-- [Optimize RAM&SSD](#optimize-ramssd-)
+- [Optimize RAM&SSD🚀](#optimize-ramssd-)
   - [Decrease swap](#decrease-swap)
   - [Set VFS cache pressure](#set-vfs-cache-pressure)
   - [Disable write access](#disables-write-access)
   - [Prevent out of memory](#prevent-out-of-memory)
   - [Command to free memory](#command-to-free-memory)
-- [Better CPU Managment](#better-cpu-)
-- [Touchpad Gestures](#touchpad-gestures-)
-- [Customization](#customization-)
-- [Software](#softwares-)
-- [Retro Gaming](#retro-gaming-)
+- [Better CPU Managment💻](#better-cpu-)
+- [Touchpad Gestures🖱️](#install-touchegg)
+- [Customization🎨](#customization-)
+- [Software📥](#softwares-)
+- [Retro Gaming🎮](#retro-gaming-)
   - [Install RetroPi](#install-retropi)
   - [Install Themes](#install-themes)
   - [Install Shaders](#install-shaders)
   - [The Bezel Project](#the-bezel-project)
-- [Linux Resources](#linux-resourses-)
-- [Terminal](#terminal-)
+- [Linux Resources📚](#linux-resourses-)
+- [Terminal🔳](#terminal-)
   - [Cool Bash ](#cool-bash)
   - [Pimp out Neofetch](#pimp-out-neofetch--can-be-added-to-bashrc)
   - [Oh-My-fish](#use-oh-my-fish)
-  - [Stop terminal sudo password](#stop-terminal-sudo-asking-for-password)
-- [Useful Linux Commands](#useful-commands-)
+  - [Disable terminal sudo password](#disable-terminal-sudo-password)
+- [Useful Linux Commands📋](#useful-commands-)
 ***
 #
 <h2 align="center"><b><i>⚙️CUSTOM KERNELS & DRIVERS⚙️</b></i> </h2>
@@ -207,7 +207,7 @@ sudo systemctl start ananicy
 ```
 ***
 #
-<h2 align="center"><b><i>🔧TOUCHPAD GESTURES🔧</b></i> </h2>
+<h2 align="center"><b><i>🖱️TOUCHPAD GESTURES🖱️</b></i> </h2>
 
 ###  Install <a href="https://github.com/JoseExposito/touchegg"><b>Touchegg</b></a> 
 ```
@@ -342,6 +342,11 @@ sudo snap install mailspring
 wget https://updates.getmailspring.com/download?platform=linuxDeb
 sudo chmod +x name_of_file.deb
 sudo dpkg -i /path/to/deb/file
+```
+	
+###  <a href="https://ravenreader.app/"><b>Raven Reader</b></a> (Rss News)
+```
+sudo snap install raven-reader
 ```
 	
 ###  <a href="https://www.qbittorrent.org/"><b>qBittorrent</b></a> (Torrenting Client) 
@@ -564,7 +569,7 @@ fish_config
 For startup greetings go to `.config/fish/functions` and create a file <a href="https://github.com/trinib/Awesome-Ubuntu-for-Beginners/blob/main/fish_greeting.fish"><b>fish_greeting.fish</b></a>
 	
 #
-###  Stop terminal sudo asking for password 
+###  Disable terminal sudo password 
 
 Open: 
 
