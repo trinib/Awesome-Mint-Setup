@@ -39,6 +39,7 @@
   - [Cool Bash ](#cool-bash)
   - [Pimp out Neofetch](#pimp-out-neofetch--can-be-added-to-bashrc)
   - [Oh-My-fish](#use-oh-my-fish)
+  - [GitHub search](#gh-s---search-github-repositories-interactively-from-the-command-line)
   - [Disable terminal sudo password](#disable-terminal-sudo-password)
 - [Useful Linux Commands 📋](#useful-commands)
 	
@@ -96,7 +97,7 @@ sudo apt-get install pulseeffects lsp-plugins
 Check out this <a href="https://github.com/trinib/Awesome-Linux-Mint-Basics/blob/main/Enable%20High%20Quality%20Audio.md"><b>guide</b></a>
 
 ###  Troubleshoot 
-If there is any issue with your audio like *_lag_* or in my case *_louder volume_* feature was not working, I found this fix on mint forums :
+If there is any issue with your audio like *_lag_* or in my case *_louder volume_* feature was not working, From linux-mint forums :
 ```
 killall pulseaudio
 sudo killall pulseaudio
@@ -582,6 +583,35 @@ fish_config
 	
 For startup greetings go to `.config/fish/functions` and create a file <a href="https://github.com/trinib/Awesome-Ubuntu-for-Beginners/blob/main/fish_greeting.fish"><b>fish_greeting.fish</b></a>
 	
+#	
+### <a href="https://github.com/gennaro-tedesco/gh-s"><b>gh-s</b></a> - Search GitHub repositories interactively from the command line
+	
+<img src="https://i.imgur.com/8N1SLTB.png" width=500px height=250px>    
+
+	
+Install :
+```
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+sudo apt update
+sudo apt install gh
+```
+	
+Login authorization :
+```
+gh auth login
+```
+	
+Install extension :	
+```
+gh extension install gennaro-tedesco/gh-s
+```
+	
+Get Started :
+```
+gh s
+```
+	
 #
 ###  Disable terminal sudo password 
 
@@ -589,7 +619,7 @@ Open:
 
     sudo nano -w /etc/sudoers
 
-Change the line that says:
+Change the line that says :
 
 `%sudo  ALL=(ALL) ALL` 
 
