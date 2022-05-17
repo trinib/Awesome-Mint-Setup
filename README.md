@@ -34,13 +34,13 @@
   - [Install Themes](#install-themes)
   - [Install Shaders](#install-shaders)
   - [The Bezel Project](#the-bezel-project)
-- [Linux Resources 📚](#linux-resourses)
 - [Terminal 🔳](#terminal)
   - [Cool Bash ](#cool-bash)
   - [Pimp out Neofetch](#pimp-out-neofetch--can-be-added-to-bashrc)
   - [Oh-My-fish](#use-oh-my-fish)
   - [GitHub search](#gh-s---search-github-repositories-interactively-from-the-command-line)
   - [Disable terminal sudo password](#disable-terminal-sudo-password)
+- [Linux Resources 📚](#linux-resourses)
 - [Useful Linux Commands 📋](#useful-commands)
 	
 ***
@@ -452,50 +452,6 @@ chmod +x "bezelproject.sh"
 <i> For rom packs & bios files, go to <a href="https://www.arcadepunks.com/download-raspberry-pi-4-images/"><b>Arcade Punks</b></a> and download a Raspberry Pi custom build image using torrents. Then you can mount image file in linux and view contents. Search for roms&bios folders/files and extract them to retropi directories on your Linux system.</i><br><a href="https://www.arcadepunks.com/download-raspberry-pi-4-images/"><img src="https://user-images.githubusercontent.com/18756975/168478268-5001d1f6-1b5d-4273-9eb5-2cca4f740a74.png" width=220px height=70px></a>
 
 ***
-
-<h2 align="center">📚<b><i>LINUX RESOURSES</b></i>📚</h2>
-
-###  Endless linux stuff 
-
-<h2 align=center><table>
-	<tr>
-		<td>
-			<a href="https://www.linuxuprising.com/">
-				<img src="https://i.imgur.com/ghu8lV3.png" width=250px height=20px>
-			</a>
-		</td>
-		<td>
-			<a href="https://linoxide.com/">
-				<img src="https://linoxide.com/wp-content/uploads/2013/10/linoxide-logo.png" width=210px height=80px>
-			</a>
-		</td>
-		<td>
-			<a href="https://www.omgubuntu.co.uk/">
-				<img src="https://www.omgubuntu.co.uk/wp-content/themes/omgubuntu-theme-2021_10_0/images/logo.svg?v=20210304085925" width=200px height=50px>
-			</a>
-                </tr>
-</table>
-<table>
-	<tr>
-		<td>
-			<a href="https://itsfoss.com/">
-				<img src="https://itsfoss.com/wp-content/uploads/2019/12/itsfoss_homepage.png" width=200px height=80px>
-			</a>
-		</td>
-		<td>
-			<a href="https://www.fosslinux.com/">
-				<img src="https://786647.smushcdn.com/1490832/wp-content/uploads/2020/01/fl_logo_v3.png?lossy=1&strip=1&webp=1" width=200px height=50px>
-			</a>
-		</td>
-		<td>
-			<a href="https://ubunlog.com/en/">
-				<img src="https://scontent.fpos1-1.fna.fbcdn.net/v/t1.18169-9/399280_10150981309523763_1867995150_n.jpg?_nc_cat=103&ccb=1-6&_nc_sid=e3f864&_nc_ohc=bXNXFj49ou0AX-Y79Jx&_nc_ht=scontent.fpos1-1.fna&oh=00_AT8tebcBgf1xGcE_qTHX57jxOG_8UqXaxd1Ub_aRJ8L0sg&oe=62A4AA3F" width=200px height=70px>
-			</a>
-		</td>		
-	</tr>
-</table></h2>
-
-****
 	
 <h2 align="center">🔳<b><i>TERMINAL</b></i>🔳</h2>
 
@@ -631,7 +587,51 @@ or:
 
 `%sudo  ALL=(ALL:ALL) NOPASSWD:ALL` (to allow any group as well as any user).
 
-***   
+***
+
+<h2 align="center">📚<b><i>LINUX RESOURSES</b></i>📚</h2>
+
+###  Endless linux stuff 
+
+<h2 align=center><table>
+	<tr>
+		<td>
+			<a href="https://www.linuxuprising.com/">
+				<img src="https://i.imgur.com/ghu8lV3.png" width=250px height=20px>
+			</a>
+		</td>
+		<td>
+			<a href="https://linoxide.com/">
+				<img src="https://linoxide.com/wp-content/uploads/2013/10/linoxide-logo.png" width=210px height=80px>
+			</a>
+		</td>
+		<td>
+			<a href="https://www.omgubuntu.co.uk/">
+				<img src="https://www.omgubuntu.co.uk/wp-content/themes/omgubuntu-theme-2021_10_0/images/logo.svg?v=20210304085925" width=200px height=50px>
+			</a>
+                </tr>
+</table>
+<table>
+	<tr>
+		<td>
+			<a href="https://itsfoss.com/">
+				<img src="https://itsfoss.com/wp-content/uploads/2019/12/itsfoss_homepage.png" width=200px height=80px>
+			</a>
+		</td>
+		<td>
+			<a href="https://www.fosslinux.com/">
+				<img src="https://786647.smushcdn.com/1490832/wp-content/uploads/2020/01/fl_logo_v3.png?lossy=1&strip=1&webp=1" width=200px height=50px>
+			</a>
+		</td>
+		<td>
+			<a href="https://ubunlog.com/en/">
+				<img src="https://scontent.fpos1-1.fna.fbcdn.net/v/t1.18169-9/399280_10150981309523763_1867995150_n.jpg?_nc_cat=103&ccb=1-6&_nc_sid=e3f864&_nc_ohc=bXNXFj49ou0AX-Y79Jx&_nc_ht=scontent.fpos1-1.fna&oh=00_AT8tebcBgf1xGcE_qTHX57jxOG_8UqXaxd1Ub_aRJ8L0sg&oe=62A4AA3F" width=200px height=70px>
+			</a>
+		</td>		
+	</tr>
+</table></h2>
+
+****   
 	
 <h2 align="center">📋<b><i>USEFUL COMMANDS</b></i>📋</h2>
 
