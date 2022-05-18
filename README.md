@@ -643,7 +643,7 @@ into
 9. `rm` (Remove files/folders)
 10. `cd` (return to home directory where ever you are)
 
-<i>Here is more <a href="https://github.com rinib/Awesome-Linux-Mint/blob/main/Linux%20Basic%20Commands%20Every%20User%20Should%20Know.md"><b>COMMANDS</b></a> </i>
+<i>Here is more <a href="https://github.com/trinib/Awesome-Ubuntu-Setup/blob/main/Linux%20Basic%20Commands%20Every%20User%20Should%20Know.md"><b>COMMANDS</b></a> </i>
 #
 
 **[⬆ BACK TO TOP ⬆](#contents)**
