@@ -5,6 +5,11 @@
 	    
 <p align="center"><img src="https://i.imgur.com/SYiccUK.png" width=20%></p>
 
+To Do 
+- [ ] Remove Nohang and Ananicy with <a href="https://github.com/AdnanHodzic/auto-cpufreq"><b>auto-cpufreq</b></a>
+	  
+- [ ] Replace Andbox with <a href="https://waydro.id/index.html"><b>Waydroid</b></a>
+	
 # Contents
 - [Kernels & Drivers 🔧](#custom-kernels--drivers)
   - [XanMod](#xanmod)
@@ -24,7 +29,6 @@
   - [Set VFS cache pressure](#set-vfs-cache-pressure)
   - [Disable write access](#disables-write-access)
   - [Prevent out of memory](#prevent-out-of-memory)
-  - [Command to free memory](#command-to-free-memory)
 - [Better CPU Managment 💻](#better-cpu)
 - [Touchpad Gestures 🖱️](#install-touchegg)
 - [Customization 🎨](#customization)
@@ -190,11 +194,6 @@ sudo apt update
 sudo apt install nohang
 sudo systemctl enable --now nohang-desktop.service
 ```
-###  Command to free memory 
-```
-sync; sudo echo 2 | sudo tee /proc/sys/vm/drop_caches
-```
-Check out this <a href="https://gist.github.com/trinib/0ae1e7cd56178358ee28bb0828daab4f"><b>guide</b></a> to make a script and execute it at a certain time
 
 ***
 
