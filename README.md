@@ -10,6 +10,8 @@ To Do
 	  
 - [ ] Replace Anbox with <a href="https://waydro.id/index.html"><b>Waydroid</b></a>
 	
+- [ ] Add <a href="https://github.com/wwmm/easyeffects"><b>EasyEffects</b></a>
+	
 # Contents
 - [Kernels & Drivers 🔧](#custom-kernels--drivers)
   - [XanMod](#xanmod)
