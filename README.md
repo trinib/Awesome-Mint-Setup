@@ -45,7 +45,6 @@ To Do
   - [Pimp out Neofetch](#pimp-out-neofetch--can-be-added-to-bashrc)
   - [Oh-My-fish](#use-oh-my-fish)
   - [GitHub search](#gh-s---search-github-repositories-interactively-from-the-command-line)
-  - [Disable terminal sudo password](#disable-terminal-sudo-password)
 - [Linux Resources 📚](#linux-resourses)
 - [Useful Linux Commands 📋](#useful-commands)
 	
