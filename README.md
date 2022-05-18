@@ -570,7 +570,7 @@ gh s
 ```
 	
 #
-###  Disable terminal sudo password 
+###  Disable terminal sudo password (Optional)
 
 Open: 
 
@@ -583,10 +583,6 @@ Change the line that says :
 into 
 
 `%sudo  ALL=(ALL) NOPASSWD:ALL`
-
-or:
-
-`%sudo  ALL=(ALL:ALL) NOPASSWD:ALL` (to allow any group as well as any user).
 
 ***
 
