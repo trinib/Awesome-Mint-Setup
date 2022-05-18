@@ -8,7 +8,7 @@
 To Do 
 - [ ] Remove Nohang and Ananicy with <a href="https://github.com/AdnanHodzic/auto-cpufreq"><b>auto-cpufreq</b></a>
 	  
-- [ ] Replace Andbox with <a href="https://waydro.id/index.html"><b>Waydroid</b></a>
+- [ ] Replace Anbox with <a href="https://waydro.id/index.html"><b>Waydroid</b></a>
 	
 # Contents
 - [Kernels & Drivers 🔧](#custom-kernels--drivers)
