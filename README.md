@@ -1,9 +1,9 @@
 <p align="center">
 <img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white"><img src="https://badges.frapsoft.com/os/v2/open-source-175x29.png?v=103"><br><a href="https://www.kernel.org/category/about.html"><img src="https://badges.frapsoft.com/bash/v1/bash-200x34.png?v=103"><a href=""></a>
 	
-<h2 align="center"><b><i>Simple, important & cool resources for <a href="https://distrowatch.com/search.php?ostype=Linux&category=All&origin=All&basedon=Ubuntu&notbasedon=None&desktop=All&architecture=All&package=All&rolling=All&isosize=All&netinstall=All&language=All&defaultinit=All&status=Active#simple"><b>Ubuntu-based-distros</b></a></b></i></h2>
+<h2 align="center"><b><i>Simple, important & cool resources for</b></i></h2>
 	    
-<p align="center"><img src="https://i.imgur.com/SYiccUK.png" width=20%></p>
+<p align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Linux_Mint_Logo_%28until_2021%29.svg/1200px-Linux_Mint_Logo_%28until_2021%29.svg.png?20210414163034" width=50%></p>
 
 To Do 
 - [ ] Replace Ananicy with <a href="https://github.com/AdnanHodzic/auto-cpufreq"><b>auto-cpufreq</b></a>
@@ -61,15 +61,6 @@ To Do
     echo 'deb http://deb.xanmod.org releases main' | sudo tee /etc/apt/sources.list.d/xanmod-kernel.list
     wget -qO - https://dl.xanmod.org/gpg.key | sudo apt-key --keyring /etc/apt/trusted.gpg.d/xanmod-kernel.gpg add -
     sudo apt update && sudo apt install linux-xanmod
-    
-    ## FOR INTEL
-    sudo apt install intel-microcode iucode-tool
-    ## FOR AMD
-    sudo apt install amd64-microcode
-
-    echo 'net.core.default_qdisc = fq_pie' | sudo tee /etc/sysctl.d/90-override.conf
-    sudo reboot
-
       
 or
 
