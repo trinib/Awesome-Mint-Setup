@@ -13,6 +13,8 @@ To Do
 - [ ] Add <a href="https://github.com/wwmm/easyeffects"><b>EasyEffects</b></a>
 
 - [ ] Add <a href="https://www.qemu.org/"><b>QEMU</b></a>
+
+- [ ] Add <a href="https://gitlab.com/volian/nala#nala"><b>Nala</b></a> package manager
 	
 # Contents
 - [Kernels & Drivers 🔧](#custom-kernels--drivers)
@@ -614,7 +616,7 @@ into
 		</td>
 		<td>
 			<a href="https://ubunlog.com/en/">
-				<img src="https://scontent.fpos1-1.fna.fbcdn.net/v/t1.18169-9/399280_10150981309523763_1867995150_n.jpg?_nc_cat=103&ccb=1-6&_nc_sid=e3f864&_nc_ohc=bXNXFj49ou0AX-Y79Jx&_nc_ht=scontent.fpos1-1.fna&oh=00_AT8tebcBgf1xGcE_qTHX57jxOG_8UqXaxd1Ub_aRJ8L0sg&oe=62A4AA3F" width=200px height=70px>
+				<img src="https://i.imgur.com/dLzmWWM.jpg" width=200px height=70px>
 			</a>
 		</td>		
 	</tr>
