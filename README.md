@@ -50,7 +50,6 @@ To Do
   - [Oh-My-fish](#use-oh-my-fish)
   - [GitHub search](#gh-s---search-github-repositories-interactively-from-the-command-line)
 - [Linux Resources 📚](#linux-resourses)
-- [Useful Linux Commands 📋](#useful-commands)
 	
 ***
 
