@@ -623,21 +623,5 @@ into
 </table></h2>
 
 ****   
-	
-<h2 align="center">📋<b><i>USEFUL COMMANDS</b></i>📋</h2>
-
-1. `man` (used for getting manuals for specific command example: `man ls` gets manual for `ls` command)
-2. `ping` (used for checking connection)
-3. `cd` (Changing your directories)
-4. `cat` (list the content of the desired file)
-5. `nano` (Simple Text editor , quick&fast)
-6. `locate` (Searching with command line , (*)has other options too
-7. `--purge remove` (Uninstall packages and clean up files)
-8. `history | grep`  (Search history for specific word)
-9. `rm` (Remove files/folders)
-10. `cd` (return to home directory where ever you are)
-
-<i>Here is more <a href="https://github.com/trinib/Awesome-Ubuntu-Setup/blob/main/Linux%20Basic%20Commands%20Every%20User%20Should%20Know.md"><b>COMMANDS</b></a> </i>
-#
 
 **[⬆ BACK TO TOP ⬆](#contents)**
