@@ -235,7 +235,7 @@ sudo nano ~/.config/touchegg/touchegg.conf
 <p align="center">
  <img src="https://i.imgur.com/E8S35nT.png" width=400px height=200px>	
 	
-###  All linux themes from <a href="https://www.pling.com/s/Gnome/browse"><b>Pling</b></a> website 
+###  All themes example here are from <a href="https://www.pling.com/s/Gnome/browse"><b>Pling</b></a> website.
 
 #### <a href="https://www.pling.com/p/1445634/#files-panel"><b>Rainbow cursor</b></a>
 
@@ -282,9 +282,12 @@ sudo update-initramfs -u
 ### <a href="https://app-outlet.github.io/"><b>App Outlet</b></a> (Universal App Store)
 Install from https://www.pling.com/p/1355468/
 	
-#### Or build manually
-- An .deb file
-- An .tar.gz file
+#### Or build and create these installaion files :
+
+- AppImage file
+- .deb file(to install `sudo dpkg -i filename.deb`)
+- .rpm file(to install `sudo rpm -i filename.rpm`)
+- .tar.gz file
 - A folder linux-unpacked folder with the unpacked app
 ```
 sudo apt install nodejs git npm
@@ -561,21 +564,6 @@ Get Started :
 ```
 gh s
 ```
-	
-#
-###  Disable terminal sudo password (Optional)
-
-Open: 
-
-    sudo nano -w /etc/sudoers
-
-Change the line that says :
-
-`%sudo  ALL=(ALL) ALL` 
-
-into 
-
-`%sudo  ALL=(ALL) NOPASSWD:ALL`
 
 ***
 
