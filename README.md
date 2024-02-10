@@ -15,12 +15,13 @@ To Do
 - [ ] Add <a href="https://www.qemu.org/"><b>QEMU</b></a>
 
 - [ ] Add <a href="https://gitlab.com/volian/nala#nala"><b>Nala</b></a> package manager
+
+
 	
 # Contents
 - [Kernels & Drivers 🔧](#custom-kernels--drivers)
   - [XanMod](#xanmod)
   - [Liquorix](#liquorix)
-  - [Graphic Drivers](#graphic-drivers)
 - [Better Audio 🔊](#boost-audio-)
   - [Equalizer](#equalizer)
   - [Audio Tweaks](#audio-tweaks)
@@ -71,12 +72,6 @@ or
     sudo apt-get install linux-image-liquorix-amd64 linux-headers-liquorix-amd64
     sudo reboot
 	
-###  Graphic Drivers 
-	
-<a href="https://github.com/lutris/docs/blob/master/InstallingDrivers.md#nvidia"><b>Nvidia</b></a>
-
-<a href="https://github.com/lutris/docs/blob/master/InstallingDrivers.md#amd--intel"><b>AMD / Intel</b></a>
-
 ***
 	
 <h2 align="center"><b><i>🔊BOOST AUDIO🔊</b></i> </h2>
@@ -578,27 +573,28 @@ gh s
 				<img src="https://i.imgur.com/ghu8lV3.png" width=250px height=20px>
 			</a>
 		</td>
-		<td>
-			<a href="https://linoxide.com/">
-				<img src="https://linoxide.com/wp-content/uploads/2013/10/linoxide-logo.png" width=210px height=80px>
+	        <td>
+			<a href="https://www.omgubuntu.co.uk/">
+				<img src="https://www.omgubuntu.co.uk/wp-content/themes/omgubuntu-theme-2023_10_0/images/logo.svg?v=20231008132253" width=200px height=50px>
 			</a>
 		</td>
 		<td>
-			<a href="https://www.omgubuntu.co.uk/">
-				<img src="https://www.omgubuntu.co.uk/wp-content/themes/omgubuntu-theme-2021_10_0/images/logo.svg?v=20210304085925" width=200px height=50px>
+			<a href="https://www.phoronix.com/">
+				<img src="https://www.phoronix.com/phxcms7-css/phoronix.png" width=210px height=80px>
 			</a>
+		</td
                 </tr>
 </table>
 <table>
 	<tr>
 		<td>
 			<a href="https://itsfoss.com/">
-				<img src="https://itsfoss.com/wp-content/uploads/2019/12/itsfoss_homepage.png" width=200px height=80px>
+				<img src="https://itsfoss.com/content/images/size/w300/format/webp/2023/01/itsfoss-logo.png" width=200px height=80px>
 			</a>
 		</td>
 		<td>
 			<a href="https://www.fosslinux.com/">
-				<img src="https://786647.smushcdn.com/1490832/wp-content/uploads/2020/01/fl_logo_v3.png?lossy=1&strip=1&webp=1" width=200px height=50px>
+				<img src="https://b1490832.smushcdn.com/1490832/wp-content/uploads/2020/01/fl_logo_v3.png?lossy=2&strip=1&webp=1" width=200px height=50px>
 			</a>
 		</td>
 		<td>
