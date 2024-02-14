@@ -1,7 +1,9 @@
 <p align="center">
 <img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white"><img src="https://badges.frapsoft.com/os/v2/open-source-175x29.png?v=103"><br><a href="https://www.kernel.org/category/about.html"><img src="https://badges.frapsoft.com/bash/v1/bash-200x34.png?v=103"><a href=""></a>
+
+<br>
 	
-<h2 align="center"><b><i>Simple, important & cool resources for</b></i></h2>
+<h1 align="center"><b><i>Simple, important & cool resources for</b></i></h1>
 	    
 <p align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Linux_Mint_Logo_%28until_2021%29.svg/1200px-Linux_Mint_Logo_%28until_2021%29.svg.png?20210414163034" width=50%></p>
 
@@ -10,7 +12,7 @@ To Do
 	  
 - [ ] Replace Anbox with <a href="https://waydro.id/index.html"><b>Waydroid</b></a>
 	
-- [ ] Add <a href="https://github.com/wwmm/easyeffects"><b>EasyEffects</b></a>
+- [ ] Add <a href="https://github.com/wwmm/easyeffects"><b>EasyEffects</b></a> for PipeWire's audio server only
 
 - [ ] Add <a href="https://www.qemu.org/"><b>QEMU</b></a>
 
@@ -56,7 +58,8 @@ To Do
 
 <h2 align="center">🔧<b><i>CUSTOM KERNELS & DRIVERS</b></i>🔧</h2>
 
-<i>Depending on the type of hardware you have one might work better than the other</i>
+> [!NOTE]
+<i>Depending on the type of hardware you have, one **might** work better than the other. But in my opinion XanMod good for gaming and Liquorix for heavy tasks like video editing, vscode etc.</i>
 
 #### <a href="https://xanmod.org/"><b>XanMod</b></a>
 
@@ -73,6 +76,7 @@ or
     sudo reboot
 	
 ***
+**[⬆ BACK TO TOP ⬆](#contents)**
 	
 <h2 align="center"><b><i>🔊BOOST AUDIO🔊</b></i> </h2>
 
@@ -84,7 +88,9 @@ or
 ```
 sudo apt-get install pulseeffects lsp-plugins
 ````
-<a href="https://github.com/JackHack96/EasyEffects-Presets/tree/pulseeffects"><b>pulse-presets</b></a>
+
+Presets
+> <a href="https://github.com/JackHack96/EasyEffects-Presets/tree/pulseeffects"><b>pulse-presets</b></a>
 
 
 ###  Audio Tweaks 
@@ -103,6 +109,7 @@ sudo apt-get install libalsaplayer0
 ```
 	
 ***
+**[⬆ BACK TO TOP ⬆](#contents)**
 
 <h2 align="center">🔋<b><i>BETTER BATTERY</b></i>🔋</h2>
 
@@ -133,8 +140,9 @@ Disable Startup Apps
 Disable All Effects & Animations
 	
 Disable Automatic Screen Rotation (found in `display settings`)
-	
+
 ***
+**[⬆ BACK TO TOP ⬆](#contents)**
 
 <h2 align="center">🚀<b><i>OPTIMIZE RAM&SSD</b></i>🚀</h2>
 
@@ -176,6 +184,9 @@ sudo nano /etc/fstab
  <img src="https://i.imgur.com/pM1Mf4C.png" width=400px height=200px>	
 	
 ###  Prevent out of memory 
+
+> [!CAUTION]
+> This tool is outdated and has not been updated for a while. If have issues try <a href="https://github.com/rfjakob/earlyoom"><b>earlyoom</b></a> or <a href="https://github.com/facebookincubator/oomd"><b>oomd</b></a>
 	
 Install <a href="https://github.com/hakavlad/nohang"><b>Nohang</b></a>:
 ```  
@@ -186,8 +197,12 @@ sudo systemctl enable --now nohang-desktop.service
 ```
 
 ***
+**[⬆ BACK TO TOP ⬆](#contents)**
 
 <h2 align="center">💻<b><i>BETTER CPU</b></i>💻</h2>
+	
+> [!WARNING]
+> This tool is outdated and has not been updated for a while. Please use <a href="https://github.com/AdnanHodzic/auto-cpufreq"><b>auto-cpufreq</b></a>. Have not have time to use it and write quick tutorial.
 
 ###  Manage processes IO and CPU priorities with <a href="https://github.com/Nefelim4ag/Ananicy"><b>Ananicy</b></a> 
 ```
@@ -199,6 +214,7 @@ sudo systemctl start ananicy
 ```
 	
 ***
+**[⬆ BACK TO TOP ⬆](#contents)**
 
 <h2 align="center">🖱️<b><i>TOUCHPAD GESTURES</b></i>🖱️</h2>
 
@@ -223,6 +239,7 @@ sudo nano ~/.config/touchegg/touchegg.conf
 <i>Here is my <a href="https://github.com/trinib/Awesome-Basic-Linux-Mint/blob/main/Touchegg_Settings.txt"><b>configuration</b></a> for reference</i>
 
 ***
+**[⬆ BACK TO TOP ⬆](#contents)**
 
 <h2 align="center">🎨<b><i>CUSTOMIZATION</b></i>🎨</h2>
 
@@ -271,6 +288,7 @@ sudo update-initramfs -u
 ```
 	
 ***
+**[⬆ BACK TO TOP ⬆](#contents)**
 
 <h2 align="center">📥<b><i>SOFTWARES</b></i>📥</h2>
 	
@@ -294,15 +312,19 @@ npm run build
 ```
 
 ### <a href="https://www.oracle.com/java/technologies/downloads/"><b>Java</b></a> (Running Programs)
-```
-sudo add-apt-repository ppa:linuxuprising/java
-sudo apt update
-sudo apt install oracle-java17-installer --install-recommends
 
-## Or manually (would not auto-update)
+VERSION 17
+```
 wget https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.deb
 chmod +x jdk-17_linux-x64_bin.deb
 sudo dpkg -i jdk-17_linux-x64_bin.deb
+```
+
+VERSION 21
+```
+wget https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.deb
+chmod +x jdk-21_linux-x64_bin.deb
+sudo dpkg -i jdk-21_linux-x64_bin.deb
 ```	
 	
 ###  <a href="https://www.winehq.org/"><b>Wine</b></a> (Install Windows Softwares) 
@@ -390,6 +412,7 @@ sudo apt install shutter
 ```
 	
 ***
+**[⬆ BACK TO TOP ⬆](#contents)**
 
 <h2 align="center">🎮<b><i>Retro Gaming</b></i>🎮</h2>
 	
@@ -440,10 +463,11 @@ chmod +x "bezelproject.sh"
 ## Restart Emulation Station and you should then see the new script in the RetroPie menu.
 ```
 	
-`Tip:`
-<i> For rom packs & bios files, go to <a href="https://www.arcadepunks.com/download-raspberry-pi-4-images/"><b>Arcade Punks</b></a> and download a Raspberry Pi custom build image using torrents. Then you can mount image file in linux and view contents. Search for roms&bios folders/files and extract them to retropi directories on your Linux system.</i><br><a href="https://www.arcadepunks.com/download-raspberry-pi-4-images/"><img src="https://user-images.githubusercontent.com/18756975/168478268-5001d1f6-1b5d-4273-9eb5-2cca4f740a74.png" width=220px height=70px></a>
+> [!TIP]
+> <i> For **FREE** rom packs & bios files, go to <a href="https://www.arcadepunks.com/download-raspberry-pi-4-images/"><b>Arcade Punks</b></a> and download a Raspberry Pi custom build image using torrents. Then you can mount image file in linux and view contents. Search for roms&bios folders/files and extract them to retropi directories on your Linux system.</i><br><a href="https://www.arcadepunks.com/download-raspberry-pi-4-images/"><img src="https://user-images.githubusercontent.com/18756975/168478268-5001d1f6-1b5d-4273-9eb5-2cca4f740a74.png" width=220px height=70px></a>
 
 ***
+**[⬆ BACK TO TOP ⬆](#contents)**
 	
 <h2 align="center">🔳<b><i>TERMINAL</b></i>🔳</h2>
 
@@ -561,6 +585,7 @@ gh s
 ```
 
 ***
+**[⬆ BACK TO TOP ⬆](#contents)**
 
 <h2 align="center">📚<b><i>LINUX RESOURSES</b></i>📚</h2>
 
