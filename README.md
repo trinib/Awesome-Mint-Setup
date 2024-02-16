@@ -4,13 +4,13 @@
 <br>
 	
 <h1 align="center"><b><i>Simple, important & cool resources for</b></i></h1>
-	    
+<h3 align="center">(Ubuntu)</h3>
 <p align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Linux_Mint_Logo_%28until_2021%29.svg/1200px-Linux_Mint_Logo_%28until_2021%29.svg.png?20210414163034" width=50%></p>
 
 To Do 
 - [ ] Replace Ananicy with <a href="https://github.com/AdnanHodzic/auto-cpufreq"><b>auto-cpufreq</b></a>
 	  
-- [ ] Replace Anbox with <a href="https://waydro.id/index.html"><b>Waydroid</b></a>
+- [ ] Add <a href="https://waydro.id/index.html"><b>Waydroid</b></a>
 	
 - [ ] Add <a href="https://github.com/wwmm/easyeffects"><b>EasyEffects</b></a> for PipeWire's audio server only
 
@@ -291,36 +291,17 @@ sudo update-initramfs -u
 **[⬆ BACK TO TOP ⬆](#contents)**
 
 <h2 align="center">📥<b><i>SOFTWARES</b></i>📥</h2>
-	
-### <a href="https://app-outlet.github.io/"><b>App Outlet</b></a> (Universal App Store)
-Install from https://www.pling.com/p/1355468/
-	
-#### Or build and create these installaion files :
-
-- AppImage file
-- .deb file(to install `sudo dpkg -i filename.deb`)
-- .rpm file(to install `sudo rpm -i filename.rpm`)
-- .tar.gz file
-- A folder linux-unpacked folder with the unpacked app
-```
-sudo apt install nodejs git npm
-git clone https://github.com/app-outlet/app-outlet.git
-cd app-outlet
-npm install
-npm run start
-npm run build
-```
 
 ### <a href="https://www.oracle.com/java/technologies/downloads/"><b>Java</b></a> (Running Programs)
 
-VERSION 17
+_VERSION 17_
 ```
 wget https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.deb
 chmod +x jdk-17_linux-x64_bin.deb
 sudo dpkg -i jdk-17_linux-x64_bin.deb
 ```
 
-VERSION 21
+_VERSION 21_
 ```
 wget https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.deb
 chmod +x jdk-21_linux-x64_bin.deb
@@ -336,22 +317,20 @@ sudo add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal mai
 sudo apt install --install-recommends winehq-stable
 ```
 	
-###  <a href="https://anbox.io/"><b>Anbox</b></a> (Android Emulator) 
-```
-## Install kernel modules
-sudo add-apt-repository ppa:morphis/anbox-support
-sudo apt update
-sudo apt install linux-headers-generic anbox-modules-dkms
-	
+###  <a href="https://anbox-cloud.io/"><b>Anbox Cloud</b></a> (Android Emulator) 
+
 ## Install using Snap Store
-sudo rm /etc/apt/preferences.d/nosnap.pref
-sudo apt update
-sudo apt install snapd
-snap install --devmode --beta anbox
-	
-## The snap will not automatically update. In order to update to a newer version you can run:
-snap refresh --beta --devmode anbox
 ```
+sudo apt install snapd
+sudo snap install anbox-cloud-appliance --classic
+```
+- Open https://your-machine-address/applications in your browser. By default, the Anbox Cloud Appliance uses self-signed certificates, which might cause a security warning in your browser. Use the mechanism provided by your browser to proceed to the web page.
+- Click Add Application.
+- Enter a name for the application, for example, virtual-device-web.
+- Keep the preselected resource type.
+- Select the Android image that you want to use, for example, jammy:android13:arm64.
+- Do not upload an APK file.
+- Click Add Application. You are redirected to the application view. Wait until the application status changes to ready.
 	
 ###  <a href="https://lutris.net/"><b>Lutris</b></a> (Game Library Manager) 
 <a href="https://www.youtube.com/watch?v=oHDkeQ9eDrc"><b>Demo</b></a>
