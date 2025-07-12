@@ -1,0 +1,179 @@
+# ---- llm ----
+model: mistral:mistral-small-latest     # Setting Mistral as the default model
+temperature: 0.7                        # Default temperature parameter
+top_p: 0.9                              # Default top-p parameter
+
+# ---- behavior ----
+stream: true                            # Enable streaming responses
+save: true                              # Save messages
+keybindings: emacs                      # Emacs-style keybindings
+editor: null                            # Default editor
+wrap: auto                              # Auto text wrapping
+wrap_code: false                        # Don't wrap code blocks
+
+# ---- function-calling ----
+function_calling: true                  # Enable function calling
+mapping_tools:                          # Tool aliases
+  fs: 'fs_cat,fs_ls,fs_mkdir,fs_rm,fs_write'
+use_tools: null                         # No default tools
+
+# ---- prelude ----
+repl_prelude: null                      # No default role for REPL mode
+cmd_prelude: null                       # No default role for CMD mode
+agent_prelude: null                     # No default session for agent
+
+# ---- session ----
+save_session: true                      # Auto-save sessions
+compress_threshold: 4000                # Compress at 4000 tokens
+summarize_prompt: 'Summarize the discussion briefly in 200 words or less to use as a prompt for future context.'
+summary_prompt: 'This is a summary of the chat history as a recap: '
+
+# ---- RAG ----
+rag_embedding_model: "gemini:text-embedding-004"  # Using Gemini for embeddings
+rag_reranker_model: null                # No reranker model
+rag_top_k: 5                            # Retrieve 5 documents
+rag_chunk_size: 1500                    # 1500 character chunks
+rag_chunk_overlap: 200                  # 200 character overlap
+rag_template: |
+  Answer the query based on the context while respecting the rules. (user query, some textual context and rules, all inside xml tags)
+
+  <context>
+  __CONTEXT__
+  </context>
+
+  <rules>
+  - If you don't know, just say so.
+  - If you are not sure, ask for clarification.
+  - Answer in the same language as the user query.
+  - If the context appears unreadable or of poor quality, tell the user then answer as best as you can.
+  - If the answer is not in the context but you think you know the answer, explain that to the user then answer with your own knowledge.
+  - Answer directly and without using xml tags.
+  </rules>
+
+  <user_query>
+  __INPUT__
+  </user_query>
+
+# Document loaders for RAG
+document_loaders:
+  pdf: 'pdftotext $1 -'
+  docx: 'pandoc --to plain $1'
+
+# ---- appearance ----
+highlight: true                  # Enable syntax highlighting
+light_theme: false               # Use dark theme
+left_prompt: '{color.green}{?session {?agent {agent}>}{session}{?role /}}{!session {?agent {agent}>}}{role}{?rag @{rag}}{color.cyan}{?session )}{!session >}{color.reset} '
+right_prompt: '{color.purple}{?session {?consume_tokens {consume_tokens}({consume_percent}%)}{!consume_tokens {consume_tokens}}}{color.reset}'
+
+# ---- misc ----
+serve_addr: 127.0.0.1:8000
+user_agent: auto
+save_shell_history: true
+sync_models_url: https://raw.githubusercontent.com/sigoden/aichat/refs/heads/main/models.yaml
+
+# ---- clients ----
+clients:
+  # Gemini configuration with your API key
+  - type: gemini
+    api_base: https://generativelanguage.googleapis.com/v1beta
+    api_key: "AIzaSyBOQtBNwjPtFRQTTcd5ZU2leDq9lAHTO_Y"
+    patch:
+      chat_completions:
+        '.*':
+          body:
+            safetySettings:
+              - category: HARM_CATEGORY_HARASSMENT
+                threshold: BLOCK_NONE
+              - category: HARM_CATEGORY_HATE_SPEECH
+                threshold: BLOCK_NONE
+              - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+                threshold: BLOCK_NONE
+              - category: HARM_CATEGORY_DANGEROUS_CONTENT
+                threshold: BLOCK_NONE
+
+  # Mistral configuration with your API key
+  - type: openai-compatible
+    name: mistral
+    api_base: https://api.mistral.ai/v1
+    api_key: "ALqftKzLyxXBFh4nj35Vs3594bdBDdf5"
+    
+   # Ollama (local models)
+  - type: openai-compatible
+    name: ollama
+    api_base: http://localhost:11434/v1
+    models:
+      - name: llama3
+        max_input_tokens: 128000
+        supports_function_calling: true
+      - name: mistral
+        max_input_tokens: 32768
+      - name: gemma
+        max_input_tokens: 8192
+      - name: phi3
+        max_input_tokens: 4096
+      - name: nomic-embed-text
+        type: embedding
+        default_chunk_size: 1000
+        max_batch_size: 50
+
+  # Groq (free tier)
+  - type: openai-compatible
+    name: groq
+    api_base: https://api.groq.com/openai/v1
+    api_key: "gsk_..."  # Replace with your Groq API key
+    models:
+      - name: llama-3.3-70b-versatile
+        max_input_tokens: 131072
+        supports_function_calling: true
+      - name: qwen-qwq-32b
+        max_input_tokens: 131072
+      - name: qwen/qwen3-32b
+        max_input_tokens: 131072
+
+  # Jina AI (free embeddings)
+  - type: openai-compatible
+    name: jina
+    api_base: https://api.jina.ai/v1
+    api_key: "jina_..."  # Replace with your Jina API key
+    models:
+      - name: jina-embeddings-v3
+        type: embedding
+        default_chunk_size: 2000
+        max_batch_size: 100
+        
+  # NEW: Cloudflare Workers AI
+  - type: openai-compatible
+    name: cloudflare
+    api_base: https://api.cloudflare.com/client/v4/accounts/{ACCOUNT_ID}/ai/v1
+    api_key: "YOUR_CLOUDFLARE_API_TOKEN"  # Replace with your Cloudflare API token
+    models:
+      - name: "@cf/meta/llama-4-scout-17b-16e-instruct"
+        max_input_tokens: 131072
+        max_output_tokens: 2048
+        require_max_tokens: true
+        supports_vision: true
+      - name: "@cf/meta/llama-3.3-70b-instruct-fp8-fast"
+        max_input_tokens: 131072
+        max_output_tokens: 2048
+        require_max_tokens: true
+      - name: "@cf/qwen/qwq-32b"
+        max_input_tokens: 131072
+        max_output_tokens: 2048
+        require_max_tokens: true
+      - name: "@cf/qwen/qwen2.5-coder-32b-instruct"
+        max_input_tokens: 131072
+        max_output_tokens: 2048
+        require_max_tokens: true
+      - name: "@cf/google/gemma-3-12b-it"
+        max_input_tokens: 131072
+        max_output_tokens: 2048
+        require_max_tokens: true
+      - name: "@cf/mistralai/mistral-small-3.1-24b-instruct"
+        max_input_tokens: 131072
+        max_output_tokens: 2048
+        require_max_tokens: true
+      - name: "@cf/baai/bge-large-en-v1.5"
+        type: embedding
+        max_tokens_per_chunk: 512
+        default_chunk_size: 1000
+        max_batch_size: 100
