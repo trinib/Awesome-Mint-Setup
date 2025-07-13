@@ -389,7 +389,7 @@
           "foreground": "#000000",
           "leading_diamond": "\ue0b2",
           "properties": {
-            "time_format": "3:04PM"
+            "time_format": "3:04pm"
           },
           "style": "diamond",
           "template": "\uf4ab {{ .CurrentDate | date .Format }}",
