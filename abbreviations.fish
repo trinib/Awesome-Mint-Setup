@@ -1,11 +1,11 @@
 # System commands
-abbr -a -g "ex" "exec fish"
+abbr -a -g "e" "fish"
 abbr -a -g "c" "clear"
-abbr -a -g "e" "$EDITOR"
+abbr -a -g "ed" "$EDITOR"
 abbr -a -g "o" "xdg-open"
 abbr -a -g "g" "git"
 abbr -a -g "k" "kubectl"
-abbr -a -g "d" "docker"
+abbr -a -g "do" "docker"
 abbr -a -g "dc" "docker-compose"
 
 # Directory navigation
