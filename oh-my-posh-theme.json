@@ -5,7 +5,7 @@
       "alignment": "left",
       "segments": [
         {
-          "background": "#21c7a8",
+          "background": "#00e56f",
           "foreground": "#011627",
           "leading_diamond": "\u256d\u2500\ue0b6",
           "properties": {
@@ -404,13 +404,13 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "#fbff00",
+          "foreground": "#00e56f",
           "style": "plain",
           "template": "\u2570\u2500",
           "type": "text"
         },
         {
-          "foreground": "#22da6e",
+          "foreground": "#fbff00",
           "foreground_templates": ["{{ if gt .Code 0 }}#ef5350{{ end }}"],
           "properties": {
             "always_enabled": true
