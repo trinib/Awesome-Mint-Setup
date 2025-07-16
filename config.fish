@@ -21,12 +21,13 @@ set -gx MCFLY_PROMPT "❯"
 # Make autosuggestions more visible
 set -g fish_autosuggestion_color brblack
 
+alias reload="exec fish"
 
 # =================== Key Bindings ===================
 # Use Ctrl+F to accept the current suggestion
 bind \cf forward-word
 
-bind \ce fish
+bind \ce "exec fish"
 
 # Alt+Left/Right to navigate words
 bind \e\[1\;3C forward-word
@@ -61,70 +62,7 @@ alias df 'df -h'
 alias du 'du -h'
 alias free 'free -m'
 
-if status is-interactive
-    # Commands to run in interactive sessions can go here
-end
-
-oh-my-posh init fish --config /home/trinib/.local/share/fishthemes/night-owl.omp.json | source 
-zoxide init fish | source
-mcfly init fish | source
-
-set -x TZ America/New_York
-
-# Created by `pipx` on 2025-07-10 06:51:15
-set PATH $PATH /home/trinib/.local/bin
-
-set -gx MCFLY_RESULTS 500
-set -gx MCFLY_RESULTS_SORT LAST_RUN
-set -gx MCFLY_FUZZY 4
-set -gx MCFLY_DELETE_WITHOUT_CONFIRM true
-set -gx MCFLY_KEY_SCHEME vim
-set -gx MCFLY_PROMPT "❯"
-
-# Make autosuggestions more visible
-set -g fish_autosuggestion_color brblack
-
-
-# =================== Key Bindings ===================
-# Use Ctrl+F to accept the current suggestion
-bind \cf forward-word
-
-bind \ce exec fish
-
-# Alt+Left/Right to navigate words
-bind \e\[1\;3C forward-word
-bind \e\[1\;3D backward-word
-
-# Ctrl+Backspace to delete previous word
-bind \b backward-kill-word
-
-# Ctrl+Delete to delete next word
-bind \e\[3\;5~ kill-word
-
-# Alt+Up to search history matching current input
-bind \e\[1\;3A history-search-backward
-
-# Alt+Down to search history matching current input
-bind \e\[1\;3B history-search-forward
-
-
-# =================== History Settings ===================
-# Increase history size
-set -g fish_history_max_length 10000
-
-# Don't save commands starting with space
-set -g fish_history_ignore_space 1
-
-# Remove duplicates from history
-set -g fish_history_ignore_dups 1
-
-
-# =================== System shortcuts ===================
-alias df 'df -h'
-alias du 'du -h'
-alias free 'free -m'
-
-# DELETE BELOW AND CONTENTS FROM .config\fish\fish_variables AAND RESTART TERMIANL TO RESET COLORS
+# DELETE BELOW AND CONTENT FROM .config\fish\fish_variables AAND RESTART TERMIANL TO RESET COLORS
 set fish_color_normal f8f8f2
 set fish_color_command 50fa7b
 set fish_color_param 8be9fd
@@ -137,3 +75,15 @@ set fish_color_end 50fa7b
 set fish_color_quote f1fa8c
 set fish_color_autosuggestion 6272a4
 set fish_color_valid_path --underline
+
+## Ctrl + L	Clear screen
+## Ctrl + C	Cancel command
+## Ctrl + U	Delete before cursor
+## Ctrl + K	Delete after cursor
+## Ctrl + W	Delete previous word
+## Ctrl + A	Beginning of line
+## Ctrl + E	End of line
+## Ctrl + R	Reverse search in history
+## !!	Run previous command
+## !<command>	Run last command starting with <command>
+## Tab	Autocomplete
