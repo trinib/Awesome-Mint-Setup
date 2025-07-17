@@ -59,6 +59,23 @@ config.font = wezterm.font_with_fallback({
   'FiraCode Nerd Font Sembd',
 })
 
+-- Background Image Configuration
+--config.background = {
+--  {
+--    source = {
+--      -- IMPORTANT: Replace this with the full path to your image file.
+--      -- Use forward slashes, e.g., "C:/Users/Admin/Pictures/my-background.png"
+--      File = "C:/Users/Admin/Downloads/sk.png",
+--    },
+--    -- Controls the transparency of the image. 0.0 is fully transparent, 1.0 is fully opaque.
+--    opacity = 0.90,
+--    -- Dims the image to 30% of its original brightness to make text more readable.
+--    hsb = {
+--      brightness = 0.1,
+--    },
+--  },
+--}
+
 config.font_size = 12.5
 config.line_height = 1.0
 config.cell_width = 1.0
@@ -307,6 +324,13 @@ config.keys = {
   { key = 'q', mods = 'CTRL|SHIFT', action = act.QuitApplication },
   { key = 'm', mods = 'CTRL|SHIFT', action = act.Hide },
   { key = 'n', mods = 'CTRL|SHIFT', action = wezterm.action.ToggleFullScreen },
+  
+    -- Run the 'fish' command with Ctrl+E
+  {
+    key = 'e',
+    mods = 'CTRL',
+    action = wezterm.action.SendString 'fish\n',
+  },
 
 }
 
