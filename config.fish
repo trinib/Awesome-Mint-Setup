@@ -6,10 +6,10 @@ oh-my-posh init fish --config /home/trinib/.local/share/fishthemes/night-owl.omp
 zoxide init fish | source
 mcfly init fish | source
 
-set -x TZ America/New_York
-
-# Created by `pipx` on 2025-07-10 06:51:15
 set PATH $PATH /home/trinib/.local/bin
+
+# Add local bin directory to PATH
+fish_add_path ~/.local/bin
 
 set -gx MCFLY_RESULTS 500
 set -gx MCFLY_RESULTS_SORT LAST_RUN
@@ -17,17 +17,24 @@ set -gx MCFLY_FUZZY 4
 set -gx MCFLY_DELETE_WITHOUT_CONFIRM true
 set -gx MCFLY_KEY_SCHEME vim
 set -gx MCFLY_PROMPT "❯"
+#set -gx EDITOR nvim
+#set -gx VISUAL nvim
+set -gx PAGER less
+set -gx BROWSER firefox
+set -gx LANG en_US.UTF-8
+#et -gx LC_ALL en_US.UTF-8
+set -gx GPG_TTY (tty)
+
+set -x TZ America/New_York
 
 # Make autosuggestions more visible
-set -g fish_autosuggestion_color brblack
-
-alias reload="exec fish"
+#set -g fish_autosuggestion_color brblack
 
 # =================== Key Bindings ===================
 # Use Ctrl+F to accept the current suggestion
 bind \cf forward-word
 
-bind \ce "exec fish"
+bind \ce "fish"
 
 # Alt+Left/Right to navigate words
 bind \e\[1\;3C forward-word
@@ -57,10 +64,11 @@ set -g fish_history_ignore_space 1
 set -g fish_history_ignore_dups 1
 
 
-# =================== System shortcuts ===================
+# =================== System shortcuts Alias ===================
 alias df 'df -h'
 alias du 'du -h'
 alias free 'free -m'
+alias reload="exec fish"
 
 # DELETE BELOW AND CONTENT FROM .config\fish\fish_variables AAND RESTART TERMIANL TO RESET COLORS
 set fish_color_normal f8f8f2
