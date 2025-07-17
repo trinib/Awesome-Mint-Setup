@@ -52,7 +52,7 @@ config.enable_scroll_bar = false
 -- Appearance settings
 config.font = wezterm.font_with_fallback({
   {
-    family = 'FiraCode Nerd Font',
+    family = 'FiraCode Nerd Font Ret',
     weight = 'Regular',
     harfbuzz_features = {'calt=1', 'clig=1', 'liga=1'},
   },
@@ -170,7 +170,7 @@ config.enable_wayland = false
 config.enable_kitty_graphics = true
 config.enable_csi_u_key_encoding = true
 config.use_ime = true
-config.adjust_window_size_when_changing_font_size = false
+config.adjust_window_size_when_changing_font_size = true
 
 -- Check updates every 24 hours
 config.check_for_updates = true
@@ -304,10 +304,10 @@ config.keys = {
   { key = 'l', mods = 'CTRL|SHIFT', action = act.ShowLauncherArgs { flags = 'FUZZY|LAUNCH_MENU_ITEMS' } },
   
   -- WINDOW CONTROL SHORTCUTS
-  
-  -- Close window (Alt+F4)
   { key = 'q', mods = 'CTRL|SHIFT', action = act.QuitApplication },
-  
+  { key = 'm', mods = 'CTRL|SHIFT', action = act.Hide },
+  { key = 'n', mods = 'CTRL|SHIFT', action = wezterm.action.ToggleFullScreen },
+
 }
 
 -- Mouse bindings
