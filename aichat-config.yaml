@@ -1,5 +1,6 @@
 # ---- llm ----
-model: mistral:mistral-small-latest     # Setting Mistral as the default model
+# aichat --list-models
+model: mistral:mistral-medium-latest    # Setting as the default model
 temperature: 0.7                        # Default temperature parameter
 top_p: 0.9                              # Default top-p parameter
 
@@ -76,7 +77,7 @@ clients:
   # Gemini configuration with your API key
   - type: gemini
     api_base: https://generativelanguage.googleapis.com/v1beta
-    api_key: "AIzaSyBOQtBNwjPtFRQTTcd5ZU2leDq9lAHTO_Y"
+    api_key: "YOUR_GEMINI_API_KEY"
     patch:
       chat_completions:
         '.*':
@@ -95,26 +96,43 @@ clients:
   - type: openai-compatible
     name: mistral
     api_base: https://api.mistral.ai/v1
-    api_key: "ALqftKzLyxXBFh4nj35Vs3594bdBDdf5"
+    api_key: "YOUR_MISTRAL_API_KEY"
     
-   # Ollama (local models)
+  # Ollama (local models) 
   - type: openai-compatible
     name: ollama
-    api_base: http://localhost:11434/v1
+    api_base: http://localhost:11434/v1 # This is the default Ollama API base URL
+    # api_key: "" # Ollama typically does not require an API key for local use.
     models:
-      - name: llama3
-        max_input_tokens: 128000
-        supports_function_calling: true
-      - name: mistral
+      # Chat Models (replace with models you have pulled using `ollama pull <model_name>`)
+      - name: llama3 # Example: `ollama pull llama3`
+        max_input_tokens: 128000 # Llama 3 models have large context windows
+        supports_function_calling: true # Check if the specific model supports it
+      - name: mistral # Example: `ollama pull mistral`
         max_input_tokens: 32768
-      - name: gemma
+      - name: gemma # Example: `ollama pull gemma`
         max_input_tokens: 8192
-      - name: phi3
+      - name: phi3 # Example: `ollama pull phi3`
         max_input_tokens: 4096
-      - name: nomic-embed-text
+      - name: deepseek-coder-v2 # Example: `ollama pull deepseek-coder-v2`
+        max_input_tokens: 128000 # Check the specific model's context
+        supports_function_calling: true
+      # Embedding Models (important for RAG)
+      - name: nomic-embed-text # Example: `ollama pull nomic-embed-text`
         type: embedding
-        default_chunk_size: 1000
-        max_batch_size: 50
+        default_chunk_size: 1000 # Recommended chunk size for this model
+        max_batch_size: 50 # Max texts to embed in a single API call
+        
+  # DeepSeek configuration
+  - type: openai-compatible
+    name: deepseek
+    api_base: https://api.deepseek.com/v1
+    api_key: "YOUR_DEEPSEEK_API_KEY" # Replace with your DeepSeek API key
+    models:
+      - name: deepseek-coder
+        max_input_tokens: 16384
+      - name: deepseek-chat
+        max_input_tokens: 16384
 
   # Groq (free tier)
   - type: openai-compatible
@@ -177,3 +195,48 @@ clients:
         max_tokens_per_chunk: 512
         default_chunk_size: 1000
         max_batch_size: 100
+        
+  # OpenRouter configuration
+  - type: openai-compatible
+    name: openrouter
+    api_base: https://openrouter.ai/api/v1
+    api_key: "sk-or-YOUR_OPENROUTER_API_KEY" # Replace with your OpenRouter API key
+    # OpenRouter aggregates many models. You'll specify the specific model in the `name` field
+    # when using `aichat -m openrouter:model-name`.
+    # You can browse models and their names on openrouter.ai/models
+    models:
+      # Example models, check OpenRouter for current availability and specific names
+      - name: "anthropic/claude-3.5-sonnet"
+        max_input_tokens: 200000
+        supports_function_calling: true
+      - name: "mistralai/mistral-large-latest"
+        max_input_tokens: 32768
+        supports_function_calling: true
+      - name: "meta-llama/llama-3-8b-instruct:free" # Example of a free model on OpenRouter
+        max_input_tokens: 8192
+      - name: "google/gemini-pro"
+        max_input_tokens: 30720
+        supports_function_calling: true
+
+  # Hugging Face Inference API configuration
+  - type: openai-compatible
+    name: huggingface
+    api_base: https://api-inference.huggingface.co/models # Base URL for general inference
+    api_key: "hf_YOUR_HUGGINGFACE_API_TOKEN" # Replace with your Hugging Face API token
+    # For specific hosted inference endpoints, the api_base might be a custom URL,
+    # and the model name would be derived from that endpoint.
+    models:
+      # These are examples. Hugging Face Inference API can host many models.
+      # You'll typically use the model ID from the Hugging Face Hub.
+      # Ensure you create an access token with "Inference API" permissions.
+      - name: "mistralai/Mistral-7B-Instruct-v0.2"
+        max_input_tokens: 32768
+      - name: "deepseek-ai/DeepSeek-Coder-V2-Instruct"
+        max_input_tokens: 16384
+      - name: "google/gemma-2b-it"
+        max_input_tokens: 8192
+      # For embeddings, you would define a separate model with type: embedding
+      - name: "sentence-transformers/all-MiniLM-L6-v2"
+        type: embedding
+        default_chunk_size: 512 # Adjust based on model
+        max_batch_size: 100 # Adjust based on model
