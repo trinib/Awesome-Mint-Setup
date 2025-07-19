@@ -92,11 +92,28 @@ clients:
               - category: HARM_CATEGORY_DANGEROUS_CONTENT
                 threshold: BLOCK_NONE
 
-  # Mistral configuration with your API key
+  # Mistral configuration
   - type: openai-compatible
     name: mistral
     api_base: https://api.mistral.ai/v1
     api_key: "YOUR_MISTRAL_API_KEY"
+    models:
+      - name: mistral-small-latest  # Explicitly define the default model
+        max_input_tokens: 32768      # Example: Context window for Mistral Small
+        supports_function_calling: true # Mistral Small supports function calling
+      - name: mistral-medium-latest # Add another specific model
+        max_input_tokens: 128000     # Example context window for Mistral Medium
+        supports_function_calling: true
+      - name: mistral-large-latest  # Add Mistral's flagship model
+        max_input_tokens: 128000     # Example context window for Mistral Large
+        supports_function_calling: true
+      - name: codestral-latest      # Specific model for code generation
+        max_input_tokens: 256000     # Codestral has a very large context
+        supports_function_calling: true
+      - name: mistral-embed          # Mistral's embedding model
+        type: embedding
+        default_chunk_size: 1000     # Recommended for embedding models
+        max_batch_size: 100          # Max texts to embed in one call
     
   # Ollama (local models) 
   - type: openai-compatible
@@ -159,7 +176,7 @@ clients:
         default_chunk_size: 2000
         max_batch_size: 100
         
-  # NEW: Cloudflare Workers AI
+  # Cloudflare Workers AI
   - type: openai-compatible
     name: cloudflare
     api_base: https://api.cloudflare.com/client/v4/accounts/{ACCOUNT_ID}/ai/v1
