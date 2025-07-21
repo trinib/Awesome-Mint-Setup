@@ -81,7 +81,7 @@ config.line_height = 1.0
 config.cell_width = 1.0
 config.initial_cols = 70 -- Width
 config.initial_rows = 22 -- Height
-config.window_background_opacity = 0.96
+config.window_background_opacity = 0.94
 config.text_background_opacity = 1.0
 config.integrated_title_button_style = 'Windows'
 config.integrated_title_button_color = 'Auto'
@@ -134,31 +134,31 @@ config.colors.tab_bar = {
 
   -- === ACTIVE TAB ===
   active_tab = {
-    bg_color = '#d583bc', -- The main vibrant pink
-	fg_color = '#282828', -- Keep dark text
+    bg_color = '#dc74bc', -- The main vibrant pink
+	fg_color = '#171717', -- Keep dark text
     intensity = 'Bold',
 	italic = true,
   },
   -- === INACTIVE TABS ===
   inactive_tab = {
     bg_color = '#6d2d57', -- A brighter, but still muted, dark pink
-    fg_color = '#919197', -- Soft, light text color
+    fg_color = '#a9a9a9', -- Soft, light text color
   },
   -- How an inactive tab looks when you hover over it.
   inactive_tab_hover = {
-    bg_color = '#d583bc', -- An even brighter pink for hover feedback
-    fg_color = '#282828', -- Fully white text on hover
+    bg_color = '#aa4c8d', -- An even brighter pink for hover feedback
+    fg_color = '#eaeaea', -- Fully white text on hover
     italic = true,
   },
 
   -- === NEW TAB BUTTON (+) ===
   new_tab = {
     bg_color = '#191724',
-    fg_color = '#d583bc',
+    fg_color = '#dc74bc',
   },
   -- The new tab button hover state.
   new_tab_hover = {
-    bg_color = '#d583bc', -- The very bright pink for the '+' hover effect
+    bg_color = '#e86dc2', -- The very bright pink for the '+' hover effect
     fg_color = '#191724', -- Dark text for contrast
   },
 }
@@ -389,7 +389,7 @@ wezterm.on('update-right-status', function(window, pane)
   
   -- Create a status with hostname, date, and exit button
   local elements = {
-    { Foreground = { Color = '#BD93F9' } },
+    { Foreground = { Color = '#b7f070' } },
     { Text = ' ' .. hostname .. ' ' },
     { Foreground = { Color = '#F8F8F2' } },
   }
