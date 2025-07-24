@@ -241,14 +241,14 @@ clients:
   # Hugging Face
   - type: openai-compatible
     name: huggingface
-    api_base: https://api-inference.huggingface.co/models # Base URL for general inference
+    api_base: https://router.huggingface.co/v1 # Base URL for general inference
     api_key: "hf_YOUR_HUGGINGFACE_API_TOKEN" # Replace with your Hugging Face API token
     # For specific hosted inference endpoints, the api_base might be a custom URL,
     # and the model name would be derived from that endpoint.
+    # Example config - huggingface:moonshotai/Kimi-K2-Instruct:novita 
+    # Models - https://huggingface.co/models?pipeline_tag=text-generation
     models:
-      # These are examples. Hugging Face Inference API can host many models.
-      # You'll typically use the model ID from the Hugging Face Hub.
-      # Ensure you create an access token with "Inference API" permissions.
+      # Ensure you create an access token with "Make calls to Inference Providers" permissions.
       - name: "mistralai/Mistral-7B-Instruct-v0.2"
         max_input_tokens: 32768
       - name: "deepseek-ai/DeepSeek-Coder-V2-Instruct"
