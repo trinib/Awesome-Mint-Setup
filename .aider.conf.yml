@@ -1,0 +1,188 @@
+# Universal Aider configuration – solo-dev optimized
+# Goals: low token usage, fast feedback, safe Git history, works for any codebase.
+
+# ── Models ────────────────────────────────────────────────────────────────
+model: openrouter/deepseek/deepseek-r1                           # primary model for code generation
+editor-model: anthropic/claude-3-5-sonnet-20241022               # model used for actual edit operations
+weak-model: openrouter/anthropic/claude-3.5-haiku-20241022       # summariser / repo-map helper / commits / chat history
+
+# ── Aliases for quick model switching via /editor-model ────────────────────
+alias:
+  - "fast:openrouter/openai/gpt-4o"                         # low-latency, high-quality edits
+  - "smart:openrouter/openai/o1"                            # deep reasoning for complex tasks
+  - "hacker:openrouter/anthropic/claude-3.5-haiku-20241022" # cost-effective wide-context model
+  - "edit:o4-mini"
+
+# ── Optional architect mode flags ────────────────────────────────────────
+#architect: true                  # off by default; toggle via /architect cmd
+#auto-accept-architect: false     # require review when architect mode is used(default: True)
+
+# ── File Formats ───────────────────────────────────────
+#edit-format: diff                    # Specify what edit format the main LLM should use(API model replies)
+#editor-edit-format: editor-diff      # Specify the edit format for the editor model(copy/paste or architect mode[editor-diff and editor-whole])
+## The editor model replies with either:
+# editor-diff - "here’s a diff-style patch"
+# editor-whole - "here’s the full replacement file"
+# editor-diff and editor-whole are narrowed-down prompts, optimized for "just edit the file" in architect mode.
+
+# ── Linting for Alexa Skill project (Python + AWS CLI + SAM) ───────────────────────────────────────
+lint-cmd:
+  python: flake8                # Python linter
+  yaml: yamllint                # CloudFormation templates, SAM templates
+  shell: shellcheck             # Bash/POSIX shell scripts
+  json: jq . > /dev/null        # Check if JSON is valid
+  markdown: markdownlint        # Optional: if you use README.md or docs
+
+# ── Prompt & history budget ───────────────────────────────────────────────
+cache-prompts: true              # skip resending static context
+cache-keepalive-pings: 2         # keep cache warm (pingsX5min) = uptime to keep cache alive
+max-chat-history-tokens: 4096    # summarise long sessions
+
+# ── Repo map (context snapshot) ───────────────────────────────────────────
+map-tokens: 1024                 # small but useful repo overview
+map-refresh: auto                # refresh when tracked files change
+
+# ── Git workflow helpers ─────────────────────────────────────────────────
+auto-commits: true               # commit after each successful change
+dirty-commits: true              # commit even with unstaged changes
+#attribute-commit-message-author: true  # prefix msgs with "aider:"
+
+# ── Global system prompt ─────────────────────────────────────────────────
+system-message: >-
+  You are Aider, a pair-programming AI: think step-by-step, ask questions, propose designs,
+  output unified diffs per style guides, include tests and CLI commands.
+  Never expose secrets, and maximize correctness and maintainability.
+
+# ── Specify a custom prompt for generating commit messages ───────────────
+commit-prompt: 'Aider-AI🧙: {{summary}} ({{files}})'
+
+read: [CONVENTIONS.md]           # optional project style guide
+
+# ── Output / UX tweaks ───────────────────────────────────────────────────
+pretty: true                     # colorized terminal output
+stream: false                    # stream tokens for snappy feedback
+suggest-shell-commands: true     # propose handy CLI snippets 
+dark-mode: false
+watch-files: true                # watch all files and look for any AI coding instructions text
+
+# ── Cooler Color Palette ─────────────────────────────────────────────────────
+# User input and AI messages
+user-input-color: "#9bd255"           # your typed commands appear in blue :contentReference[oaicite:0]{index=0}
+assistant-output-color: "#37e1e6"        # AI responses in cyan for clarity :contentReference[oaicite:1]{index=1}
+
+# Tool outputs, errors, and warnings
+tool-output-color: "#ff3ee2"          # normal tool messages in magenta :contentReference[oaicite:2]{index=2}
+tool-error-color: "#f52828"    # errors in bright magenta to stand out :contentReference[oaicite:3]{index=3}
+tool-warning-color: "#f58528"     # warnings in bright cyan (cool alert) :contentReference[oaicite:4]{index=4}
+
+# Completion menu and syntax highlighting
+completion-menu-color: "white"        # selection text in white for contrast :contentReference[oaicite:5]{index=5}
+completion-menu-bg-color: "#02009e"      # background in blue to keep the cool tone :contentReference[oaicite:6]{index=6}
+code-theme: "one-dark"                 # popular dark theme with purples & blues for code :contentReference[oaicite:7]{index=7}
+
+# ── Privacy ──────────────────────────────────────────────────────────
+analytics-disable: true
+
+# ── Check for new aider versions on launch ──────────────────────────────────────────────────────────
+#check-update: true
+#just-check-update: true
+
+# ──  Useful Commands ─────────────────────────────────────────────────────────
+# Slash-commands (inside Aider interactive session)
+# - /help                   - list all available slash-commands
+# - /commands               - alias for /help
+# - /web <url>              - Reads/Scrape/fetch webpage
+# - /ask                    - For complex changes, discuss a plan first
+# - /model <model-id>       - ALIAS switch the main LLM mid-session
+# - /editor-model <model-id> - switch the editor LLM for diffs or full edits
+# - /architect "<prompt>"   - perform an Architect Mode design pass
+# - /map-refresh            - regenerate the repo-map context snapshot
+# - /undo                   - revert the last AI-generated commit
+# - /save                   - persist current session history to disk
+# - /diff <file>            - display the diff of a file in-session
+# - /exit                   - exit the Aider session
+# - /quit                   - alias for /exit
+
+# CLI-only flags (require restart of Aider)
+# - aider --edit-format udiff         - use unified-diff patches
+# - aider --edit-format diff          - use context-diff patches
+# - aider --edit-format whole         - output full updated files
+# - aider --model <model-id>          - one-off override of main model
+# - aider --weak-model <model-id>     - one-off override of weak/summariser model
+# - aider --architect                 - start Aider in Architect Mode
+# - aider --list-providers            - list all configured LLM providers
+# - aider --list-models <model name>  - list all LLM models by name
+# - aider --version / -V              - show Aider version
+
+# ── Edit Format Summary Table ──────────────────────────────────────────────────────────
+# | Mode          | Description                                | Best Use Case                         | Token Cost    |
+# | ------------- | ------------------------------------------ | ------------------------------------- | ------------- |
+# | diff        | Classic minimal diffs                      | Small edits, bug fixes                | 🔹 Lowest       |
+# | udiff       | Unified diffs with context                 | Most day-to-day changes               | 🔸 Low          |
+# | diff-fence  | Unified diffs wrapped in markdown fences   | Better readability in markdown tools  | 🔸 Low-Medium   |
+# | whole       | Outputs entire files                       | Full rewrites, file generation        | 🔺 Higher       |
+# | architect   | Full-project planning and design reasoning | Large features, refactoring, planning | 🔺🔺 Highest    |
+
+
+# ── What /copy-context Is For? ────────────────────────────────────────────────
+# '/copy-context' is used when you want to ask an external LLM (like ChatGPT in a web browser) to help you, 
+#  but you still want Aider to do the actual file editing.
+# It’s a way to: Copy your project’s code + your question into your clipboard 
+# so you can paste it into a web-based AI like ChatGPT or Claude.
+
+# It’s like you’re saying:
+# "Hey Aider, gather all the files I care about, add my instructions, 
+#  and turn that into a prompt I can copy and paste into ChatGPT."
+
+# Think of it Like This:
+# --Tool--	       |        --What It Does--
+# Aider	           |  Knows your files and can edit them
+# Web LLM	         |  Can analyze and give smart advice
+# '/copy-context'	 |  Gathers files + instructions into a perfect prompt
+# '/paste'	       |  Applies the LLM's advice into your code automatically
+## EXAMPLE
+# '/add main.py'
+# '/copy-context' Please improve the exception handling in main.py.
+# '/paste'
+
+
+# ── What Are Tokens? ──────────────────────────────────────
+# A token is roughly 4 characters or 1 word.
+# Each LLM has a maximum token context window (e.g., GPT-4o can handle up to 128,000 tokens).
+# Aider uses a setting like map_tokens: 1024 to control how much context it sends about your codebase 
+#(not including your actual prompt or output).
+
+# Project Size	Recommended map_tokens
+# Tiny (1–3 files)	512–1024
+# Small (5–10 files)	2048–4096
+# Medium (10–25 files)	4096–8192
+# Large (25+ files)	8192–16384+
+#
+# You want to set map_tokens high enough to include all essential files, 
+# but low enough to avoid token overflows or slow responses.
+
+# ── Linters install ──────────────────────────────────────────────────────────
+## Linux
+# pip install flake8
+# npm install -g markdownlint-cli
+# sudo apt install yamllint shellcheck jq 
+# 
+## On Windows (via Chocolatey or manually):
+# pip install flake8
+# pip install yamllint
+# npm install -g markdownlint-cli
+# choco install shellcheck jq
+
+# ── Playwrite install for web scrape ──────────────────────────────────────
+# pip install pytest-playwright
+# playwright install --with-deps chromium
+
+# ── Create python environment and activate it ───────────────────────────────
+# https://docs.python.org/3/library/venv.html
+
+# python -m venv /thepath
+# ./Activate.ps1
+
+
+# Gemini Diffusion Coder (Tested) + RooCode: This is the FASTEST AI Coder YET & IT'S FULLY FREE! 
+# https://www.youtube.com/watch?v=5QpE0YTASxQ
