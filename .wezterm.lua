@@ -41,6 +41,9 @@ config.colors.brights = {
   '#FFFFFF', -- Bright White
 }
 
+-- Scrollbar color override (without affecting theme)
+config.colors.scrollbar_thumb = "#dc74bc"
+
 -- General settings
 config.check_for_updates = true
 config.automatically_reload_config = true
@@ -76,6 +79,82 @@ config.font = wezterm.font_with_fallback({
 --  },
 --}
 
+-- Background Image Configuration (moving)
+--local dimmer = { brightness = 0.040 }
+--config.background = {
+--  -- This is the deepest/back-most layer. It will be rendered first
+--  {
+--    source = {
+--      File = 'C:/Users/Admin/Downloads/sk.png',
+--    },
+--    -- The texture tiles vertically but not horizontally.
+--    -- When we repeat it, mirror it so that it appears "more seamless".
+--    -- An alternative to this is to set `width = "100%"` and have
+--    -- it stretch across the display
+--    repeat_x = 'Mirror',
+--    hsb = dimmer,
+--    -- When the viewport scrolls, move this layer 10% of the number of
+--    -- pixels moved by the main viewport. This makes it appear to be
+--    -- further behind the text.
+--    attachment = { Parallax = 0.1 },
+--  },
+--  -- Subsequent layers are rendered over the top of each other
+--  {
+--    source = {
+--      File = 'C:/Users/Admin/Downloads/sk.png',
+--    },
+--    width = '100%',
+--    repeat_x = 'NoRepeat',
+--
+--    -- position the spins starting at the bottom, and repeating every
+--    -- two screens.
+--    vertical_align = 'Bottom',
+--    repeat_y_size = '200%',
+--    hsb = dimmer,
+--
+--    -- The parallax factor is higher than the background layer, so this
+--    -- one will appear to be closer when we scroll
+--    attachment = { Parallax = 0.2 },
+--  },
+--  {
+--    source = {
+--      File = 'C:/Users/Admin/Downloads/sk.pngg',
+--    },
+--    width = '100%',
+--    repeat_x = 'NoRepeat',
+--
+--    -- start at 10% of the screen and repeat every 2 screens
+--    vertical_offset = '10%',
+--    repeat_y_size = '200%',
+--    hsb = dimmer,
+--    attachment = { Parallax = 0.3 },
+--  },
+--  {
+--    source = {
+--      File = 'C:/Users/Admin/Downloads/sk.png',
+--    },
+--    width = '100%',
+--    repeat_x = 'NoRepeat',
+--
+--    vertical_offset = '30%',
+--    repeat_y_size = '200%',
+--    hsb = dimmer,
+--    attachment = { Parallax = 0.4 },
+--  },
+--  {
+--    source = {
+--      File = 'C:/Users/Admin/Downloads/sk.png',
+--    },
+--    width = '100%',
+--    repeat_x = 'NoRepeat',
+--
+--    vertical_offset = '50%',
+--    repeat_y_size = '150%',
+--    hsb = dimmer,
+--    attachment = { Parallax = 0.5 },
+--  },
+--}
+
 config.font_size = 12.5
 config.line_height = 1.0
 config.cell_width = 1.0
@@ -92,10 +171,10 @@ config.inactive_pane_hsb = {
 
 -- Border Padding
 config.window_padding = {
-  left = 2,
-  right = 2,
-  top = 2,
-  bottom = 2,
+  left = 15,
+  right = 15,
+  top = 15,
+  bottom = 15,
 }
 
   -- Adjust Window Frame
