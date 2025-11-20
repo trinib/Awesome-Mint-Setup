@@ -202,9 +202,11 @@ config.window_decorations = "NONE"
 config.colors.foreground = '#FFFFFF' -- Brighter white text
 
 -- Cursor color settings
-config.colors.cursor_bg = '#FF79C6' -- Background color of the cursor (bright pink)
-config.colors.cursor_fg = '#ffffff' -- Text color when cursor is on a character
-config.colors.cursor_border = '#FF79C6' -- Border color of the cursor
+-- Add to cursor settings section
+config.force_reverse_video_cursor = false
+config.colors.cursor_bg = '#FF79C6'
+config.colors.cursor_fg = '#FFF833'
+config.colors.cursor_border = '#FF1493'  -- Hot pink border
 
 -- Tab bar colors (Vibrant Pink Candy Theme - Final)
 config.colors.tab_bar = {
@@ -241,7 +243,7 @@ config.colors.tab_bar = {
     fg_color = '#191724', -- Dark text for contrast
   },
 }
-
+----------------------------------
 -- Tab bar settings
 config.use_fancy_tab_bar = true
 config.tab_bar_at_bottom = false
@@ -256,6 +258,12 @@ config.cursor_blink_rate = 500
 config.cursor_thickness = 8
 config.cursor_blink_ease_in = 'Linear'
 config.cursor_blink_ease_out = 'Linear'
+
+-- Add shadow effect (simulate glow)
+--config.window_background_gradient = {
+--    colors = { '#191724', '#272538', '#261924', '#1F1B1F' },
+--    orientation = 'Vertical',
+--}
 
 -- Performance settings
 config.front_end = 'WebGpu'  -- Use WebGpu for better performance
@@ -272,16 +280,17 @@ config.adjust_window_size_when_changing_font_size = true
 config.check_for_updates = true
 config.check_for_updates_interval_seconds = 86400
 
--- Create a comprehensive launch menu with different options
+----------------------------------
+-- launch menu with different options
 config.launch_menu = {
   -- WSL options
   {
     label = 'WSL: Home',
-    args = {'wsl.exe'},
+    args = {'wsl.exe', '--cd', '/home/trinib'},
   },
   {
-    label = 'WSL: Projects',
-    args = {'wsl.exe', '--cd', '~/projects'},
+    label = 'WSL: Admin',
+    args = {'wsl.exe'},
   },
   {
     label = 'WSL: Code',
@@ -294,27 +303,27 @@ config.launch_menu = {
   
   -- Windows options - these DO NOT use domain and specify args directly
   {
-    label = 'PowerShell: Home',
-    args = {'powershell.exe', '-NoLogo'},
+    label = 'PowerShell7: Home',
+    args = {"C:\\Program Files\\PowerShell\\7\\pwsh.exe", "-NoLogo"},
   },
   {
-    label = 'PowerShell: Documents',
-    args = {'pwsh.exe', '-NoLogo'},
+    label = 'PowerShell7: Documents',
+    args = {"C:\\Program Files\\PowerShell\\7\\pwsh.exe", "-NoLogo"},
     cwd = wezterm.home_dir .. '\\Documents',
   },
   {
-    label = 'PowerShell: Downloads',
-    args = {'pwsh.exe', '-NoLogo'},
+    label = 'PowerShell7: Downloads',
+    args = {"C:\\Program Files\\PowerShell\\7\\pwsh.exe", "-NoLogo"},
     cwd = wezterm.home_dir .. '\\Downloads',
   },
   {
-    label = 'PowerShell: Desktop',
-    args = {'pwsh.exe', '-NoLogo'},
+    label = 'PowerShell7: Desktop',
+    args = {"C:\\Program Files\\PowerShell\\7\\pwsh.exe", "-NoLogo"},
     cwd = wezterm.home_dir .. '\\Desktop',
   },
   {
-    label = 'PowerShell: C Drive',
-    args = {'pwsh.exe', '-NoLogo'},
+    label = 'PowerShell7: C Drive',
+    args = {"C:\\Program Files\\PowerShell\\7\\pwsh.exe", "-NoLogo"},
     cwd = 'C:\\',
   },
   {
@@ -324,19 +333,27 @@ config.launch_menu = {
   {
     label = 'Git Bash: Home',
     args = {'C:\\Program Files\\Git\\bin\\bash.exe', '-l'},
+  }, 
+  {
+    label = "SSH: VS",
+    args = {"ssh", "root@142.11.236.29"},
+  },
+  {
+    label = "SSH: Oracle",
+    args = {"ssh", "-i", "~/.ssh/oraclessh", "ubuntu@150.136.37.234"},
   },
 }
-
+----------------------------------
 -- Key bindings
 config.disable_default_key_bindings = false
 config.keys = {
   -- Split panes with WSL and send a clear command immediately after
-  { key = '|', mods = 'CTRL|SHIFT', action = wezterm.action_callback(function(window, pane)
+  { key = '}', mods = 'CTRL|SHIFT', action = wezterm.action_callback(function(window, pane)
     -- First split the pane
     window:perform_action(
       act.SplitPane {
         direction = 'Right',
-        command = { args = {'wsl.exe'} },
+        command = { args = {'wsl.exe', '--cd', '/home/trinib'}, },
       },
       pane
     )
@@ -347,13 +364,14 @@ config.keys = {
     -- Send the clear command
     window:active_pane():send_text("clear\n")
   end)},
-
-  { key = '_', mods = 'CTRL|SHIFT', action = wezterm.action_callback(function(window, pane)
+  
+  -- Split panes down
+  { key = '"', mods = 'CTRL|SHIFT', action = wezterm.action_callback(function(window, pane)
     -- First split the pane
     window:perform_action(
       act.SplitPane {
         direction = 'Down',
-        command = { args = {'wsl.exe'} },
+        command = { args = {'wsl.exe', '--cd', '/home/trinib'}, },
       },
       pane
     )
@@ -394,7 +412,7 @@ config.keys = {
   { key = 'v', mods = 'CTRL|SHIFT', action = act.PasteFrom 'Clipboard' },
   
   -- Quick select mode
-  { key = 'f', mods = 'CTRL|SHIFT', action = act.Search { CaseSensitiveString = '' } },
+  { key = 's', mods = 'CTRL|SHIFT', action = act.Search { CaseSensitiveString = '' } },
   
   -- Launcher menu
   { key = 'l', mods = 'CTRL|SHIFT', action = act.ShowLauncherArgs { flags = 'FUZZY|LAUNCH_MENU_ITEMS' } },
@@ -402,7 +420,7 @@ config.keys = {
   -- WINDOW CONTROL SHORTCUTS
   { key = 'q', mods = 'CTRL|SHIFT', action = act.QuitApplication },
   { key = 'm', mods = 'CTRL|SHIFT', action = act.Hide },
-  { key = 'n', mods = 'CTRL|SHIFT', action = wezterm.action.ToggleFullScreen },
+  { key = 'f', mods = 'CTRL|SHIFT', action = wezterm.action.ToggleFullScreen },
   
     -- Run the 'fish' command with Ctrl+E
   {
@@ -410,9 +428,63 @@ config.keys = {
     mods = 'CTRL',
     action = wezterm.action.SendString 'fish\n',
   },
+  
+  -- Animated Background Opacity Toggle
+  { key = 'o', mods = 'CTRL|SHIFT', action = wezterm.action_callback(function(window, pane)
+    local overrides = window:get_config_overrides() or {}
+    if not overrides.window_background_opacity then
+        overrides.window_background_opacity = 0.7
+    else
+        if overrides.window_background_opacity == 0.7 then
+            overrides.window_background_opacity = 0.94
+        else
+            overrides.window_background_opacity = 0.7
+        end
+    end
+    window:set_config_overrides(overrides)
+end)},
+
+ --Quick Directory Jumper
+{ key = '1', mods = 'CTRL|ALT', action = act.SpawnCommandInNewTab { 
+    args = {'wsl.exe', '--cd', '/home/trinib/projects'} 
+}},
+{ key = '2', mods = 'CTRL|ALT', action = act.SpawnCommandInNewTab { 
+    args = {"C:\\Program Files\\PowerShell\\7\\pwsh.exe", "-NoLogo"} 
+}},
+
+-- Add these for Chrome-like tab switching
+{ key = 'Tab', mods = 'CTRL', action = act.ActivateTabRelative(1) },
+{ key = 'Tab', mods = 'CTRL|SHIFT', action = act.ActivateTabRelative(-1) },
+
+-- Jump to specific tabs
+{ key = '1', mods = 'ALT', action = act.ActivateTab(0) },
+{ key = '2', mods = 'ALT', action = act.ActivateTab(1) },
+{ key = '3', mods = 'ALT', action = act.ActivateTab(2) },
+{ key = '4', mods = 'ALT', action = act.ActivateTab(3) },
+
+-- Tab Move/Reorder
+{ key = '{', mods = 'CTRL|SHIFT', action = act.MoveTabRelative(-1) },
+{ key = '}', mods = 'SHIFT|ALT', action = act.MoveTabRelative(1) },
+
+--Better Scrolling
+{ key = 'k', mods = 'CTRL|SHIFT', action = act.ScrollByPage(-0.5) },
+{ key = 'j', mods = 'CTRL|SHIFT', action = act.ScrollByPage(0.5) },
+{ key = 'PageUp', mods = 'SHIFT', action = act.ScrollByPage(-1) },
+{ key = 'PageDown', mods = 'SHIFT', action = act.ScrollByPage(1) },
+
+--Rename Current Tab
+{ key = 'r', mods = 'CTRL|SHIFT', action = act.PromptInputLine {
+    description = 'Enter new name for tab',
+    action = wezterm.action_callback(function(window, pane, line)
+        if line then
+            window:active_tab():set_title(line)
+        end
+    end),
+}},
 
 }
 
+----------------------------------
 -- Mouse bindings
 config.mouse_bindings = {
   -- Right click paste
@@ -435,46 +507,276 @@ config.mouse_bindings = {
   },
 }
 
+----------------------------------
 -- Disable confirmation for tab close button
 wezterm.on('mux-is-process-stateful', function(domain, pane)
   -- Always return false to indicate no confirmation needed
   return false
 end)
 
+----------------------------------
 -- Override the new tab button behavior to open WSL
-wezterm.on('format-tab-title', function(tab, tabs, panes, config, hover, max_width)
-  -- This ensures the tab title is formatted correctly
-  return tab.active_pane.title
+--wezterm.on('format-tab-title', function(tab, tabs, panes, config, hover, max_width)
+--  -- This ensures the tab title is formatted correctly
+--  return tab.active_pane.title
+--end)
+
+----------------------------------------------------------
+-- Show icon and name on tabs
+--wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+--  local process_name = tab.active_pane.foreground_process_name or ""
+--  local icon, text, icon_color
+--
+--  -- Match based on process name (case-insensitive)
+--  if process_name:match("wsl") then
+--    icon = "🐧"
+--    text = "WSL"
+--    icon_color = "#7ECF17" -- green
+--  elseif process_name:match("powershell") or process_name:match("pwsh") then
+--    icon = "⚡"
+--    text = "PowerShell"
+--    icon_color = "#FFB86C" -- orange
+--  elseif process_name:match("bash") then
+--    icon = "🐚"
+--    text = "Bash"
+--    icon_color = "#8BE9FD" -- cyan
+--  elseif process_name:match("cmd") then
+--    icon = "💻"
+--    text = "CMD"
+--    icon_color = "#F1FA8C" -- yellow
+--  else
+--    icon = "💻"
+--    text = "Shell"
+--    icon_color = "#BD93F9" -- purple fallback
+--  end
+--
+--  -- Tab colors
+--  local bg, fg
+--  if tab.is_active then
+--    bg, fg = "#ff79c6", "#000000"  -- active tab background/text
+--  elseif hover then
+--    bg, fg = "#bd93f9", "#ffffff"  -- hovered tab
+--  else
+--    bg, fg = "#44475a", "#bfbfbf"  -- inactive tab
+--  end
+--
+--  return {
+--    { Background = { Color = bg } },
+--    { Foreground = { Color = icon_color } },
+--    { Text = " " .. icon .. " " },
+--    { Foreground = { Color = fg } },
+--    { Text = text .. " " },
+--  }
+--end)
+
+-----------------------------------------------------------------
+-- Show icons and path on tabs
+wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+  local process_name = tab.active_pane.foreground_process_name or ""
+  local cwd_uri = tab.active_pane.current_working_dir
+  local cwd = ""
+
+  -- Extract folder name from URI (e.g. file:///home/user/project)
+  if cwd_uri then
+    cwd = cwd_uri.file_path or cwd_uri
+    cwd = cwd:gsub("file://", "")
+    cwd = cwd:gsub("%%20", " ")  -- decode spaces
+    local home = os.getenv("HOME") or os.getenv("USERPROFILE")
+    if home and cwd:find(home, 1, true) then
+      cwd = cwd:gsub(home, "~") -- shorten home dir
+    end
+    -- Show only last folder name
+    cwd = cwd:match("([^/\\]+)$") or cwd
+  else
+    cwd = "🔎"
+  end
+  
+----------------------------------
+  -- Determine icon and color based on process
+  --Terminal / Shell Generic (copy and past in terminal to view)
+-- 	  	  	  󰆍	  󰆍	  󰞷	  󰦪 	 󰨚	 󰩈	 󰅟	 
+-- | Shell         | Icon  |
+-- | ------------- | ----- |
+-- | Bash          |      |
+-- | Zsh           | 󱆃    |
+-- | Fish          | 󰈺    |
+-- | Nushell       | 󰯉    |
+-- | PowerShell    | 󰨊    |
+-- | CMD           |      |
+-- | Korn / POSIX  |      |
+-- | Shell Unknown |  /  |
+-- 
+-- | OS            | Icon  |
+-- | ------------- | ----- |
+-- | Windows       |  /  |
+-- | macOS         |      |
+-- | Generic Linux |      |
+-- | Red Hat       |      |
+-- | Ubuntu        |  /  |
+-- | Debian        |      |
+-- | Arch          |      |
+-- | Fedora        |      |
+-- | Alpine Linux  |      |
+-- | Kali Linux    |      |
+-- | Manjaro       |      |
+-- | CentOS        |      |
+-- | OpenSUSE      |      |
+-- | Gentoo        |      |
+-- | NixOS         |      |
+-- | BSD (Generic) |  /  |
+-- | Android Shell |      |
+-- 
+-- | Tool                 | Icon |
+-- | -------------------- | ---- |
+-- | Git Repo             |     |
+-- | Git Branch           |     |
+-- | Git Commit           |     |
+-- | Code Workstation     |     |
+-- | Editor Terminal Mode | 󰅩   |
+-- | Debug Shell          |     |
+-- | Python Venv          |     |
+-- | Node CLI             |     |
+-- | Rust CLI             |     |
+-- | Go CLI               |     |
+-- 
+-- | Context      | Icon |
+-- | ------------ | ---- |
+-- | Docker       |     |
+-- | Kubernetes   | 󱁢   |
+-- | AWS CLI      |     |
+-- | Azure Shell  | ﴱ    |
+-- | Google Cloud |     |
+-- | Remote SSH   | 󰣀   |
+-- | VPN Tunnel   | 󰕥   |
+-- | VM Guest     | 󰢹   |
+-- 
+-- | Meaning             | Icon |
+-- | ------------------- | ---- |
+-- | Root user / SU mode |     |
+-- | Sudo Available      | 󰯃   |
+-- | Elevated Shell      |     |
+-- | Chroot              | 󰱅   |
+-- | Virtual Environment |     |
+-- | Script Execution    |     |
+-- | System Monitor      |     |
+-- 
+-- | Context         | Icon  |
+-- | --------------- | ----- |
+-- | Home Directory  |  /  |
+-- | Git Repo Folder |      |
+-- | Media Folder    |      |
+-- | Network Folder  | 󰌷    |
+local icon, icon_color
+if process_name:match("wsl") then
+    icon = ""  -- Linux Tux icon
+    icon_color = "#4AFF67"
+elseif process_name:match("powershell") or process_name:match("pwsh") then
+    icon = ""  -- Powershell Nerd Font icon
+    icon_color = "#FFB86C"
+elseif process_name:match("bash") then
+    icon = ""  -- Bash shell Nerd Font icon
+    icon_color = "#8BE9FD"
+elseif process_name:match("cmd") then
+    icon = ""  -- Command prompt Nerd Font icon
+    icon_color = "#D0D400"
+else
+    icon = ""  -- Generic terminal
+    icon_color = "#6363FF"
+end
+
+  -- Background / text color states
+  local bg, fg
+  if tab.is_active then
+    bg, fg = "#ff79c6", "#000000"
+  elseif hover then
+    bg, fg = "#bd93f9", "#ffffff"
+  else
+    bg, fg = "#612E4A", "#bfbfbf"
+  end
+
+  -- Build final title
+  return {
+    { Background = { Color = bg } },
+    { Foreground = { Color = icon_color } },
+    { Text = " " .. icon .. " " },
+    { Foreground = { Color = fg } },
+    { Text = cwd .. " " },
+  }
 end)
 
+----------------------------------
 -- Make the new tab button spawn WSL tabs on left click, show launcher on right click
 wezterm.on('new-tab-button-click', function(window, pane, button, default_action)
   -- Check which mouse button was clicked
   if button == "Left" then
     -- Left click: spawn a WSL tab
     window:perform_action(
-      act.SpawnCommandInNewTab { args = {'wsl.exe'} },
+      act.SpawnCommandInNewTab { args = {'wsl.exe', '--cd', '/home/trinib'} },
       pane
     )
     return false -- prevent the default action
   end
 end)
 
+----------------------------------
+  -- 🌈 Gradient trail at top
+local gradient_colors = {
+  "#ff5555", "#ff79c6", "#bd93f9", "#50fa7b", "#f1fa8c", "#ffb86c", "#7989FF"
+}
 
--- Add a visual exit button indicator in the status bar
-wezterm.on('update-right-status', function(window, pane)
+-- How fast to animate (seconds)
+local frame_delay = 0.3  -- 20fps (lower = smoother, higher CPU)
+local window_ref = nil
+
+local function update_status()
+  if not window_ref then return end
+  local window = window_ref
   local hostname = wezterm.hostname()
 
-  
-  -- Create a status with hostname, date, and exit button
-  local elements = {
+  -- 🌈 Build gradient trail
+  local trail = {}
+  for _, c in ipairs(gradient_colors) do
+    table.insert(trail, { Foreground = { Color = c } })
+    table.insert(trail, { Text = "▋" })
+  end
+
+  -- Rotate colors
+  table.insert(gradient_colors, 1, table.remove(gradient_colors))
+
+  -- 🧠 Compose right-status
+  local status = {
     { Foreground = { Color = '#b7f070' } },
-    { Text = ' ' .. hostname .. ' ' },
-    { Foreground = { Color = '#F8F8F2' } },
+    { Text = ' ' .. hostname .. '  ' },
   }
-  
-  window:set_right_status(wezterm.format(elements))
+  for _, item in ipairs(trail) do
+    table.insert(status, item)
+  end
+
+  window:set_right_status(wezterm.format(status))
+
+  -- 🔁 Schedule next frame
+  wezterm.time.call_after(frame_delay, update_status)
+end
+
+wezterm.on("update-right-status", function(window, _)
+  if not window_ref then
+    window_ref = window
+    wezterm.time.call_after(frame_delay, update_status)
+  end
 end)
+----------------------------
+
+-- 🔔 Visual Bell (Silent Pink Flash)
+config.visual_bell = {
+  fade_in_duration_ms = 250,
+  fade_out_duration_ms = 350,
+  target = "BackgroundColor",
+}
+
+config.colors.visual_bell = "#7A3A5A"  -- bright pink flash
+
+config.audible_bell = "Disabled"       -- 🚫 no sound
+----------------------------------------------------------
 
 -- Return the configuration
 return config
