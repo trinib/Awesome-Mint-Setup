@@ -1,15 +1,7 @@
-if status is-interactive
-    # Commands to run in interactive sessions can go here
-end
-
 oh-my-posh init fish --config /home/trinib/.local/share/fishthemes/night-owl.omp.json | source 
 zoxide init fish | source
 mcfly init fish | source
-
-set PATH $PATH /home/trinib/.local/bin
-
-# Add local bin directory to PATH
-fish_add_path ~/.local/bin
+#alias neofetch='neofetch | lolcat'
 
 set -gx MCFLY_RESULTS 500
 set -gx MCFLY_RESULTS_SORT LAST_RUN
@@ -24,8 +16,7 @@ set -gx BROWSER firefox
 set -gx LANG en_US.UTF-8
 #et -gx LC_ALL en_US.UTF-8
 set -gx GPG_TTY (tty)
-
-set -x TZ America/New_York
+set -gx TZ America/Halifax
 
 # Make autosuggestions more visible
 #set -g fish_autosuggestion_color brblack
@@ -34,7 +25,7 @@ set -x TZ America/New_York
 # Use Ctrl+F to accept the current suggestion
 bind \cf forward-word
 
-bind \ce "fish"
+#bind \ce "fish"
 
 # Alt+Left/Right to navigate words
 bind \e\[1\;3C forward-word
@@ -95,3 +86,25 @@ set fish_color_valid_path --underline
 ## !!	Run previous command
 ## !<command>	Run last command starting with <command>
 ## Tab	Autocomplete
+
+#Screen Flash
+function fish_user_key_bindings
+    # Backspace behavior
+    bind \x7f 'if test (commandline) = ""; printf "\a"; else; commandline -f backward-delete-char; end'
+    bind \b   'if test (commandline) = ""; printf "\a"; else; commandline -f backward-delete-char; end'
+
+    # ⚡ Enter key: flash when executing a command (breaks execution time)
+    # bind \r 'printf "\a"; commandline -f accept-autosuggestion;'
+end
+
+# opencode
+fish_add_path /home/trinib/.opencode/bin
+
+fish_add_path /home/trinib/no-more-secrets/bin
+
+fish_add_path /home/trinib/.local/share/nvm/v24.4.1/bin
+
+set PATH $PATH /home/trinib/.local/bin
+
+# Add local bin directory to PATH
+fish_add_path ~/.local/bin
