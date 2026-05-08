@@ -3,6 +3,21 @@ zoxide init fish | source
 mcfly init fish | source
 #alias neofetch='neofetch | lolcat'
 
+# opencode
+fish_add_path /home/trinib/.opencode/bin
+
+fish_add_path /home/trinib/no-more-secrets/bin
+
+fish_add_path /home/trinib/.local/share/nvm/v24.4.1/bin
+
+set PATH $PATH /home/trinib/.local/bin
+
+# cargo
+set PATH $PATH /home/trinib/.cargo/bin
+
+# Add local bin directory to PATH
+fish_add_path ~/.local/bin
+
 set -gx MCFLY_RESULTS 500
 set -gx MCFLY_RESULTS_SORT LAST_RUN
 set -gx MCFLY_FUZZY 4
@@ -96,15 +111,3 @@ function fish_user_key_bindings
     # ⚡ Enter key: flash when executing a command (breaks execution time)
     # bind \r 'printf "\a"; commandline -f accept-autosuggestion;'
 end
-
-# opencode
-fish_add_path /home/trinib/.opencode/bin
-
-fish_add_path /home/trinib/no-more-secrets/bin
-
-fish_add_path /home/trinib/.local/share/nvm/v24.4.1/bin
-
-set PATH $PATH /home/trinib/.local/bin
-
-# Add local bin directory to PATH
-fish_add_path ~/.local/bin
