@@ -33,6 +33,9 @@ set -gx LANG en_US.UTF-8
 set -gx GPG_TTY (tty)
 set -gx TZ America/Halifax
 
+#(wsl 1)
+set -gx TZ Etc/GMT+4 
+
 # Make autosuggestions more visible
 #set -g fish_autosuggestion_color brblack
 
