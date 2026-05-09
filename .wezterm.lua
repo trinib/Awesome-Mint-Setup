@@ -55,7 +55,7 @@ config.enable_scroll_bar = false
 -- Appearance settings
 config.font = wezterm.font_with_fallback({
   {
-    family = 'FiraCode Nerd Font Ret',
+    family = 'FiraCode Nerd Font Med',
     weight = 'Regular',
     harfbuzz_features = {'calt=1', 'clig=1', 'liga=1'},
   },
