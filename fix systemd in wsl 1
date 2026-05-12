@@ -1,0 +1,3 @@
+sudo sh -c 'cd /bin && mv -f systemd-sysusers systemd-sysusers.org && ln -s echo systemd-sysusers'
+
+sudo dpkg --configure -a
