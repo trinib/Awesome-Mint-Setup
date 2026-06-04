@@ -32,9 +32,18 @@ set -gx LANG en_US.UTF-8
 #et -gx LC_ALL en_US.UTF-8
 set -gx GPG_TTY (tty)
 set -gx TZ America/Halifax
-
-#(wsl 1)
+#or
 set -gx TZ Etc/GMT+4 
+
+# TGPT AI
+function ai
+    tgpt --provider gemini --model "gemini-3.1-flash-lite" --key "YOUR KEY" "$argv"
+end
+
+# BASH
+#function ai() {
+#    tgpt --provider gemini --model "gemini-3.1-flash-lite" --key "YOUR_NEW_API_KEY_HERE" "$*"
+#}
 
 # Make autosuggestions more visible
 #set -g fish_autosuggestion_color brblack
