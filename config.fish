@@ -9,6 +9,7 @@ fish_add_path /home/trinib/.opencode/bin
 fish_add_path /home/trinib/no-more-secrets/bin
 
 fish_add_path /home/trinib/.local/share/nvm/v24.4.1/bin
+fish_add_path /home/trinib/.nvm/versions/node/v24.16.0/bin
 
 set PATH $PATH /home/trinib/.local/bin
 
