@@ -426,7 +426,7 @@ config.keys = {
   {
     key = 'e',
     mods = 'CTRL',
-    action = wezterm.action.SendString 'fish\n',
+    action = wezterm.action.SendString 'zsh\n',
   },
   
   -- Animated Background Opacity Toggle
