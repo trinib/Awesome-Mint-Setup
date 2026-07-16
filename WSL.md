@@ -194,3 +194,22 @@ If your terminal audio hangs or stops producing sound entirely, fully restart th
 wsl --shutdown
 ```
 Re-opening your WSL terminal will automatically refresh the audio subsystem connection.
+
+---
+---
+---
+
+# Turning headroom off globally (all projects, all sessions):
+
+1. headroom unwrap claude — strips ANTHROPIC_BASE_URL and the hook wiring from ~/.claude/settings.json
+2. Remove the two export ANTHROPIC_BASE_URL=... / OPENAI_BASE_URL=... lines we added to ~/.zshrc by hand (headroom doesn't manage that file, so unwrap won't touch it)
+3. Optionally stop the proxy itself: headroom install stop --profile init-user (keeps the systemd unit installed, just stopped) or headroom install remove --profile init-user (fully uninstalls it)
+4. Restart Claude Code / open a new shell
+
+Turning it off for just one project, leaving the global routing intact everywhere else — add to that repo's .claude/settings.json (or .claude/settings.local.json if you don't want it committed):
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "https://api.anthropic.com"
+  }
+}
+Claude Code's own settings env block takes precedence over whatever's inherited from your shell, so this should override the proxy for that project even with the ~/.zshrc export in place. (If it somehow doesn't, the guaranteed fallback is unset ANTHROPIC_BASE_URL in that terminal before running claude.)
