@@ -1,13 +1,69 @@
 toilet  -f smblock -F gay --filter border:gay "======== SINGH ========="
 echo -e "{⌐■_■} > -- ︻╦╤─ ~ ~ ~ ~ \e[5m" | cowsay -f eyes | lolcat
 
+zstyle ':omz:update' mode reminder
+zstyle ':omz:update' frequency 3
+source ~/aliases.zsh
+
 export PATH="$HOME/.local/bin:$PATH"
 
 #eval "$(oh-my-posh init zsh)"
 #eval "$(oh-my-posh init zsh --config /home/trinib/.local/share/oh-my-posh-theme.json)"
 
 source ~/.zsh/catppuccin_frappe-zsh-syntax-highlighting.zsh
+# --- dynamic starship: right cluster on line 1 when it truly fits, else line 2 ---
+autoload -Uz add-zsh-hook
+
+typeset -g _SS_INLINE="$HOME/.config/starship.toml"
+typeset -g _SS_NARROW="$HOME/.config/starship-narrow.toml"
+
+# strip color codes + zsh prompt markers, then wc -L gives display columns
+_ss_width() { sed -e $'s/\x1b\\[[0-9;]*[a-zA-Z]//g' -e 's/%[{}]//g' | wc -L; }
+
+# right cluster width is ~constant; measure once at startup
+typeset -g _SS_RIGHT_W
+_SS_RIGHT_W=$(STARSHIP_CONFIG="$_SS_NARROW" starship prompt --right 2>/dev/null | _ss_width)
+
+_ss_switch() {
+  local lw
+  lw=$(STARSHIP_CONFIG="$_SS_NARROW" starship prompt 2>/dev/null | _ss_width)
+  if (( lw + _SS_RIGHT_W + 3 <= COLUMNS )); then
+    export STARSHIP_CONFIG="$_SS_INLINE"      # fits -> line 1
+  else
+    export STARSHIP_CONFIG="$_SS_NARROW"      # doesn't -> line 2
+  fi
+}
+add-zsh-hook precmd _ss_switch
+# --- track last command duration for the always-visible timer pill ---
+zmodload zsh/datetime 2>/dev/null
+
+typeset -g _CMD_START=0
+typeset -g LAST_CMD_DURATION_MS=0
+export LAST_CMD_DURATION_MS
+
+_cmd_timer_preexec() {
+  _CMD_START=$EPOCHREALTIME
+}
+
+_cmd_timer_precmd() {
+  if [[ "$_CMD_START" != "0" ]]; then
+    local elapsed_ms=$(( (EPOCHREALTIME - _CMD_START) * 1000 ))
+    LAST_CMD_DURATION_MS=${elapsed_ms%.*}
+    export LAST_CMD_DURATION_MS
+    _CMD_START=0
+  fi
+}
+
+add-zsh-hook preexec _cmd_timer_preexec
+add-zsh-hook precmd _cmd_timer_precmd
 eval "$(starship init zsh)"
+
+# reflow live on window resize
+TRAPWINCH() {
+  _ss_switch
+  local f; for f in $precmd_functions; do $f; done
+  zle && zle reset-prompt
+}
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
@@ -142,3 +198,27 @@ bindkey '^H' alert-backspace # Maps secondary Backspace layout
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# bun completions
+[ -s "/home/trinib/.bun/_bun" ] && source "/home/trinib/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Headroom proxy routing (added by Claude Code)
+export ANTHROPIC_BASE_URL=http://127.0.0.1:8787
+export OPENAI_BASE_URL=http://127.0.0.1:8787/v1
+
+# >>> headroom persistent env >>>
+export HEADROOM_PORT="8787"
+export HEADROOM_HOST="127.0.0.1"
+export HEADROOM_MODE="token"
+export HEADROOM_BACKEND="anthropic"
+export HEADROOM_TELEMETRY="off"
+export ANTHROPIC_BASE_URL="http://127.0.0.1:8787"
+export ENABLE_TOOL_SEARCH="true"
+export COPILOT_PROVIDER_TYPE="anthropic"
+export COPILOT_PROVIDER_BASE_URL="http://127.0.0.1:8787"
+export OPENAI_BASE_URL="http://127.0.0.1:8787/v1"
+# <<< headroom persistent env <<<
