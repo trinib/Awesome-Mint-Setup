@@ -1,0 +1,201 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+palette = 'catppuccin_mocha'
+
+format = """
+[╔═](bold fg:teal)\
+[](green)\
+$os\
+$username\
+[](bg:sapphire fg:green)\
+$directory\
+[](bg:red fg:sapphire)\
+$git_branch\
+$git_status\
+[](fg:red bg:yellow)\
+$c\
+$rust\
+$golang\
+$nodejs\
+$bun\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+[](fg:yellow bg:green)\
+$conda\
+[](fg:green bg:lavender)\
+${custom.duration}\
+[](fg:lavender)\
+$line_break\
+[║](bold fg:teal)
+[╚════](bold fg:lavender)$character"""
+
+right_format = """
+[](fg:blue)\
+$shell\
+[](fg:blue bg:mauve)\
+${custom.cpu}\
+[](fg:mauve bg:peach)\
+$time\
+[](fg:peach)"""
+
+[fill]
+symbol = ' '
+
+[os]
+disabled = false
+style = "bg:green fg:crust bold"
+
+[os.symbols]
+Ubuntu = " "
+Debian = " "
+Arch = " "
+Windows = " "
+Macos = " "
+Linux = " "
+
+[username]
+show_always = true
+style_user = "bg:green fg:crust bold"
+style_root = "bg:green fg:crust bold"
+format = '[ $user ]($style)'
+
+[directory]
+style = "bg:sapphire fg:crust bold"
+format = "[ $path ]($style)"
+home_symbol = ""
+truncation_length = 3
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = ""
+style = "bg:red fg:crust bold"
+format = '[ $symbol $branch ]($style)'
+truncation_length = 18
+truncation_symbol = "…"
+
+[git_status]
+style = "bg:red fg:crust bold"
+format = '[$all_status$ahead_behind ]($style)'
+
+[c]
+symbol = ""
+style = "bg:yellow fg:crust bold"
+format = '[ $symbol ]($style)'
+
+[rust]
+symbol = ""
+style = "bg:yellow fg:crust bold"
+format = '[ $symbol ]($style)'
+
+[golang]
+symbol = ""
+style = "bg:yellow fg:crust bold"
+format = '[ $symbol ]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:yellow fg:crust bold"
+format = '[ $symbol ]($style)'
+
+[bun]
+symbol = "🥟"
+style = "bg:yellow fg:crust bold"
+format = '[ $symbol ]($style)'
+
+[php]
+symbol = ""
+style = "bg:yellow fg:crust bold"
+format = '[ $symbol ]($style)'
+
+[java]
+symbol = ""
+style = "bg:yellow fg:crust bold"
+format = '[ $symbol ]($style)'
+
+[kotlin]
+symbol = ""
+style = "bg:yellow fg:crust bold"
+format = '[ $symbol ]($style)'
+
+[haskell]
+symbol = ""
+style = "bg:yellow fg:crust bold"
+format = '[ $symbol ]($style)'
+
+[python]
+symbol = ""
+style = "bg:yellow fg:crust bold"
+format = '[ $symbol ]($style)'
+
+[conda]
+symbol = ""
+style = "bg:green fg:crust bold"
+format = '[ $symbol $environment ]($style)'
+
+[custom.duration]
+command = 'ms=${LAST_CMD_DURATION_MS:-0}; if [ "$ms" -lt 1000 ]; then echo "${ms}ms"; else s=$((ms/1000)); echo "${s}s"; fi'
+when = true
+shell = ["bash", "--noprofile", "--norc"]
+style = "bg:lavender fg:crust bold"
+format = "[  $output ]($style)"
+
+[shell]
+disabled = false
+bash_indicator = "bash"
+zsh_indicator = "zsh"
+fish_indicator = "fish"
+powershell_indicator = "pwsh"
+unknown_indicator = "sh"
+style = "bg:blue fg:crust bold"
+format = "[  $indicator ]($style)"
+
+[custom.cpu]
+command = 'read -r _ u1 n1 s1 id1 io1 irq1 sirq1 st1 _ < /proc/stat; sleep 0.15; read -r _ u2 n2 s2 id2 io2 irq2 sirq2 st2 _ < /proc/stat; T1=$((u1+n1+s1+id1+io1+irq1+sirq1+st1)); T2=$((u2+n2+s2+id2+io2+irq2+sirq2+st2)); DT=$((T2-T1)); DI=$(( (id2+io2) - (id1+io1) )); if [ "$DT" -gt 0 ]; then echo $(( (100*(DT-DI))/DT )); else echo 0; fi'
+when = true
+shell = ["bash", "--noprofile", "--norc"]
+symbol = "\ue266"
+style = "bg:mauve fg:crust bold"
+format = "[ $symbol $output% ]($style)"
+
+[time]
+disabled = false
+time_format = "%I:%M%p"
+style = "bg:peach fg:crust bold"
+format = "[ \uf4ab $time ]($style)"
+
+[character]
+success_symbol = '[❯](bold green)[❯](bold teal)[❯](bold sapphire)'
+error_symbol = '[❯](bold maroon)[❯](bold red)[❯](bold red)'
+vimcmd_symbol = '[❮](bold lavender)[❮](bold mauve)[❮](bold mauve)'
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a5adcb"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"

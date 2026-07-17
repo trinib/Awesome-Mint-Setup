@@ -1,0 +1,213 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+palette = 'catppuccin_mocha'
+
+format = """
+[╔═](bold fg:green)\
+[](green)\
+$os\
+$username\
+[](bg:sapphire fg:green)\
+$directory\
+[](bg:red fg:sapphire)\
+$git_branch\
+$git_status\
+[](fg:red bg:yellow)\
+$c\
+$rust\
+$golang\
+$nodejs\
+$bun\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+[](fg:yellow bg:green)\
+$conda\
+[](fg:green bg:iris)\
+${custom.duration}\
+[](fg:iris)\
+$fill\
+[](fg:cobalt)\
+$shell\
+[](fg:cobalt bg:mint)\
+${custom.cpu}\
+[](fg:mint bg:peach)\
+$time\
+[](fg:peach)\
+$line_break\
+[║](bold fg:teal)
+[╚════](bold fg:lavender)$character"""
+
+right_format = ""
+
+[fill]
+symbol = ' '
+
+[os]
+disabled = false
+style = "bg:green fg:crust bold"
+
+[os.symbols]
+Ubuntu = " "
+Debian = " "
+Arch = " "
+Windows = " "
+Macos = " "
+Linux = " "
+
+[username]
+show_always = true
+style_user = "bg:green fg:crust bold"
+style_root = "bg:green fg:crust bold"
+format = '[ $user ]($style)'
+
+[directory]
+style = "bg:sapphire fg:crust bold"
+format = "[ $path ]($style)"
+home_symbol = ""
+truncation_length = 3
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = ""
+style = "bg:red fg:crust bold"
+format = '[ $symbol $branch ]($style)'
+truncation_length = 18
+truncation_symbol = "…"
+
+[git_status]
+style = "bg:red fg:crust bold"
+format = '[$all_status$ahead_behind ]($style)'
+
+[c]
+symbol = ""
+style = "bg:yellow fg:crust bold"
+format = '[ $symbol ]($style)'
+
+[rust]
+symbol = ""
+style = "bg:yellow fg:crust bold"
+format = '[ $symbol ]($style)'
+
+[golang]
+symbol = ""
+style = "bg:yellow fg:crust bold"
+format = '[ $symbol ]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:yellow fg:crust bold"
+format = '[ $symbol ]($style)'
+
+[bun]
+symbol = "🥟"
+style = "bg:yellow fg:crust bold"
+format = '[ $symbol ]($style)'
+
+[php]
+symbol = ""
+style = "bg:yellow fg:crust bold"
+format = '[ $symbol ]($style)'
+
+[java]
+symbol = ""
+style = "bg:yellow fg:crust bold"
+format = '[ $symbol ]($style)'
+
+[kotlin]
+symbol = ""
+style = "bg:yellow fg:crust bold"
+format = '[ $symbol ]($style)'
+
+[haskell]
+symbol = ""
+style = "bg:yellow fg:crust bold"
+format = '[ $symbol ]($style)'
+
+[python]
+symbol = ""
+style = "bg:yellow fg:crust bold"
+format = '[ $symbol ]($style)'
+
+[conda]
+symbol = ""
+style = "bg:green fg:crust bold"
+format = '[ $symbol $environment ]($style)'
+
+[custom.duration]
+command = 'ms=${LAST_CMD_DURATION_MS:-0}; if [ "$ms" -lt 1000 ]; then echo "${ms}ms"; else s=$((ms/1000)); echo "${s}s"; fi'
+when = true
+shell = ["bash", "--noprofile", "--norc"]
+style = "bg:iris fg:crust bold"
+format = "[  $output ]($style)"
+
+[shell]
+disabled = false
+bash_indicator = "bash"
+zsh_indicator = "zsh"
+fish_indicator = "fish"
+powershell_indicator = "pwsh"
+unknown_indicator = "sh"
+style = "bg:cobalt fg:crust bold"
+format = "[  $indicator ]($style)"
+
+[custom.cpu]
+command = 'read -r _ u1 n1 s1 id1 io1 irq1 sirq1 st1 _ < /proc/stat; sleep 0.15; read -r _ u2 n2 s2 id2 io2 irq2 sirq2 st2 _ < /proc/stat; T1=$((u1+n1+s1+id1+io1+irq1+sirq1+st1)); T2=$((u2+n2+s2+id2+io2+irq2+sirq2+st2)); DT=$((T2-T1)); DI=$(( (id2+io2) - (id1+io1) )); if [ "$DT" -gt 0 ]; then echo $(( (100*(DT-DI))/DT )); else echo 0; fi'
+when = true
+shell = ["bash", "--noprofile", "--norc"]
+symbol = "\ue266"
+style = "bg:mint fg:crust bold"
+format = "[ $symbol $output% ]($style)"
+
+[time]
+disabled = false
+time_format = "%I:%M%p"
+style = "bg:peach fg:crust bold"
+format = "[ \uf4ab $time ]($style)"
+
+[character]
+success_symbol = '[❯](bold lavender)[❯](bold green)[❯](bold sapphire)'
+error_symbol = '[❯](bold maroon)[❯](bold red)[❯](bold red)'
+vimcmd_symbol = '[❮](bold lavender)[❮](bold mauve)[❮](bold mauve)'
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#8fdc89"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a5adcb"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
+terracotta = "#e2987a"  # Midpoint between Maroon and Peach
+apricot    = "#f7c196"  # Softer, pastel version of Peach
+amber      = "#f6ce8a"  # Warm gold between Peach and Yellow
+lime       = "#bee396"  # Bright mint between Yellow and Green
+
+# Custom Cool Accents
+mint       = "#49cfa4"  # Pastel teal between Green and Teal
+ice        = "#89e3e8"  # Piercing bright cyan between Teal and Sky
+cobalt     = "#7fa4f7"  # Deep sapphire between Sapphire and Blue
+indigo     = "#9eaaff"  # Electric purple between Blue and Lavender
+iris       = "#beafff"  # Soft pastel between Lavender and Mauve
