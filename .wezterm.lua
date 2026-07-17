@@ -14,6 +14,7 @@ end
 -- Shorcut Target "C:\Program Files\WezTerm\wezterm-gui.exe" start -- wsl.exe --cd /mnt/c
 local theme = require('lua/rose-pine').main
 config.colors = theme.colors()
+config.colors.background = '#161625'
 -- REMOVE ALL "config.colors" PARAMETERS FOR THIS TO WORK!!
 --config.color_scheme = 'The Hulk'
 
@@ -59,7 +60,7 @@ config.font = wezterm.font_with_fallback({
     weight = 'Regular',
     harfbuzz_features = {'calt=1', 'clig=1', 'liga=1'},
   },
-  'FiraCode Nerd Font Sembd',
+  'Hack Nerd Font',
 })
 
 -- Background Image Configuration
@@ -158,9 +159,10 @@ config.font = wezterm.font_with_fallback({
 config.font_size = 12.5
 config.line_height = 1.0
 config.cell_width = 1.0
+-- -- Border Padding ===============
 config.initial_cols = 70 -- Width
-config.initial_rows = 22 -- Height
-config.window_background_opacity = 0.94
+config.initial_rows = 24 -- Height
+config.window_background_opacity = 0.95
 config.text_background_opacity = 1.0
 config.integrated_title_button_style = 'Windows'
 config.integrated_title_button_color = 'Auto'
@@ -173,8 +175,8 @@ config.inactive_pane_hsb = {
 config.window_padding = {
   left = 15,
   right = 15,
-  top = 15,
-  bottom = 15,
+  top = 0,
+  bottom = 10,
 }
 
   -- Adjust Window Frame
@@ -183,23 +185,24 @@ config.window_frame = {
   border_right_width = '1px',
   border_bottom_height = '1px',
   border_top_height = '1px',
-  border_left_color = '#a5427b',    -- Pink border (matches cursor)
-  border_right_color = '#a5427b',   -- Pink border (matches cursor)
-  border_bottom_color = '#a5427b',  -- Pink border (matches cursor)
-  border_top_color = '#a5427b',     -- Pink border (matches cursor)
+  border_left_color = 'rgba(165, 66, 123, 0.95)',    -- Pink border (matches cursor)
+  border_right_color = 'rgba(165, 66, 123, 0.95)',   -- Pink border (matches cursor)
+  border_bottom_color = 'rgba(165, 66, 123, 0.95)',  -- Pink border (matches cursor)
+  border_top_color = 'rgba(165, 66, 123, 0.95)',     -- Pink border (matches cursor)
   
   -- Add these to preserve tab bar styling
   font = wezterm.font { family = 'Hack Nerd Font', weight = 'DemiBold' },
   font_size = 10.0,
-  active_titlebar_bg = '#161821',
-  inactive_titlebar_bg = '#161821',
+  -- Add color to top bar where tabs are in ===========
+  active_titlebar_bg = 'rgba(22, 22, 37, 0.95)',   -- 👈 50% transparent dark purple
+  inactive_titlebar_bg = 'rgba(22, 22, 37, 0.95)', -- 👈 30% transparent dark purle
 }
 
 -- Hide the title bar
 config.window_decorations = "NONE"
   
 -- Color overrides to make text brighter and more vibrant
-config.colors.foreground = '#FFFFFF' -- Brighter white text
+config.colors.foreground = '#E1E7FA' -- Brighter white text
 
 -- Cursor color settings
 -- Add to cursor settings section
@@ -208,10 +211,10 @@ config.colors.cursor_bg = '#FF79C6'
 config.colors.cursor_fg = '#FFF833'
 config.colors.cursor_border = '#FF1493'  -- Hot pink border
 
--- Tab bar colors (Vibrant Pink Candy Theme - Final)
+--========= LEFT Tab bar (DESKTOP NAME)
 config.colors.tab_bar = {
   -- The overall background of the tab bar area.
-  background = '#191724',
+  background = 'rgba(22, 22, 37, 0.95)',
 
   -- === ACTIVE TAB ===
   active_tab = {
@@ -234,7 +237,7 @@ config.colors.tab_bar = {
 
   -- === NEW TAB BUTTON (+) ===
   new_tab = {
-    bg_color = '#191724',
+    bg_color = 'rgba(22, 22, 37, 0.95)',
     fg_color = '#dc74bc',
   },
   -- The new tab button hover state.
@@ -266,7 +269,7 @@ config.cursor_blink_ease_out = 'Linear'
 --}
 
 -- Performance settings
-config.front_end = 'WebGpu'  -- Use WebGpu for better performance
+config.front_end = 'OpenGL'  -- Use WebGpu for better performance
 config.webgpu_power_preference = 'HighPerformance'
 config.animation_fps = 60
 config.max_fps = 120
@@ -298,32 +301,32 @@ config.launch_menu = {
   },
   {
     label = 'WSL: Root',
-    args = {'wsl.exe', '--cd', '/'},
+    args = {'C:\\Windows\\System32\\wsl.exe', '~'},
   },
   
   -- Windows options - these DO NOT use domain and specify args directly
   {
     label = 'PowerShell7: Home',
-    args = {"C:\\Program Files\\PowerShell\\7\\pwsh.exe", "-NoLogo"},
+    args = {"C:\\Program Files\\WindowsApps\\Microsoft.PowerShell_7.6.2.0_x64__8wekyb3d8bbwe\\pwsh.exe", "-NoLogo"},
   },
   {
     label = 'PowerShell7: Documents',
-    args = {"C:\\Program Files\\PowerShell\\7\\pwsh.exe", "-NoLogo"},
+    args = {"C:\\Program Files\\WindowsApps\\Microsoft.PowerShell_7.6.2.0_x64__8wekyb3d8bbwe\\pwsh.exe", "-NoLogo"},
     cwd = wezterm.home_dir .. '\\Documents',
   },
   {
     label = 'PowerShell7: Downloads',
-    args = {"C:\\Program Files\\PowerShell\\7\\pwsh.exe", "-NoLogo"},
+    args = {"C:\\Program Files\\WindowsApps\\Microsoft.PowerShell_7.6.2.0_x64__8wekyb3d8bbwe\\pwsh.exe", "-NoLogo"},
     cwd = wezterm.home_dir .. '\\Downloads',
   },
   {
     label = 'PowerShell7: Desktop',
-    args = {"C:\\Program Files\\PowerShell\\7\\pwsh.exe", "-NoLogo"},
+    args = {"C:\\Program Files\\WindowsApps\\Microsoft.PowerShell_7.6.2.0_x64__8wekyb3d8bbwe\\pwsh.exe", "-NoLogo"},
     cwd = wezterm.home_dir .. '\\Desktop',
   },
   {
     label = 'PowerShell7: C Drive',
-    args = {"C:\\Program Files\\PowerShell\\7\\pwsh.exe", "-NoLogo"},
+    args = {"C:\\Program Files\\WindowsApps\\Microsoft.PowerShell_7.6.2.0_x64__8wekyb3d8bbwe\\pwsh.exe", "-NoLogo"},
     cwd = 'C:\\',
   },
   {
@@ -426,7 +429,7 @@ config.keys = {
   {
     key = 'e',
     mods = 'CTRL',
-    action = wezterm.action.SendString 'zsh\n',
+    action = wezterm.action.SendString 'exec zsh\n',
   },
   
   -- Animated Background Opacity Toggle
@@ -684,7 +687,7 @@ else
     icon_color = "#6363FF"
 end
 
-  -- Background / text color states
+  -- Background color of tabs 👈
   local bg, fg
   if tab.is_active then
     bg, fg = "#ff79c6", "#000000"
